@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>課程介紹｜大綠地藝術 Big Green Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css?v=20260605-type">
+  <style>
+    .structure-sec {
+      background: white;
+      padding: 100px 80px;
+    }
+    .structure-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .structure-text p { font-size: 15.5px; color: var(--ink-mid); line-height: 2; margin-bottom: 14px; }
+    .structure-text .em { color: var(--green-dark); font-weight: 500; }
+    .course-pillars {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .course-pillar {
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--green-pale);
+      border: 1.5px solid rgba(127,175,155,.38);
+      border-radius: 18px;
+      padding: 20px;
+      transition: transform .2s, box-shadow .2s;
+      position: relative;
+    }
+    .course-pillar:nth-child(2) { background: var(--terra-light); }
+    .course-pillar:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(46,42,36,.08); }
+    .course-pillar span { display: block; font-size: 11px; color: var(--green-dark); letter-spacing: .16em; margin-bottom: 8px; }
+    .course-pillar strong { font-family: 'Noto Serif TC', serif; font-size: 17px; font-weight: 500; line-height: 1.6; }
+    .course-pillar::after {
+      content: '混合使用';
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+      color: var(--terra-dark);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      padding: 4px 9px;
+    }
+    .fusion-box {
+      margin-top: 30px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--green-pale), var(--terra-light));
+      border: 1px solid rgba(127,175,155,.25);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 16px 42px rgba(46,42,36,.07);
+    }
+    .fusion-item {
+      background: rgba(255,255,255,.76);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+    }
+    .fusion-item span {
+      display: block;
+      color: var(--green-dark);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      margin-bottom: 8px;
+    }
+    .fusion-item strong {
+      font-family: 'Noto Serif TC', serif;
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .fusion-plus {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--green-deep);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 30px;
+      box-shadow: 0 10px 24px rgba(61,107,92,.22);
+    }
+    .fusion-note {
+      grid-column: 1 / -1;
+      color: var(--ink-mid);
+      font-size: 14.5px;
+      line-height: 1.9;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .structure-visual {
+      background: var(--green-pale);
+      border-radius: 24px;
+      padding: 40px;
+    }
+    .sv-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .sv-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+    .sv-item {
+      background: white;
+      border-radius: 12px;
+      padding: 12px 8px;
+    }
+    .sv-item .num {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 22px;
+      color: var(--green-dark);
+    }
+    .sv-item .label { font-size: 11px; color: var(--ink-light); margin-top: 4px; }
+
+    /* Themes */
+    .themes-sec {
+      background: var(--beige);
+      padding: 100px 80px;
+    }
+    .themes-header { text-align: center; margin-bottom: 60px; }
+    .themes-header .sec-tag { justify-content: center; }
+    .theme-method-note {
+      max-width: 720px;
+      margin: 20px auto 0;
+      border-radius: 18px;
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(127,175,155,.2);
+      padding: 16px 22px;
+      color: var(--ink-mid);
+      font-size: 14.5px;
+      line-height: 1.85;
+    }
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .theme-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      border-radius: 20px;
+      padding: 28px 22px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .theme-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(46,42,36,0.09); }
+    .theme-icon {
+      width: 128px;
+      height: 96px;
+      margin: 0 auto 18px;
+      display: block;
+      object-fit: contain;
+    }
+    .theme-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .theme-card p { font-size: 13px; color: var(--ink-mid); line-height: 1.8; }
+
+    /* Age groups */
+    .age-sec {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    .age-header { text-align: center; margin-bottom: 60px; }
+    .age-header .sec-tag { justify-content: center; }
+    .age-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+    }
+    .age-card {
+      grid-column: span 2;
+      border-radius: 24px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 4px 20px rgba(46,42,36,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .age-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(46,42,36,0.1); }
+    .age-card:nth-child(4) { grid-column: 2 / span 2; }
+    .age-card:nth-child(5) { grid-column: 4 / span 2; }
+    .age-card-top {
+      padding: 32px 28px 24px;
+    }
+    .age-card:nth-child(1) .age-card-top { background: var(--green-pale); }
+    .age-card:nth-child(2) .age-card-top { background: var(--terra-light); }
+    .age-card:nth-child(3) .age-card-top { background: var(--yellow-light); }
+    .age-card:nth-child(4) .age-card-top { background: #edf2f4; }
+    .age-card:nth-child(5) .age-card-top { background: #eee9f2; }
+    .age-range {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .age-card:nth-child(1) .age-range { color: var(--green-dark); }
+    .age-card:nth-child(2) .age-range { color: var(--terra); }
+    .age-card:nth-child(3) .age-range { color: var(--ink-mid); }
+    .age-card:nth-child(4) .age-range { color: #617b87; }
+    .age-card:nth-child(5) .age-range { color: #76627f; }
+    .age-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 17px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .age-desc { font-size: 13.5px; color: var(--ink-mid); line-height: 1.85; }
+    .age-card-body { padding: 24px 28px; }
+    .age-card-body ul { list-style: none; }
+    .age-card-body ul li {
+      font-size: 13.5px;
+      color: var(--ink-mid);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--beige);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .age-card-body ul li::before { content: '·'; color: var(--terra); font-size: 20px; line-height: 1; }
+
+    /* 48 methods */
+    .methods-sec {
+      background: white;
+      padding: 100px 80px;
+    }
+    .methods-header { text-align: center; margin-bottom: 60px; }
+    .methods-header .sec-tag { justify-content: center; }
+    .methods-header .theme-method-note { background: var(--green-pale); }
+    .methods-cats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .method-cat {
+      border-radius: 20px;
+      padding: 28px;
+      background: var(--beige);
+    }
+    .method-cat h4 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 14px;
+      padding-left: 12px;
+      border-left: 3px solid var(--green);
+    }
+    .method-cat ul { list-style: none; }
+    .method-cat ul li {
+      font-size: 13px;
+      color: var(--ink-mid);
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .method-cat ul li::before { content: '↳'; color: var(--green); font-size: 12px; }
+    .method-cat ul li a {
+      color: var(--green-deep);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(90,144,128,.28);
+      transition: color .18s, border-color .18s;
+    }
+    .method-cat ul li a:hover {
+      color: var(--terra-dark);
+      border-color: rgba(193,122,90,.45);
+    }
+    .method-badge {
+      display: inline-block;
+      margin-left: 4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--green-pale);
+      color: var(--green-dark);
+      font-size: 10px;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 900px) {
+      .structure-sec, .themes-sec, .age-sec, .methods-sec { padding: 72px 36px; }
+      .structure-inner { grid-template-columns: 1fr; gap: 42px; }
+      .fusion-box { grid-template-columns: 1fr; }
+      .fusion-plus { margin: 0 auto; }
+      .themes-grid { grid-template-columns: repeat(2, 1fr); }
+      .age-grid { grid-template-columns: repeat(2, 1fr); }
+      .age-card, .age-card:nth-child(4), .age-card:nth-child(5) { grid-column: auto; }
+      .age-card:last-child { grid-column: 1 / -1; }
+      .methods-cats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      .structure-sec, .themes-sec, .age-sec, .methods-sec { padding: 58px 20px; }
+      .course-pillars, .themes-grid, .age-grid, .methods-cats { grid-template-columns: 1fr; }
+      .age-card:last-child { grid-column: auto; }
+      .structure-visual { padding: 28px 20px; }
+      .sv-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero" id="structure">
+  <div class="page-hero-eyebrow"><span class="sec-tag-dot"></span> Course Introduction</div>
+  <h1>課程介紹</h1>
+  <p>八大主題是孩子探索世界的內容脈絡，48 種歐洲藝術方法論是老師帶領創作的教學路徑；兩者會在每堂課中混合使用，讓孩子在自由中找到自己，在創作中建立自信。</p>
+  <div class="course-pillars">
+    <a class="course-pillar" href="#themes"><span>01 · WHAT WE EXPLORE</span><strong>八大主題<br>課程內容脈絡</strong></a>
+    <a class="course-pillar" href="#methods"><span>02 · HOW WE GUIDE</span><strong>48 種歐洲藝術方法論<br>教學引導路徑</strong></a>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--beige)">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,0 L0,36 Q360,56 720,24 Q1080,0 1440,36 L1440,0Z" fill="white"/>
+  </svg>
+</div>
+
+<!-- ══ STRUCTURE ══ -->
+<section class="structure-sec">
+  <div class="structure-inner">
+    <div class="structure-text fade-up">
+      <div class="sec-tag"><span class="sec-tag-dot"></span> 課程架構</div>
+      <h2 class="sec-h2">不是兩套分開的課，<br>而是 8 × 48 的混合式藝術課程</h2>
+      <p>我們的課程規劃以<span class="em">「八大主題」</span>與<span class="em">「獨家研發 48 種歐洲藝術方法論」</span>交織而成。八大主題提供孩子探索世界的內容與情境，48 種方法論則提供老師帶領孩子感受、思考與表達的創作路徑。</p>
+      <p>也就是說，每一堂課都不是單純上一個主題，也不是只練一種技法，而是把「主題脈絡」與「方法引導」混合設計，讓孩子在生活中發現藝術，在藝術中學會生活。</p>
+      <p>孩子不只是來完成作品，而是一步步在創作中建立自信，拓展理解力，慢慢成為一個能表達、能感受、也能同理他人的人。</p>
+      <div class="fusion-box">
+        <div class="fusion-item">
+          <span>WHAT</span>
+          <strong>八大主題</strong>
+        </div>
+        <div class="fusion-plus">×</div>
+        <div class="fusion-item">
+          <span>HOW</span>
+          <strong>48 種方法論</strong>
+        </div>
+        <div class="fusion-note">一堂大綠地課程 = 一個生活/文化主題 + 一組歐洲藝術教學方法，兩者一起形成孩子的創作經驗。</div>
+      </div>
+      <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra" style="margin-top:12px;display:inline-block">預約體驗課 →</a>
+    </div>
+    <div class="structure-visual fade-up d1">
+      <div class="sv-title">獨家研發 48 種歐洲藝術學派方法論</div>
+      <div class="sv-grid">
+        <div class="sv-item"><div class="num">8</div><div class="label">感官系</div></div>
+        <div class="sv-item"><div class="num">8</div><div class="label">結構空間</div></div>
+        <div class="sv-item"><div class="num">8</div><div class="label">材料媒介</div></div>
+        <div class="sv-item"><div class="num">8</div><div class="label">敘事情緒</div></div>
+        <div class="sv-item"><div class="num">8</div><div class="label">集體關係</div></div>
+        <div class="sv-item"><div class="num">8</div><div class="label">自然生態</div></div>
+      </div>
+      <div style="margin-top:20px;text-align:center">
+        <div style="font-size:13px;color:var(--ink-light);line-height:1.8">融合義大利瑞吉歐 · 德國包浩斯<br>法國感知教育 · 當代歐洲藝術</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:white">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,56 L0,20 Q480,56 720,20 Q960,0 1440,40 L1440,56Z" fill="var(--beige)"/>
+  </svg>
+</div>
+
+<!-- ══ 8 THEMES ══ -->
+<section class="themes-sec" id="themes">
+  <div class="themes-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 第一軸：課程內容</div>
+    <h2 class="sec-h2">八大主題法，<br>是孩子探索世界的內容脈絡</h2>
+    <p class="theme-method-note">八大主題不是獨立課程分類，而是每堂課的「內容地圖」。老師會在這些主題中，搭配 48 種歐洲藝術方法論，引導孩子用不同方式感受、思考與創作。</p>
+  </div>
+  <div class="themes-grid">
+    <a class="theme-card fade-up" href="theme-world-cultures.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/world-cultures.svg" alt="">
+      <h3>世界各國</h3>
+      <p>從文化、建築、服飾到藝術風格，帶孩子用創作理解不同國家的美感與精神。</p>
+    </a>
+    <a class="theme-card fade-up d1" href="theme-picture-books.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/picture-books.svg" alt="">
+      <h3>繪本</h3>
+      <p>讓孩子在故事裡找到自己的畫面與情緒，把閱讀轉化成圖像表達。</p>
+    </a>
+    <a class="theme-card fade-up d2" href="theme-nature.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/nature.svg" alt="">
+      <h3>自然</h3>
+      <p>從植物、動物、地景與氣候出發，建立感官觀察與環境關懷。</p>
+    </a>
+    <a class="theme-card fade-up d3" href="theme-pop-culture.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/pop-culture.svg" alt="">
+      <h3>流行</h3>
+      <p>從奧運、動畫、科技與當代文化中，培養孩子自己的文化視角。</p>
+    </a>
+    <a class="theme-card fade-up" href="theme-color-studies.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/color-studies.svg" alt="">
+      <h3>色彩學</h3>
+      <p>不是從色票開始，而是從生活裡看見色彩、感受色彩、理解色彩。</p>
+    </a>
+    <a class="theme-card fade-up d1" href="theme-artist-studies.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/artist-studies.svg" alt="">
+      <h3>藝術家賞析</h3>
+      <p>走進藝術家的創作現場，把大師的語言轉化為孩子自己的創作能量。</p>
+    </a>
+    <a class="theme-card fade-up d2" href="theme-wild-art.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/wild-art.svg" alt="">
+      <h3>瘋狂藝術</h3>
+      <p>打破框架與標準答案，讓孩子用身體、材料與想像回到創作本能。</p>
+    </a>
+    <a class="theme-card fade-up d3" href="theme-local-culture.html">
+      <img class="theme-icon" src="assets/theme-icons-handdrawn/local-culture.svg" alt="">
+      <h3>在地文化</h3>
+      <p>從台灣土地、節慶、工藝與日常出發，建立孩子的文化認同。</p>
+    </a>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--beige)">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,0 L0,32 Q480,0 720,28 Q960,56 1440,20 L1440,0Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
+<!-- ══ AGE GROUPS ══ -->
+<section class="age-sec" id="age">
+  <div class="age-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 分齡設計</div>
+    <h2 class="sec-h2">依照年齡與發展，<br>量身設計的藝術旅程</h2>
+    <p style="font-size:15px;color:var(--ink-mid);max-width:660px;margin:0 auto;line-height:1.9">每個年齡階段，都有不同的感官經驗、表達方式與思考能力。課程讓孩子循序漸進地從自由探索，走向情緒表達、創意思考與個人技法發展。</p>
+  </div>
+  <div class="age-grid">
+    <div class="age-card fade-up">
+      <div class="age-card-top">
+        <div class="age-range">2 – 3 歲</div>
+        <div class="age-name">寶寶塗鴉班</div>
+        <p class="age-desc">透過繪本、音樂與身體律動，引導孩子自然地接觸色彩與創作。</p>
+      </div>
+      <div class="age-card-body">
+        <ul>
+          <li>繪本故事與圖像探索</li>
+          <li>音樂節奏與身體律動</li>
+          <li>寶寶塗鴉與自由線條</li>
+          <li>色彩與基礎媒材體驗</li>
+          <li>親子共同創作</li>
+        </ul>
+      </div>
+    </div>
+    <div class="age-card fade-up d1">
+      <div class="age-card-top">
+        <div class="age-range">3 – 4 歲</div>
+        <div class="age-name">感官啟蒙班</div>
+        <p class="age-desc">從觸摸、觀察、聆聽與遊戲中，建立對創作的好奇心與安全感。</p>
+      </div>
+      <div class="age-card-body">
+        <ul>
+          <li>五感媒材探索</li>
+          <li>顏色混合與變化</li>
+          <li>手指畫與身體創作</li>
+          <li>自然材料與異材質體驗</li>
+          <li>基礎情緒感受與表達</li>
+        </ul>
+      </div>
+    </div>
+    <div class="age-card fade-up d2">
+      <div class="age-card-top">
+        <div class="age-range">4 – 6 歲</div>
+        <div class="age-name">幼兒班</div>
+        <p class="age-desc">從自由探索走向有意識的創作，建立表達能力、想像力與解決問題的勇氣。</p>
+      </div>
+      <div class="age-card-body">
+        <ul>
+          <li>情緒顏色與故事創作</li>
+          <li>繪本延伸與角色想像</li>
+          <li>平面、立體與複合媒材</li>
+          <li>基礎空間與結構探索</li>
+          <li>練習選擇與解決問題</li>
+        </ul>
+      </div>
+    </div>
+    <div class="age-card fade-up">
+      <div class="age-card-top">
+        <div class="age-range">7 – 9 歲</div>
+        <div class="age-name">兒童班</div>
+        <p class="age-desc">引導孩子深入觀察、獨立思考，並發展屬於自己的創作觀點。</p>
+      </div>
+      <div class="age-card-body">
+        <ul>
+          <li>主題研究與創作發想</li>
+          <li>畫面構成與空間表現</li>
+          <li>多元媒材與藝術方法實驗</li>
+          <li>情緒、觀點與故事表達</li>
+          <li>個人創作分享與作品解說</li>
+        </ul>
+      </div>
+    </div>
+    <div class="age-card fade-up d1">
+      <div class="age-card-top">
+        <div class="age-range">9 歲以上</div>
+        <div class="age-name">創意技法班</div>
+        <p class="age-desc">結合創意思維與專業藝術技法，建立 AI 世代無法被取代的原創觀點。</p>
+      </div>
+      <div class="age-card-body">
+        <ul>
+          <li>素描、色彩與構圖技法</li>
+          <li>個人風格與主題發展</li>
+          <li>創意思考與概念轉化</li>
+          <li>跨媒材與當代藝術實驗</li>
+          <li>AI 世代的提問、判斷與原創能力</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--cream)">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,56 L0,20 Q360,56 720,20 Q1080,-8 1440,32 L1440,56Z" fill="white"/>
+  </svg>
+</div>
+
+<!-- ══ 48 METHODS ══ -->
+<section class="methods-sec" id="methods">
+  <div class="methods-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 第二軸：教學方法</div>
+    <h2 class="sec-h2">48 種歐洲藝術方法論，<br>是老師引導創作的路徑</h2>
+    <p style="font-size:16px;color:var(--ink-mid);max-width:620px;margin:0 auto;line-height:1.9">每個單元都會從八大主題中選擇內容，再搭配適合的歐洲教育觀點與藝術方法，讓孩子的學習有深厚的理論根基，也有豐富的實踐體驗。</p>
+    <p class="theme-method-note">簡單來說：八大主題回答「這堂課探索什麼」，48 種方法論回答「老師如何帶孩子創作」。兩者一起，才是大綠地完整的課程設計。</p>
+  </div>
+  <div class="methods-cats">
+    <div class="method-cat fade-up">
+      <h4>感官系（1–8）</h4>
+      <ul>
+        <li><a href="trace-sense.html">痕跡感知法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-02-layered-pathway.html">層疊軌跡法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-03-rhythmic-line.html">線性節奏法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-04-tactile-navigation.html">觸覺導引法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-05-sound-form-composition.html">音感創構法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-06-thermo-color-perception.html">溫度色感法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-07-olfactory-composition.html">氣味構圖法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-08-sensory-journey.html">感官旅程法 <span class="method-badge">查看</span></a></li>
+      </ul>
+    </div>
+    <div class="method-cat fade-up d1">
+      <h4>結構與空間系（9–16）</h4>
+      <ul>
+        <li><a href="method-09-rhythmic-composition.html">節奏構圖法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-10-spatial-dialogue.html">空間對話法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-11-logical-constructivism.html">邏輯建構法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-12-gravity-installation.html">重力裝置法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-13-multi-perspective.html">多視角表現法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-14-boundary-deconstruction.html">邊界探索法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-15-repetitive-structure.html">重複結構法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-16-negative-space.html">留白平衡法 <span class="method-badge">查看</span></a></li>
+      </ul>
+    </div>
+    <div class="method-cat fade-up d2">
+      <h4>材料與媒介系（17–24）</h4>
+      <ul>
+        <li><a href="method-17-medium-liberation.html">媒材解放法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-18-deconstructive-collage.html">解構拼貼法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-19-shadow-impression.html">暗面拓映法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-20-material-transformation.html">轉化媒材法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-21-edible-art.html">可食媒材法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-22-impure-medium.html">雜質實驗法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-23-liquid-motion.html">液態運動法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-24-reactive-material.html">觸發媒材法 <span class="method-badge">查看</span></a></li>
+      </ul>
+    </div>
+    <div class="method-cat fade-up">
+      <h4>敘事與情緒系（25–32）</h4>
+      <ul>
+        <li><a href="method-25-emotional-color-translation.html">情緒顏色轉譯法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-26-narrative-transformation.html">故事轉化法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-27-inner-theater.html">內在小劇場法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-28-everyday-emotion-collage.html">日常情緒拼貼法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-29-subconscious-drift.html">潛意識漫遊法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-30-restorative-creation.html">修復式創作法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-31-emotional-persona-dialogue.html">情緒角色對話法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-32-self-portrait-process.html">自畫像探索法 <span class="method-badge">查看</span></a></li>
+      </ul>
+    </div>
+    <div class="method-cat fade-up d1">
+      <h4>集體與關係系（33–40）</h4>
+      <ul>
+        <li><a href="method-33-collective-construction.html">群體構築法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-34-dialogic-drawing.html">對話式創作法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-35-public-installation.html">公共裝置法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-36-empathic-perspective.html">共感視角法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-37-relationship-mapping.html">連結地圖法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-38-body-as-canvas.html">集體身體圖法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-39-reimagining-other.html">他人圖像重構法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-40-collective-chronology.html">共同編年法 <span class="method-badge">查看</span></a></li>
+      </ul>
+    </div>
+    <div class="method-cat fade-up d2">
+      <h4>概念與思辨系（41–48）</h4>
+      <ul>
+        <li><a href="method-41-problem-based-visual-inquiry.html">問題圖像法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-42-abstract-construction.html">抽象組構法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-43-stylistic-identity.html">風格建構法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-44-contrasting-logic.html">對比思辨法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-45-visual-hypothesis.html">假設圖像法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-46-conceptual-extension.html">概念延伸法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-47-framework-visualization.html">概念框架法 <span class="method-badge">查看</span></a></li>
+        <li><a href="method-48-multimodal-language.html">多語言連結法 <span class="method-badge">查看</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center">
+    <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra">立即預約體驗課</a>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<div class="wave" style="background:white">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,56 L0,20 Q360,56 720,16 Q1080,-12 1440,32 L1440,56Z" fill="var(--green)"/>
+  </svg>
+</div>
+<section class="cta-sec">
+  <h2 class="fade-up">找到最適合孩子的課程</h2>
+  <p class="fade-up d1">加入 LINE 諮詢，我們幫你選擇最合適的課程與時段</p>
+  <div class="cta-btns fade-up d2">
+    <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-white">🌿 立即報名體驗課</a>
+    <a href="contact.html" class="btn btn-outline-w">查看教室資訊</a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="css/nav-footer.js?v=20260605-little-days-page"></script>
+<script>eval(SHARED_JS)</script>
+</body>
+</html>

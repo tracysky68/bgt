@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="生活藝術">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="2" seed="55"/><feDisplacementMap in="SourceGraphic" scale="1.1"/></filter></defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+    <path d="M26 71c15-17 29-33 43-49 8 4 15 10 22 18-14 16-29 32-45 48-7-4-14-9-20-17Z" fill="#F5E8E0" stroke="#C17A5A" stroke-width="3"/>
+    <path d="M44 88c-8 3-16 5-25 6 3-9 6-17 9-24" fill="#FAF3DA" stroke="#C17A5A" stroke-width="2.5"/>
+    <path d="M71 23c5 4 11 9 17 16" stroke="#5A9080" stroke-width="2.4"/>
+    <path d="M36 62c9 8 17 14 26 19" stroke="#5A9080" stroke-width="2.2"/>
+    <path d="M77 55c8 0 15 2 22 7" stroke="#E8C96B" stroke-width="2.4"/>
+    <path d="M66 66c9 5 16 10 21 17" stroke="#7FAF9B" stroke-width="2.4"/>
+  </g>
+</svg>

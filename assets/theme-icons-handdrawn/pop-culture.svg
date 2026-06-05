@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240">
+  <defs>
+    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="8"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.08"/></feComponentTransfer><feBlend mode="multiply" in2="SourceGraphic"/></filter>
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.032" numOctaves="2" seed="12" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2.1"/></filter>
+    <style>
+      .wash-green{fill:#dbece3;opacity:.78}.wash-terra{fill:#efd6c8;opacity:.72}.wash-yellow{fill:#f6e8af;opacity:.72}.wash-blue{fill:#dbe8ea;opacity:.72}
+      .ink{fill:none;stroke:#3c332d;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}.thin{fill:none;stroke:#3c332d;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}
+      .green{fill:none;stroke:#5a9080;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}.terra{fill:none;stroke:#c17a5a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}.yellow{fill:none;stroke:#d7b756;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}
+      .fill-green{fill:#9ccbb7;opacity:.68;filter:url(#rough)}.fill-terra{fill:#d89576;opacity:.68;filter:url(#rough)}.fill-yellow{fill:#ead070;opacity:.75;filter:url(#rough)}.fill-blue{fill:#8eb9bd;opacity:.54;filter:url(#rough)}
+    </style>
+  </defs><rect width="320" height="240" rx="34" fill="#fffaf1" opacity="0"/><ellipse class="wash-terra" cx="160" cy="128" rx="94" ry="80"/><path class="fill-yellow" d="M160 60l19 45 49 5-37 31 11 48-42-25-42 25 11-48-37-31 49-5z"/><path class="ink" d="M160 60l19 45 49 5-37 31 11 48-42-25-42 25 11-48-37-31 49-5z"/><path class="terra" d="M98 78c-19 7-30 20-35 39M225 78c19 7 30 20 35 39M92 188c-17-8-27-20-32-38M229 188c17-8 27-20 32-38"/></svg>

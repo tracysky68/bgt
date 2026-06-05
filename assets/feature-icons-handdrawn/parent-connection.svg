@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="親子連結">
+  <defs>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.038" numOctaves="2" seed="36"/>
+      <feDisplacementMap in="SourceGraphic" scale="1.1"/>
+    </filter>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+    <path d="M60 94C42 80 28 65 28 48c0-12 8-21 19-21 7 0 12 4 15 9 4-6 10-10 18-9 11 2 18 11 17 23-1 16-17 31-37 44Z" fill="#F3F8F5" stroke="#5A9080" stroke-width="3"/>
+    <path d="M43 52c7 6 15 9 24 8 8-1 14-5 20-12" stroke="#C17A5A" stroke-width="2.4"/>
+    <circle cx="48" cy="48" r="3" fill="#C17A5A"/>
+    <circle cx="76" cy="48" r="3" fill="#C17A5A"/>
+    <path d="M32 75c-8 2-15 1-20-4" stroke="#E8C96B" stroke-width="2.7"/>
+    <path d="M88 78c8 2 15 0 20-6" stroke="#E8C96B" stroke-width="2.7"/>
+    <path d="M53 84c-2 8-7 14-15 18" stroke="#7FAF9B" stroke-width="2.5"/>
+    <path d="M67 84c3 8 9 13 18 16" stroke="#7FAF9B" stroke-width="2.5"/>
+  </g>
+</svg>

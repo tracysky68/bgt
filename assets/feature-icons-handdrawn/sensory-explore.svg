@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="感官探索">
+  <defs>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="12"/>
+      <feDisplacementMap in="SourceGraphic" scale="1.15"/>
+    </filter>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+    <path d="M61 101c-14-16-22-31-22-45 0-20 13-34 27-38 15 11 21 25 18 42-2 16-10 29-23 41Z" fill="#EAF2EE" stroke="#5A9080" stroke-width="3.2"/>
+    <path d="M61 97c4-24 5-48 4-74" stroke="#5A9080" stroke-width="2"/>
+    <path d="M62 57c-12-8-23-12-34-12" stroke="#7FAF9B" stroke-width="2"/>
+    <path d="M64 46c12-8 22-12 32-12" stroke="#7FAF9B" stroke-width="2"/>
+    <path d="M62 72c-9-6-18-9-27-9" stroke="#7FAF9B" stroke-width="2"/>
+    <path d="M64 68c9-4 17-6 25-6" stroke="#7FAF9B" stroke-width="2"/>
+    <path d="M24 82c8 3 17 4 27 3" stroke="#C17A5A" stroke-width="2.4"/>
+    <circle cx="27" cy="82" r="3.5" fill="#E8C96B" stroke="#C17A5A" stroke-width="1.8"/>
+    <circle cx="42" cy="86" r="2.8" fill="#F5E8E0" stroke="#C17A5A" stroke-width="1.5"/>
+  </g>
+</svg>

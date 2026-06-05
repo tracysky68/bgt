@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040">
+  <defs>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="8"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+      <feBlend mode="multiply" in2="SourceGraphic"/>
+    </filter>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.032" numOctaves="2" seed="12" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.1"/>
+    </filter>
+    <style>
+      .bg { fill:#fbf7ef; }
+      .title { font-family: "Noto Serif TC", "PingFang TC", serif; fill:#2e2a24; font-size:54px; font-weight:500; }
+      .sub { font-family: "Noto Sans TC", "PingFang TC", sans-serif; fill:#756a5f; font-size:24px; letter-spacing:.08em; }
+      .label { font-family: "Noto Serif TC", "PingFang TC", serif; fill:#2e2a24; font-size:32px; font-weight:500; text-anchor:middle; }
+      .en { font-family: "Noto Sans", Arial, sans-serif; fill:#8b7d70; font-size:15px; letter-spacing:.16em; text-anchor:middle; }
+      .card { fill:#fffdf8; stroke:#e9decf; stroke-width:2; }
+      .wash-green { fill:#dbece3; opacity:.78; }
+      .wash-terra { fill:#efd6c8; opacity:.72; }
+      .wash-yellow { fill:#f6e8af; opacity:.72; }
+      .wash-blue { fill:#dbe8ea; opacity:.72; }
+      .ink { fill:none; stroke:#3c332d; stroke-width:5.2; stroke-linecap:round; stroke-linejoin:round; filter:url(#rough); }
+      .thin { fill:none; stroke:#3c332d; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; filter:url(#rough); }
+      .green { fill:none; stroke:#5a9080; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; filter:url(#rough); }
+      .terra { fill:none; stroke:#c17a5a; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; filter:url(#rough); }
+      .yellow { fill:none; stroke:#d7b756; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; filter:url(#rough); }
+      .fill-green { fill:#9ccbb7; opacity:.68; filter:url(#rough); }
+      .fill-terra { fill:#d89576; opacity:.68; filter:url(#rough); }
+      .fill-yellow { fill:#ead070; opacity:.75; filter:url(#rough); }
+      .fill-blue { fill:#8eb9bd; opacity:.54; filter:url(#rough); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="1040"/>
+  <rect width="1600" height="1040" fill="#fffaf1" filter="url(#paper)" opacity=".72"/>
+  <text x="104" y="112" class="title">八大主題法 · 手繪感小圖示預覽</text>
+  <text x="108" y="158" class="sub">watercolor pencil / warm handmade icons / not flat digital</text>
+
+  <g transform="translate(90 220)">
+    <g transform="translate(0 0)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-blue" cx="158" cy="126" rx="92" ry="84"/>
+      <circle class="ink" cx="160" cy="126" r="68"/>
+      <path class="thin" d="M96 126c30-16 97-15 129 3M160 58c-23 32-25 104 1 137M160 58c25 34 25 104-1 137M101 98c32 12 87 12 119-1M103 154c36-13 82-11 116 1"/>
+      <path class="green" d="M125 101c13-9 32-8 45 2M174 133c18-4 34 1 45 15M113 147c16 15 35 17 53 9"/>
+      <text x="160" y="260" class="label">世界各國</text>
+      <text x="160" y="292" class="en">WORLD CULTURES</text>
+    </g>
+
+    <g transform="translate(380 0)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-yellow" cx="160" cy="128" rx="100" ry="78"/>
+      <path class="fill-green" d="M83 90c34-16 57-13 77 8 22-19 48-23 79-6v117c-30-13-57-9-80 10-24-18-51-22-77-9z"/>
+      <path class="ink" d="M82 91c34-16 58-12 78 9 21-20 49-24 79-7v116c-30-13-57-9-80 10-24-18-51-22-77-9z"/>
+      <path class="thin" d="M160 99v120M102 121c14-4 27-3 40 2M102 146c14-3 27-1 41 3M180 124c13-7 28-9 43-4M181 151c15-6 28-7 42-2"/>
+      <text x="160" y="260" class="label">繪本</text>
+      <text x="160" y="292" class="en">PICTURE BOOKS</text>
+    </g>
+
+    <g transform="translate(760 0)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-green" cx="164" cy="126" rx="93" ry="82"/>
+      <path class="fill-green" d="M157 201c-44-37-63-81-48-115 13-31 48-36 76-7 34-26 69-12 79 18 12 36-23 77-107 104z"/>
+      <path class="ink" d="M158 201c-45-39-63-82-49-116 14-32 48-36 76-7 34-26 69-12 79 18 12 36-23 77-106 105z"/>
+      <path class="thin" d="M157 199c6-48 11-88 27-120M151 157c-16-9-26-18-36-33M164 146c22-4 42-16 60-35"/>
+      <text x="160" y="260" class="label">自然</text>
+      <text x="160" y="292" class="en">NATURE</text>
+    </g>
+
+    <g transform="translate(1140 0)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-terra" cx="160" cy="128" rx="94" ry="80"/>
+      <path class="fill-yellow" d="M160 60l19 45 49 5-37 31 11 48-42-25-42 25 11-48-37-31 49-5z"/>
+      <path class="ink" d="M160 60l19 45 49 5-37 31 11 48-42-25-42 25 11-48-37-31 49-5z"/>
+      <path class="terra" d="M98 78c-19 7-30 20-35 39M225 78c19 7 30 20 35 39M92 188c-17-8-27-20-32-38M229 188c17-8 27-20 32-38"/>
+      <text x="160" y="260" class="label">流行</text>
+      <text x="160" y="292" class="en">POP CULTURE</text>
+    </g>
+
+    <g transform="translate(0 390)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-yellow" cx="162" cy="128" rx="94" ry="78"/>
+      <path class="ink" d="M105 184c-28-34-21-83 18-110 38-26 96-19 118 22 16 30 5 66-22 84-14 9-29 7-41-5-10-10-23-12-35-5-17 10-26 18-38 14z"/>
+      <circle class="fill-terra" cx="126" cy="112" r="15"/>
+      <circle class="fill-yellow" cx="164" cy="91" r="15"/>
+      <circle class="fill-green" cx="200" cy="111" r="15"/>
+      <circle class="fill-blue" cx="216" cy="150" r="15"/>
+      <circle class="ink" cx="147" cy="171" r="8"/>
+      <text x="160" y="260" class="label">色彩學</text>
+      <text x="160" y="292" class="en">COLOR STUDIES</text>
+    </g>
+
+    <g transform="translate(380 390)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-blue" cx="160" cy="128" rx="94" ry="80"/>
+      <rect class="fill-green" x="86" y="78" width="148" height="108" rx="10"/>
+      <rect class="ink" x="86" y="78" width="148" height="108" rx="10"/>
+      <path class="thin" d="M107 161c24-31 38-26 55-8 15-27 27-39 52 9M129 112c10 8 23 7 34 0M184 112c10 8 23 7 34 0"/>
+      <path class="terra" d="M117 207h88M160 186v22"/>
+      <text x="160" y="260" class="label">藝術家賞析</text>
+      <text x="160" y="292" class="en">ARTIST STUDIES</text>
+    </g>
+
+    <g transform="translate(760 390)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-terra" cx="160" cy="128" rx="98" ry="84"/>
+      <path class="fill-terra" d="M84 181c19-63 38-94 76-114 39 21 60 53 77 114z"/>
+      <path class="ink" d="M84 181c19-63 38-94 76-114 39 21 60 53 77 114z"/>
+      <path class="yellow" d="M114 142c16-13 31-13 46 0 16-13 31-13 47 0M105 181c17-24 35-35 55-36 20 1 39 12 56 36"/>
+      <path class="thin" d="M92 207c36-12 72-13 110 0M121 97c-14-13-22-25-26-40M198 98c14-14 22-27 26-41"/>
+      <text x="160" y="260" class="label">瘋狂藝術</text>
+      <text x="160" y="292" class="en">WILD ART</text>
+    </g>
+
+    <g transform="translate(1140 390)">
+      <rect class="card" width="320" height="330" rx="38"/>
+      <ellipse class="wash-green" cx="162" cy="128" rx="98" ry="82"/>
+      <path class="fill-yellow" d="M89 152l72-66 71 66v54H89z"/>
+      <path class="ink" d="M89 152l72-66 71 66v54H89zM118 206v-45h38v45M181 166h29v25h-29z"/>
+      <path class="terra" d="M104 127c15 13 28 13 42 0s28-13 43 0 29 13 43 0"/>
+      <path class="thin" d="M75 216h171M121 107c18-14 39-23 62-20"/>
+      <text x="160" y="260" class="label">在地文化</text>
+      <text x="160" y="292" class="en">LOCAL CULTURE</text>
+    </g>
+  </g>
+</svg>

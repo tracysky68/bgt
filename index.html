@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大綠地藝術 · Big Green Team｜不是畫畫課，是孩子的內在對話時間</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green:        #7FAF9B;
+      --green-dark:   #5A9080;
+      --green-deep:   #3D6B5C;
+      --green-light:  #EAF2EE;
+      --green-pale:   #F3F8F5;
+      --terra:        #C17A5A;
+      --terra-light:  #F5E8E0;
+      --terra-dark:   #A35E3E;
+      --yellow:       #E8C96B;
+      --yellow-light: #FAF3DA;
+      --cream:        #FAF7F2;
+      --beige:        #F2EBE0;
+      --beige-dark:   #E8DDD0;
+      --ink:          #2E2A24;
+      --ink-mid:      #6B6056;
+      --ink-light:    #A89888;
+      --white:        #FFFFFF;
+      --font-sans:    'Noto Sans TC', sans-serif;
+      --font-serif:   'Noto Serif TC', serif;
+      --font-display: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ══ NAV ══════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 70px;
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(14px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0 56px;
+      border-bottom: 1px solid rgba(127,175,155,0.18);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      margin-right: 52px;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      width: 46px; height: 46px;
+      background: #8bc9c5;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .logo-mark svg { width: 26px; height: 26px; }
+    .logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .logo-zh {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.06em;
+      display: block;
+    }
+
+    .logo-en {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--green-dark);
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .nav-links { display: flex; list-style: none; gap: 2px; flex: 1; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-mid);
+      font-size: 13.5px;
+      padding: 7px 13px;
+      border-radius: 20px;
+      transition: all 0.18s;
+    }
+
+    .nav-links a:hover { color: var(--green-dark); background: var(--green-light); }
+
+    .nav-cta {
+      background: var(--terra) !important;
+      color: white !important;
+      padding: 9px 22px !important;
+      border-radius: 22px !important;
+      font-weight: 500 !important;
+    }
+
+    .nav-cta:hover { background: var(--terra-dark) !important; }
+
+    /* ══ HERO ══════════════════════════════════ */
+    .hero {
+      margin-top: 70px;
+      min-height: calc(100vh - 70px);
+      display: grid;
+      grid-template-columns: 55% 45%;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Watercolour wash behind hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(127,175,155,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 56px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-positioning {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 32px;
+    }
+
+    .hero-focus-label,
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-focus-label {
+      border: 1px solid rgba(127,175,155,.34);
+      border-radius: 999px;
+      background: rgba(255,255,255,.54);
+      color: var(--terra-dark);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      padding: 6px 13px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green-dark);
+      letter-spacing: 0.18em;
+      text-transform: none;
+    }
+
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--terra);
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 5.4vw, 74px);
+      font-weight: 500;
+      line-height: 1.24;
+      color: var(--ink);
+      margin-bottom: 24px;
+      letter-spacing: 0.045em;
+    }
+
+    .hero h1 strong {
+      font-weight: 600;
+      color: var(--green-deep);
+      display: block;
+      font-style: italic;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--terra);
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 2;
+      margin-bottom: 48px;
+      padding-left: 18px;
+      border-left: 2px solid var(--green);
+    }
+
+    .hero-btns { display: flex; gap: 14px; align-items: center; }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 32px;
+      transition: all 0.22s;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+
+    .btn-terra {
+      background: var(--terra);
+      color: white;
+      padding: 15px 38px;
+      font-size: 15px;
+      font-weight: 500;
+      box-shadow: 0 4px 20px rgba(193,122,90,0.3);
+    }
+
+    .btn-terra:hover {
+      background: var(--terra-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(193,122,90,0.4);
+    }
+
+    .btn-line {
+      color: var(--ink-mid);
+      font-size: 14px;
+      padding: 14px 26px;
+      border: 1.5px solid var(--beige-dark);
+      border-radius: 32px;
+    }
+
+    .btn-line:hover { border-color: var(--green); color: var(--green-dark); }
+
+    /* Hero right */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* Watercolour-like overlay on hero image */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--cream) 0%, rgba(250,247,242,0.2) 30%, transparent 60%);
+      z-index: 1;
+    }
+
+    /* Floating quote */
+    .hero-float {
+      position: absolute;
+      bottom: 52px;
+      left: -28px;
+      background: white;
+      border-radius: 20px;
+      padding: 22px 26px;
+      max-width: 270px;
+      box-shadow: 0 8px 36px rgba(46,42,36,0.1);
+      z-index: 3;
+    }
+
+    .hero-float::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(to right, var(--green), var(--yellow));
+    }
+
+    .hero-float p {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .hero-float span {
+      font-size: 11px;
+      color: var(--ink-light);
+      margin-top: 10px;
+      display: block;
+      font-style: normal;
+    }
+
+    /* ══ WAVE ══════════════════════════════════ */
+    .wave { width: 100%; overflow: hidden; line-height: 0; display: block; }
+    .wave svg { display: block; width: 100%; }
+
+    /* ══ STATS ══════════════════════════════════ */
+    .stats {
+      background: var(--green);
+      padding: 60px 80px;
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      gap: 0;
+    }
+
+    .stat { color: white; padding: 0 20px; }
+    .stat + .stat { border-left: 1px solid rgba(255,255,255,0.22); }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-unit { font-size: 20px; }
+    .stat-zh { font-size: 13px; opacity: 0.78; margin-top: 8px; letter-spacing: 0.06em; }
+
+    /* ══ HOME STORY ═══════════════════════════ */
+    .home-story {
+      background: var(--white);
+      padding: 110px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-story::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -90px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(127,175,155,.13), transparent 68%);
+      pointer-events: none;
+    }
+
+    .home-story-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .home-story-intro {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 58px;
+      align-items: start;
+      margin-bottom: 58px;
+    }
+
+    .home-story-kicker {
+      font-family: var(--font-display);
+      color: var(--terra-dark);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .home-story h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(42px, 4.5vw, 62px);
+      font-weight: 500;
+      line-height: 1.34;
+      color: var(--ink);
+      letter-spacing: .045em;
+    }
+
+    .home-story-lead {
+      font-family: var(--font-serif);
+      color: var(--green-deep);
+      font-size: 24px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+      letter-spacing: .025em;
+    }
+
+    .home-story p {
+      color: var(--ink-mid);
+      font-size: 15.5px;
+      line-height: 2.05;
+      margin-bottom: 14px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .story-card {
+      background: var(--cream);
+      border: 1px solid rgba(127,175,155,.15);
+      border-radius: 26px;
+      padding: 32px;
+      transition: transform .24s, box-shadow .24s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 44px rgba(46,42,36,.08);
+    }
+
+    .story-card:nth-child(2) { background: var(--green-pale); }
+    .story-card:nth-child(3) { background: var(--terra-light); }
+    .story-card:nth-child(4) { background: var(--yellow-light); }
+
+    .story-card h3 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--ink);
+      margin-bottom: 14px;
+      letter-spacing: .035em;
+    }
+
+    .story-themes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .story-themes span {
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(90,144,128,.12);
+      border-radius: 999px;
+      color: var(--green-deep);
+      font-size: 12.5px;
+      padding: 7px 12px;
+    }
+
+    .story-closing {
+      margin-top: 24px;
+      border-radius: 30px;
+      background: var(--green-deep);
+      color: white;
+      padding: 42px 48px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .story-closing h3 {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 1.38;
+      letter-spacing: .04em;
+    }
+
+    .story-closing p {
+      color: rgba(255,255,255,.84);
+      margin-bottom: 12px;
+    }
+
+    /* ══ SECTION SHARED ═══════════════════════ */
+    .sec-tag {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green-dark);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sec-tag-dot {
+      width: 26px; height: 1px;
+      border-radius: 50%;
+      background: var(--terra);
+      flex-shrink: 0;
+    }
+
+    .sec-h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 50px);
+      font-weight: 500;
+      line-height: 1.38;
+      color: var(--ink);
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ══ ABOUT ══════════════════════════════════ */
+    .about {
+      background: var(--white);
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-img {
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--beige);
+      position: relative;
+    }
+
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Watercolour leaf deco on about image */
+    .about-img-badge {
+      position: absolute;
+      bottom: 22px; right: 22px;
+      background: white;
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: 0 6px 24px rgba(46,42,36,0.1);
+      text-align: center;
+    }
+
+    .about-img-badge .b-num {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+
+    .about-img-badge .b-label {
+      font-size: 11px;
+      color: var(--ink-light);
+      margin-top: 4px;
+    }
+
+    .about-tagline {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.7;
+      padding: 20px 24px;
+      background: var(--green-pale);
+      border-left: 3px solid var(--green);
+      border-radius: 0 14px 14px 0;
+      margin: 20px 0 28px;
+    }
+
+    .about-text p {
+      font-size: 15.5px;
+      color: var(--ink-mid);
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+
+    .about-text .em { color: var(--green-dark); font-weight: 500; }
+
+    /* ══ FEATURES ════════════════════════════════ */
+    .features {
+      background: var(--beige);
+      padding: 100px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Watercolour wash bg */
+    .features::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,201,107,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .features-header { text-align: center; margin-bottom: 60px; }
+    .features-header .sec-tag { justify-content: center; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.28s, box-shadow 0.28s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 52px rgba(46,42,36,0.1);
+    }
+
+    /* Natural leaf deco on top-right corner of each card */
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      top: -16px; right: -16px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      opacity: 0.08;
+    }
+
+    .feature-card:nth-child(1)::after { background: var(--green); }
+    .feature-card:nth-child(2)::after { background: var(--terra); }
+    .feature-card:nth-child(3)::after { background: var(--yellow); }
+
+    .feature-num {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      margin-bottom: 18px;
+    }
+
+    .feature-card:nth-child(1) .feature-num { color: var(--green-dark); }
+    .feature-card:nth-child(2) .feature-num { color: var(--terra); }
+    .feature-card:nth-child(3) .feature-num { color: var(--ink-light); }
+
+    .feature-icon {
+      width: 74px;
+      height: 74px;
+      margin-bottom: 18px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .feature-card p {
+      font-size: 14.5px;
+      color: var(--ink-mid);
+      line-height: 1.9;
+    }
+
+    /* ══ QUOTES ══════════════════════════════════ */
+    .quotes-sec {
+      background: var(--cream);
+      padding: 100px 80px;
+      position: relative;
+    }
+
+    .quotes-sec::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(127,175,155,0.08) 0%, transparent 70%);
+    }
+
+    .quotes-header { text-align: center; margin-bottom: 56px; }
+    .quotes-header .sec-tag { justify-content: center; }
+
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .quote-card {
+      border-radius: 22px;
+      padding: 36px 30px;
+      position: relative;
+      transition: transform 0.24s;
+    }
+
+    .quote-card:nth-child(1) { background: var(--green-pale); }
+    .quote-card:nth-child(2) { background: var(--terra-light); }
+    .quote-card:nth-child(3) { background: var(--yellow-light); }
+
+    .quote-card:hover { transform: translateY(-4px); }
+
+    .quote-mark {
+      font-family: Georgia, serif;
+      font-size: 56px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .quote-card:nth-child(1) .quote-mark { color: var(--green); }
+    .quote-card:nth-child(2) .quote-mark { color: var(--terra); }
+    .quote-card:nth-child(3) .quote-mark { color: var(--yellow); }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: var(--ink);
+      line-height: 1.82;
+      font-style: italic;
+      letter-spacing: .025em;
+    }
+
+    .quote-age {
+      font-size: 12px;
+      color: var(--ink-light);
+      margin-top: 14px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ══ TESTIMONIALS ══════════════════════════ */
+    .testimonials {
+      background: var(--beige);
+      padding: 100px 80px;
+    }
+
+    .testimonials-header { text-align: center; margin-bottom: 56px; }
+    .testimonials-header .sec-tag { justify-content: center; }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .t-card {
+      background: white;
+      border-radius: 22px;
+      padding: 32px;
+      transition: transform 0.24s, box-shadow 0.24s;
+    }
+
+    .t-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(46,42,36,0.08);
+    }
+
+    .t-stars { color: var(--terra); font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
+
+    .t-text {
+      font-size: 14.5px;
+      color: var(--ink-mid);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .t-author { font-size: 12.5px; color: var(--ink-light); font-weight: 500; }
+
+    /* ══ FOUNDER ════════════════════════════════ */
+    .founder {
+      background: var(--white);
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .founder-img {
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--beige);
+      position: relative;
+    }
+
+    .founder-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 24%; display: block; }
+
+    .founder-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: var(--ink-light);
+    }
+
+    .founder-placeholder span { font-size: 13px; letter-spacing: 0.06em; text-align: center; }
+
+    .founder-quote {
+      font-family: var(--font-serif);
+      font-size: 25px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      padding: 24px 28px;
+      background: var(--green-pale);
+      border-radius: 18px;
+      position: relative;
+    }
+
+    .founder-quote::before {
+      content: '\201C';
+      font-size: 60px;
+      color: var(--green);
+      opacity: 0.4;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 8px; left: 16px;
+      line-height: 1;
+    }
+
+    .founder-name {
+      font-family: var(--font-serif);
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .founder-title {
+      font-size: 13.5px;
+      color: var(--green-dark);
+      letter-spacing: 0.06em;
+      margin-bottom: 28px;
+    }
+
+    .founder-stats {
+      display: flex;
+      gap: 0;
+      margin-bottom: 28px;
+      background: var(--beige);
+      border-radius: 16px;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .f-stat { flex: 1; }
+    .f-stat + .f-stat { border-left: 1px solid var(--beige-dark); }
+
+    .f-stat .num {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    .f-stat .label {
+      font-size: 11.5px;
+      color: var(--ink-light);
+      margin-top: 4px;
+    }
+
+    .founder-bio { font-size: 15px; color: var(--ink-mid); line-height: 2; }
+
+    /* ══ CTA ════════════════════════════════════ */
+    .cta-sec {
+      background: var(--green);
+      padding: 100px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Watercolour wash deco */
+    .cta-sec::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      top: -180px; left: -100px;
+    }
+
+    .cta-sec::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      bottom: -140px; right: -80px;
+    }
+
+    .cta-sec h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(38px, 4.4vw, 56px);
+      font-weight: 500;
+      color: white;
+      margin-bottom: 14px;
+      position: relative;
+      letter-spacing: .045em;
+    }
+
+    .cta-sec p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 44px;
+      position: relative;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      position: relative;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--green-deep);
+      padding: 16px 42px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 32px;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 24px rgba(46,42,36,0.15);
+      transition: all 0.22s;
+    }
+
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(46,42,36,0.22); }
+
+    .btn-outline-w {
+      background: transparent;
+      color: white;
+      padding: 15px 38px;
+      font-size: 15px;
+      font-weight: 400;
+      border-radius: 32px;
+      text-decoration: none;
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.55);
+      transition: all 0.22s;
+    }
+
+    .btn-outline-w:hover { background: rgba(255,255,255,0.12); border-color: white; transform: translateY(-2px); }
+
+    /* ══ FOOTER ════════════════════════════════ */
+    footer {
+      background: var(--ink);
+      padding: 68px 80px 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1.1fr;
+      gap: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 28px;
+    }
+
+    .footer-brand .logo-zh { color: white; }
+    .footer-brand .logo-en { color: var(--green); }
+
+    .footer-brand p {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.48);
+      line-height: 1.9;
+      margin-top: 18px;
+    }
+
+    .footer-col h5 {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.48);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.18s;
+    }
+
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+
+    .footer-addr {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.3);
+      margin-top: -6px;
+      margin-bottom: 8px;
+      padding-left: 2px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ══ SCROLL ANIMATION ═════════════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+
+    .stagger-2 { transition-delay: 0.1s; }
+    .stagger-3 { transition-delay: 0.2s; }
+
+    @media (max-width: 1000px) {
+      .nav {
+        height: 128px; padding: 10px 24px 12px; justify-content: center;
+        align-content: center; flex-wrap: wrap;
+      }
+      .nav-logo { margin-right: 0; }
+      .nav-links {
+        flex: 0 0 100%; display: grid; grid-template-columns: repeat(6, auto);
+        justify-content: center; gap: 2px; margin-top: 8px;
+      }
+      .nav-links a { display: block; padding: 8px 10px; text-align: center; }
+      .hero { margin-top: 128px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 90px 40px 60px; }
+      .hero-right { min-height: 520px; }
+      .hero-float { left: 28px; }
+      .home-story { padding: 80px 36px; }
+      .home-story-intro { grid-template-columns: 1fr; gap: 26px; }
+      .story-grid { grid-template-columns: 1fr; }
+      .story-closing { grid-template-columns: 1fr; padding: 34px 28px; }
+      .about,.founder { grid-template-columns: 1fr; gap: 48px; }
+      .features-grid,.quotes-grid,.testimonials-grid { grid-template-columns: repeat(2,1fr); }
+      .features,.quotes-sec,.testimonials,.about,.founder,.cta-sec { padding: 78px 40px; }
+      footer { padding: 60px 40px 32px; }
+      .footer-grid { grid-template-columns: 1.4fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 680px) {
+      .nav { height: 156px; padding: 10px 12px 12px; }
+      .logo-mark { width: 40px; height: 40px; }
+      .logo-zh { font-size: 14px; }
+      .logo-en { font-size: 8px; }
+      .nav-links { grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 8px; }
+      .nav-links a { padding: 7px 4px; font-size: 12px; }
+      .nav-cta { padding: 7px 4px !important; }
+      .hero { margin-top: 156px; }
+      .hero-left { padding: 76px 22px 48px; }
+      .hero h1 { font-size: 36px; }
+      .hero-right { min-height: 390px; }
+      .hero-actions { align-items: flex-start; flex-direction: column; }
+      .home-story { padding: 64px 22px; }
+      .home-story h2 { font-size: 30px; }
+      .home-story-lead { font-size: 18px; }
+      .stats { padding: 48px 20px; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); gap: 30px 0; }
+      .stat + .stat { border-left: 0; }
+      .stat:nth-child(even) { border-left: 1px solid rgba(255,255,255,.22); }
+      .stat-num { font-size: 40px; }
+      .features-grid,.quotes-grid,.testimonials-grid { grid-template-columns: 1fr; }
+      .features,.quotes-sec,.testimonials,.about,.founder,.cta-sec { padding: 62px 20px; }
+      .sec-h2 { font-size: 28px; }
+      .founder-stats { flex-wrap: wrap; }
+      .f-stat { min-width: 50%; margin-bottom: 20px; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      footer { padding: 54px 22px 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">
+      <img src="assets/bgt-logo.png" alt="">
+    </div>
+    <div>
+      <span class="logo-zh">大綠地藝術</span>
+      <span class="logo-en">Big Green Team</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">關於我們</a></li>
+    <li><a href="courses.html">課程介紹</a></li>
+    <li><a href="works.html">學生成果</a></li>
+    <li><a href="workshop.html">家長工作坊</a></li>
+    <li><a href="blog.html">部落格</a></li>
+    <li><a href="little-days.html">幼學小日子</a></li>
+    <li><a href="contact.html" class="nav-cta">聯絡我們</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+
+  <!-- Watercolour leaf decorations -->
+  <svg style="position:absolute;top:80px;left:52px;width:72px;opacity:0.25;pointer-events:none;z-index:1" viewBox="0 0 72 96">
+    <path d="M36 88 Q12 64 20 32 Q28 4 44 18 Q60 36 36 88Z" fill="#7FAF9B"/>
+    <path d="M36 88 Q36 48 36 20" stroke="#5A9080" stroke-width="1.2" fill="none" opacity="0.6"/>
+    <path d="M36 60 Q28 52 20 48" stroke="#5A9080" stroke-width="1" fill="none" opacity="0.5"/>
+    <path d="M36 48 Q44 42 52 38" stroke="#5A9080" stroke-width="1" fill="none" opacity="0.5"/>
+  </svg>
+
+  <svg style="position:absolute;bottom:100px;left:260px;width:48px;opacity:0.2;pointer-events:none;z-index:1" viewBox="0 0 48 64">
+    <path d="M24 60 Q8 44 14 24 Q20 8 30 16 Q40 28 24 60Z" fill="#C17A5A"/>
+    <path d="M24 60 Q24 36 24 14" stroke="#A35E3E" stroke-width="1" fill="none" opacity="0.5"/>
+  </svg>
+
+  <svg style="position:absolute;top:140px;right:48%;width:36px;opacity:0.18;pointer-events:none;z-index:1" viewBox="0 0 36 36">
+    <circle cx="18" cy="18" r="7" fill="#E8C96B"/>
+    <circle cx="18" cy="4" r="3" fill="#E8C96B" opacity="0.7"/>
+    <circle cx="18" cy="32" r="3" fill="#E8C96B" opacity="0.7"/>
+    <circle cx="4" cy="18" r="3" fill="#E8C96B" opacity="0.7"/>
+    <circle cx="32" cy="18" r="3" fill="#E8C96B" opacity="0.7"/>
+  </svg>
+
+  <div class="hero-left">
+    <div class="hero-positioning">
+      <div class="hero-focus-label">大綠地獨創教育定位</div>
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        創感力教育｜把感受變成判斷，把想法說清楚
+      </div>
+    </div>
+    <h1>
+      不是畫畫課，<br>
+      是孩子的<br>
+      <strong>內在對話時間</strong>
+    </h1>
+    <p class="hero-sub">AI 時代，孩子最需要的不是技術，是想清楚、說得出來、做出選擇的能力</p>
+    <p class="hero-desc">
+      在歐洲，藝術教育從來不是為了「畫得像」，<br>
+      而是為了讓孩子學會感受自己、理解自己、表達自己。<br>
+      在法國、義大利、瑞吉歐學派的課堂上，孩子從小就學習用創作與世界對話。<br>
+      這樣的理念，正是「大綠地兒童藝術」堅持的方向。
+    </p>
+    <div class="hero-btns">
+      <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra">立即報名體驗課</a>
+      <a href="#about" class="btn btn-line">了解更多</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img
+      src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=80"
+      alt="孩子在大綠地藝術課堂中創作"
+      onerror="this.style.background='var(--beige)';this.style.display='block'"
+    />
+    <div class="hero-float">
+      <p>「我畫了好多花，因為我想讓每個人看見都覺得溫暖。」</p>
+      <span>— 大綠地的孩子 · 6歲</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ HOME STORY ══════════════ -->
+<section class="home-story">
+  <div class="home-story-inner">
+    <div class="home-story-intro fade-up">
+      <div>
+        <div class="home-story-kicker">European Art Education</div>
+        <h2>AI 時代，<br>孩子最需要的不是技術，<br>是想清楚、說得出來、做出選擇的能力</h2>
+      </div>
+      <div>
+        <p class="home-story-lead">不是畫畫課，是孩子的內在對話時間。</p>
+        <p>在歐洲，藝術教育從來不是為了「畫得像」，而是為了讓孩子學會感受自己、理解自己、表達自己。</p>
+        <p>在法國、義大利、瑞吉歐學派的課堂上，孩子從小就學習用創作與世界對話。他們不是在練習技法，而是在創造屬於自己的語言與視角。</p>
+        <p>這樣的理念，正是「大綠地兒童藝術」堅持的方向。</p>
+      </div>
+    </div>
+
+    <div class="story-grid">
+      <article class="story-card fade-up">
+        <h3>讓創作回到孩子的本能</h3>
+        <p>我們設計了 48 種歐洲藝術學派創作方法，引導孩子從五感出發，探索內在與世界的連結。</p>
+        <p>孩子用滾輪刷出城市的紋理、用咖啡染料製作牆面質地、用剪貼拼貼夢境的樣貌、用葉子敲打畫布感受聲音的節奏。</p>
+        <p>他們在自由中選擇、在過程中思考、在創作中慢慢發現：「原來，我可以這樣表達我自己。」</p>
+      </article>
+
+      <article class="story-card fade-up stagger-2">
+        <h3>引導孩子打開想像與情緒的開關</h3>
+        <p>我們相信，每個孩子天生都有表達的能力，只是需要被看見、被理解的空間。</p>
+        <p>課堂中，我們不急著講解「怎麼畫」，而是先問一句：「你今天想說什麼？」</p>
+        <p>每一次創作，都是一場內在的對話；每一張作品，都是孩子用畫筆寫下的生命片段。</p>
+      </article>
+
+      <article class="story-card fade-up stagger-3">
+        <h3>從生活出發的藝術教育，<br>才是最溫柔的啟動方式</h3>
+        <p>在大綠地，藝術不是被切割出來的一小塊時間，而是融入日常的感受力與想像力。</p>
+        <p>孩子會從安平樹屋中學習自然與建築的共生，從青花瓷學習圖紋的故事與文化的情感，從奧運主題課程中畫出每一種屬於自己的努力與信念。</p>
+        <p>這些主題，不只是教材，更是孩子看見自己與世界的方式。</p>
+      </article>
+
+      <article class="story-card fade-up">
+        <h3>讓孩子用一百種方式表達自己，<br>創作因此變得有意義</h3>
+        <p>我們的課程圍繞八大主題與 48 種歐洲藝術方法論發展。每一個單元都設計了多元媒材與開放引導，讓孩子透過創作建構自我，累積情緒韌性，發展出屬於自己的觀看方式。</p>
+        <p>孩子不只是來完成作品，而是一步步在創作中建立自信，拓展理解力，慢慢成為一個能表達、能感受、也能同理他人的人。</p>
+        <div class="story-themes" aria-label="八大主題">
+          <span>國家</span><span>繪本</span><span>自然</span><span>流行</span>
+          <span>色彩學</span><span>藝術</span><span>瘋狂藝術</span><span>在地文化</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="story-closing fade-up">
+      <h3>大綠地，<br>是為台灣孩子打造的生活藝術場域</h3>
+      <div>
+        <p>這裡不是傳統美術教室。我們不複製標準化模板，也不評比誰畫得最好。</p>
+        <p>我們讓每個孩子，有機會用他自己的節奏與方式，發現自己內在的聲音。</p>
+        <p>在創作中長大的孩子，不只是更有創意——在 AI 無法取代判斷力的時代，他更懂得感受、傾聽，以及清晰地表達他想成為的人。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE ↓ STATS -->
+<div class="wave" style="background:white">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,60 L0,24 Q240,0 480,28 Q720,56 960,20 Q1200,0 1440,28 L1440,60Z" fill="#7FAF9B"/>
+  </svg>
+</div>
+
+<!-- ══════════════ STATS ══════════════ -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat fade-up">
+      <div class="stat-num">20<span class="stat-unit">年</span></div>
+      <div class="stat-zh">教學現場</div>
+    </div>
+    <div class="stat fade-up stagger-2">
+      <div class="stat-num">20<span class="stat-unit">年</span></div>
+      <div class="stat-zh">藝術教育</div>
+    </div>
+    <div class="stat fade-up stagger-3">
+      <div class="stat-num">1<span class="stat-unit">萬+</span></div>
+      <div class="stat-zh">教學孩子</div>
+    </div>
+    <div class="stat fade-up" style="transition-delay:0.3s">
+      <div class="stat-num">100<span class="stat-unit">+</span></div>
+      <div class="stat-zh">合作園所</div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE ↓ ABOUT -->
+<div class="wave" style="background:#7FAF9B">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,0 L0,36 Q360,60 720,28 Q1080,0 1440,40 L1440,0Z" fill="white"/>
+  </svg>
+</div>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section class="about" id="about">
+  <div class="about-img fade-up">
+    <img
+      src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900&q=80"
+      alt="課堂實景"
+      onerror="this.style.display='none'"
+    />
+    <div class="about-img-badge">
+      <div class="b-num">48</div>
+      <div class="b-label">種歐洲創作法</div>
+    </div>
+  </div>
+
+  <div class="about-text fade-up stagger-2">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> About Us</div>
+    <h2 class="sec-h2">我們相信，<br>畫畫，<br>不只是畫畫。</h2>
+
+    <div class="about-tagline">「每個孩子的內在都有一片綠地，等待被看見、被理解、被尊重。」</div>
+
+    <p>大綠地藝術成立於台中，起點是一群對孩子充滿熱情的教育者。我們做的，不只是教孩子拿筆，更是陪他們走進內心，用創作去<span class="em">感受生活、表達想法、釋放情緒</span>。</p>
+
+    <p>在大綠地，我們設計出全台獨創的<span class="em">「創感力教育」</span>課程，融合義大利瑞吉歐教育理念與歐洲當代藝術觀點。當 AI 可以生成任何畫面，孩子真正需要的，是把內心感受化為清晰判斷的能力——這正是「創感力」。</p>
+
+    <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra" style="display:inline-block;font-size:14px;padding:12px 28px;margin-top:8px">預約了解更多 →</a>
+  </div>
+</section>
+
+<!-- WAVE ↓ FEATURES -->
+<div class="wave" style="background:white">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,60 L0,20 Q480,60 720,24 Q960,0 1440,40 L1440,60Z" fill="var(--beige)"/>
+  </svg>
+</div>
+
+<!-- ══════════════ FEATURES ══════════════ -->
+<section class="features" id="courses">
+  <div class="features-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 課程特色</div>
+    <h2 class="sec-h2">老師不教技法，<br>卻讓孩子愛上創作一輩子</h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card fade-up">
+      <div class="feature-num">01 · 感官探索</div>
+      <img class="feature-icon" src="assets/feature-icons-handdrawn/sensory-explore.svg" alt="手繪感官探索圖示">
+      <h3>48種歐洲創作方法</h3>
+      <p>引導孩子從五感出發，探索內在與世界的連結。孩子用滾輪刷出城市紋理、用咖啡染料製作牆面質地、用葉子敲打布感受聲音的節奏。</p>
+    </div>
+    <div class="feature-card fade-up stagger-2">
+      <div class="feature-num">02 · 情緒表達</div>
+      <img class="feature-icon" src="assets/feature-icons-handdrawn/emotion-art.svg" alt="手繪情緒表達圖示">
+      <h3>情緒 × 藝術課程</h3>
+      <p>全台獨創，讓創作成為孩子說話的方式。課堂中不急著講解「怎麼畫」，而是先問一句：「你今天想說什麼？」每一張作品都是生命片段。</p>
+    </div>
+    <div class="feature-card fade-up stagger-3">
+      <div class="feature-num">03 · 親子連結</div>
+      <img class="feature-icon" src="assets/feature-icons-handdrawn/parent-connection.svg" alt="手繪親子連結圖示">
+      <h3>陪伴者與情緒翻譯員</h3>
+      <p>老師不是評分的評審，而是孩子創作旅程的陪伴者。我們相信，理解，是最深的愛。透過畫畫，讓家長更靠近孩子的內心世界。</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE ↓ QUOTES -->
+<div class="wave" style="background:var(--beige)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,0 L0,40 Q360,0 720,36 Q1080,60 1440,20 L1440,0Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
+<!-- ══════════════ QUOTES ══════════════ -->
+<section class="quotes-sec">
+  <div class="quotes-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 孩子說的話</div>
+    <h2 class="sec-h2">每個孩子都是<br>天生的哲學家</h2>
+  </div>
+
+  <div class="quotes-grid">
+    <div class="quote-card fade-up">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">我們一起把綠色擦開，就會變成一座森林了。</p>
+      <p class="quote-age">— 大綠地的孩子 · 手指畫課</p>
+    </div>
+    <div class="quote-card fade-up stagger-2">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">我畫了好多花，因為我想讓每個人看見都覺得溫暖。</p>
+      <p class="quote-age">— 大綠地的孩子 · 大型壁畫課</p>
+    </div>
+    <div class="quote-card fade-up stagger-3">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">我做的怪獸有四顆眼睛，因為它要看清楚誰在生氣。</p>
+      <p class="quote-age">— 大綠地的孩子 · 立體創作課</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE ↓ TESTIMONIALS -->
+<div class="wave" style="background:var(--cream)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,60 L0,24 Q360,60 720,20 Q1080,-10 1440,32 L1440,60Z" fill="var(--beige)"/>
+  </svg>
+</div>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section class="testimonials">
+  <div class="testimonials-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 家長回饋</div>
+    <h2 class="sec-h2">謝謝你們幫我<br>看見孩子內心的樣子</h2>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="t-card fade-up">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">「沒想到孩子可以用手指畫出這麼多層次的情感，好自由、好快樂。回家後他一直說：今天我用手畫了風跟太陽！」</p>
+      <div class="t-author">— 家長 · 昌平教室</div>
+    </div>
+    <div class="t-card fade-up stagger-2">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">「原來孩子的世界這麼豐富，謝謝你們幫我看見他內心的樣子。他回家一直說：那面牆是我畫的！感動極了。」</p>
+      <div class="t-author">— 家長 · 豐樂教室</div>
+    </div>
+    <div class="t-card fade-up stagger-3">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">「我從沒想過孩子可以表達出這樣的情感，謝謝大綠地的陪伴。謝謝老師給他這樣無拘無束的創作機會。」</p>
+      <div class="t-author">— Yi-Wen Liou · 家長</div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE ↓ FOUNDER -->
+<div class="wave" style="background:var(--beige)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,0 L0,32 Q480,60 720,28 Q960,0 1440,40 L1440,0Z" fill="white"/>
+  </svg>
+</div>
+
+<!-- ══════════════ FOUNDER ══════════════ -->
+<section class="founder">
+  <div class="founder-img fade-up">
+    <img src="assets/founder-huahua-home.png" alt="大綠地藝術創辦人花花老師">
+  </div>
+
+  <div class="fade-up stagger-2">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 創辦人</div>
+
+    <div class="founder-quote">陪伴不是指導，理解才是真正的力量。</div>
+
+    <div class="founder-name">花花老師（王靜雯）</div>
+    <div class="founder-title">大綠地藝術 創辦人 · 幼兒美感教育專家</div>
+
+    <div class="founder-stats">
+      <div class="f-stat">
+        <div class="num">20<span style="font-size:14px">年</span></div>
+        <div class="label">現場教學</div>
+      </div>
+      <div class="f-stat">
+        <div class="num">15<span style="font-size:14px">年</span></div>
+        <div class="label">藝術教育</div>
+      </div>
+      <div class="f-stat">
+        <div class="num">5<span style="font-size:14px">年</span></div>
+        <div class="label">幼教老師</div>
+      </div>
+      <div class="f-stat">
+        <div class="num">3<span style="font-size:14px">寶</span></div>
+        <div class="label">媽媽</div>
+      </div>
+    </div>
+
+    <p class="founder-bio">花花老師以5年幼教現場、15年兒童藝術教育與20年教學實務為基礎，也是一位3寶媽媽。她深信每個孩子天生都有表達的能力，只是需要被看見、被理解的空間。她設計出融合義大利瑞吉歐教育理念與歐洲當代藝術觀點的獨創課程，讓創作成為孩子認識自己的旅程。</p>
+  </div>
+</section>
+
+<!-- WAVE ↓ CTA -->
+<div class="wave" style="background:white">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,60 L0,20 Q360,60 720,16 Q1080,-12 1440,32 L1440,60Z" fill="#7FAF9B"/>
+  </svg>
+</div>
+
+<!-- ══════════════ CTA ══════════════ -->
+<section class="cta-sec" id="contact">
+  <h2 class="fade-up">讓孩子開始用畫畫說話</h2>
+  <p class="fade-up stagger-2">立即預約免費體驗課，陪孩子找到屬於自己的表達語言</p>
+  <div class="cta-btns fade-up stagger-3">
+    <a href="https://lin.ee/zJctveL" target="_blank" class="btn-white">立即報名體驗課</a>
+    <a href="https://lin.ee/zJctveL" target="_blank" class="btn-outline-w">加入 LINE 諮詢</a>
+  </div>
+</section>
+
+<!-- WAVE ↓ FOOTER -->
+<div class="wave" style="background:#7FAF9B">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,60 L0,28 Q360,0 720,32 Q1080,56 1440,20 L1440,60Z" fill="#2E2A24"/>
+  </svg>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer id="locations">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-right:0">
+        <div class="logo-mark" style="width:40px;height:40px">
+          <img src="assets/bgt-logo.png" alt="">
+        </div>
+        <div>
+          <span class="logo-zh">大綠地藝術</span>
+          <span class="logo-en">Big Green Team</span>
+        </div>
+      </a>
+      <p>致力推廣兒童情緒藝術教育，陪孩子用創作感受生活、表達想法、釋放情緒。每個孩子的內在都有一片綠地，等待被看見。</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>服務項目</h5>
+      <ul>
+        <li><a href="courses.html">課程介紹</a></li>
+        <li><a href="works.html">學生成果</a></li>
+        <li><a href="workshop.html">家長工作坊</a></li>
+        <li><a href="blog.html">部落格專欄</a></li>
+        <li><a href="little-days.html">幼學小日子</a></li>
+        <li><a href="https://www.facebook.com/biggreenteam" target="_blank">Facebook</a></li>
+        <li><a href="https://lin.ee/zJctveL" target="_blank">LINE 官方帳號</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>教室資訊</h5>
+      <ul>
+        <li><a href="contact.html">📍 昌平教室</a></li>
+        <li><a href="tel:04-22334859">☎ 04-22334859</a></li>
+        <li class="footer-addr">台中市北屯區昌平路一段77號</li>
+        <li style="margin-top:8px"><a href="contact.html">📍 豐樂教室</a></li>
+        <li><a href="tel:04-24752782">☎ 04-24752782</a></li>
+        <li class="footer-addr">台中市南屯區文心南五路一段312號</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 大綠地藝術 Big Green Team · 台中市</span>
+    <span><a href="contact.html">聯絡我們</a></span>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-up
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const t = id && document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Nav shadow
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 10 ? '0 4px 28px rgba(46,42,36,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>

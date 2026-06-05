@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="一百種表達">
+  <defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.042" numOctaves="2" seed="88"/><feDisplacementMap in="SourceGraphic" scale="1.05"/></filter></defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+    <path d="M60 20l7 24 24-4-19 16 16 21-24-8-12 22-1-25-25 1 22-13-12-23 22 11 2-22Z" fill="#FAF3DA" stroke="#E8C96B" stroke-width="3"/>
+    <path d="M28 28c5 2 9 6 11 11" stroke="#7FAF9B" stroke-width="2.5"/>
+    <path d="M89 24c-5 3-9 7-12 13" stroke="#C17A5A" stroke-width="2.5"/>
+    <path d="M21 86c8-2 16-2 24 1" stroke="#5A9080" stroke-width="2.5"/>
+    <path d="M79 90c8 0 15 2 21 7" stroke="#C17A5A" stroke-width="2.5"/>
+    <circle cx="59" cy="58" r="6" fill="#F5E8E0" stroke="#C17A5A" stroke-width="2"/>
+  </g>
+</svg>

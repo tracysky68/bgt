@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="孩子的內心畫家長工作坊，陪你看懂畫裡的情緒密碼。">
+  <title>家長工作坊｜大綠地藝術 Big Green Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css?v=20260605-type">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    .workshop-hero {
+      margin-top: 70px;
+      padding: 96px 80px 84px;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(193,122,90,.12), transparent 30%),
+        linear-gradient(135deg, var(--green-pale), var(--cream));
+      position: relative;
+      overflow: hidden;
+    }
+    .workshop-hero::before {
+      content: '';
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -140px;
+      bottom: -180px;
+      border-radius: 50%;
+      background: rgba(127,175,155,.12);
+    }
+    .workshop-hero-inner {
+      max-width: 980px;
+      position: relative;
+      z-index: 1;
+    }
+    .workshop-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: .04em;
+      color: var(--ink);
+      margin: 18px 0 24px;
+    }
+    .workshop-hero p {
+      max-width: 760px;
+      color: var(--ink-mid);
+      font-size: 17px;
+      line-height: 2;
+    }
+    .workshop-note {
+      display: inline-flex;
+      margin-top: 28px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: white;
+      color: var(--green-deep);
+      font-size: 12px;
+      letter-spacing: .08em;
+      box-shadow: 0 12px 30px rgba(46,42,36,.06);
+    }
+    .workshop-section {
+      padding: 92px 80px;
+      background: white;
+    }
+    .workshop-section.alt { background: var(--beige); }
+    .workshop-wrap { max-width: 1120px; margin: 0 auto; }
+    .workshop-lead {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 54px;
+      align-items: start;
+    }
+    .question-card {
+      background: var(--green-pale);
+      border-radius: 30px;
+      padding: 40px;
+      border: 1px solid rgba(127,175,155,.18);
+    }
+    .question-card h2,
+    .content-card h3,
+    .video-card h3 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .question-card h2 {
+      font-size: 30px;
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+    .question-card p,
+    .workshop-copy p {
+      color: var(--ink-mid);
+      font-size: 15.5px;
+      line-height: 2;
+      margin-bottom: 14px;
+    }
+    .workshop-copy strong { color: var(--terra-dark); font-weight: 500; }
+    .learning-grid,
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 42px;
+    }
+    .target-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .content-card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 24px;
+      border: 1px solid rgba(127,175,155,.16);
+      box-shadow: 0 14px 36px rgba(46,42,36,.06);
+    }
+    .content-card .num {
+      font-family: var(--font-display);
+      color: var(--green-dark);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      margin-bottom: 18px;
+    }
+    .content-card h3 { font-size: 18px; line-height: 1.6; margin-bottom: 10px; }
+    .content-card p { color: var(--ink-mid); font-size: 13.5px; line-height: 1.9; }
+    .quote-panel {
+      margin-top: 44px;
+      padding: 42px;
+      border-radius: 30px;
+      background: var(--green-deep);
+      color: white;
+      text-align: center;
+    }
+    .quote-panel p {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1.8;
+    }
+    .quote-panel span {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 42px;
+    }
+    .video-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(127,175,155,.16);
+      box-shadow: 0 16px 44px rgba(46,42,36,.08);
+    }
+    .video-card video {
+      width: 100%;
+      display: block;
+      background: var(--ink);
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+    }
+    .video-card div { padding: 24px 26px 28px; }
+    .video-card h3 { font-size: 22px; margin-bottom: 8px; }
+    .video-card p { color: var(--ink-mid); font-size: 14px; line-height: 1.8; }
+    .workshop-cta {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 86px 80px;
+    }
+    .workshop-cta h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .workshop-cta p {
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 1000px) {
+      .workshop-hero { margin-top: 128px; }
+      .workshop-hero, .workshop-section, .workshop-cta { padding-left: 36px; padding-right: 36px; }
+      .workshop-lead { grid-template-columns: 1fr; }
+      .learning-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .target-grid, .video-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .workshop-hero { margin-top: 156px; padding: 62px 22px 56px; }
+      .workshop-section, .workshop-cta { padding: 58px 20px; }
+      .question-card, .quote-panel { padding: 30px 24px; }
+      .learning-grid, .target-grid, .video-grid { grid-template-columns: 1fr; }
+      .quote-panel p { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <section class="workshop-hero">
+    <div class="workshop-hero-inner">
+      <div class="sec-tag"><span class="sec-tag-dot"></span> Parent Workshop</div>
+      <h1>孩子的內心畫家長工作坊｜<br>陪你看懂畫裡的情緒密碼</h1>
+      <p>那些看似隨意的塗鴉、跳躍的線條、重複出現的圖案與色彩，其實都是孩子正在用「畫」說話。這堂為家長設計的工作坊，不教你畫畫，卻教你如何從畫裡看懂孩子的心。</p>
+      <div class="workshop-note">無需美術基礎，只需要一顆願意聽孩子說話的心</div>
+    </div>
+  </section>
+
+  <div class="wave" style="background:var(--green-pale)">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+      <path d="M0,0 L0,36 Q360,56 720,24 Q1080,0 1440,36 L1440,0Z" fill="white"/>
+    </svg>
+  </div>
+
+  <section class="workshop-section">
+    <div class="workshop-wrap workshop-lead">
+      <div class="question-card fade-up">
+        <h2>你是否曾看著孩子的畫作，<br>心中充滿問號？</h2>
+        <p>從顏色選擇、筆觸強弱、圖像構成，到留白與重複元素，每一筆，都藏著情緒與線索。</p>
+      </div>
+      <div class="workshop-copy fade-up d1">
+        <p>在這堂課裡，我們會陪你重新理解孩子的創作。孩子的畫，不只是作品，更是一封寫給大人的內心信。</p>
+        <p><strong>我們相信，理解，是最深的愛。</strong>透過畫畫，你可以更靠近孩子的內心，也能更溫柔地陪伴他走過情緒的風雨。</p>
+        <p>歡迎每一位想要與孩子更靠近的你，踏上這段溫柔又深刻的旅程。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="workshop-section alt">
+    <div class="workshop-wrap">
+      <div class="section-head center">
+        <div class="sec-tag"><span class="sec-tag-dot"></span> 你會學到</div>
+        <h2 class="sec-h2">從孩子的畫裡，<br>看見情緒、需求與連結</h2>
+      </div>
+      <div class="learning-grid">
+        <article class="content-card fade-up"><div class="num">01</div><h3>了解繪畫發展</h3><p>理解孩子不同年齡階段的繪畫發展，不再用成人標準評價孩子。</p></article>
+        <article class="content-card fade-up d1"><div class="num">02</div><h3>解讀情緒線索</h3><p>學會如何從顏色、筆觸與構圖中，看見情緒、壓力與需求。</p></article>
+        <article class="content-card fade-up d2"><div class="num">03</div><h3>建立情感連結</h3><p>透過畫畫與孩子展開對話，讓陪伴不只停留在「你畫得好棒」。</p></article>
+        <article class="content-card fade-up"><div class="num">04</div><h3>用畫說話</h3><p>建立親子之間更自然、更安全的表達方式。</p></article>
+        <article class="content-card fade-up d1"><div class="num">05</div><h3>看見沒說出口的話</h3><p>發現孩子不說出口的委屈、擔心與渴望，成為更懂他的家長。</p></article>
+      </div>
+
+      <div class="quote-panel fade-up">
+        <p>「理解，是最深的愛。」</p>
+        <span>透過孩子的畫，看見他正在努力說出的心事</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="workshop-section">
+    <div class="workshop-wrap">
+      <div class="section-head center">
+        <div class="sec-tag"><span class="sec-tag-dot"></span> 適合參加</div>
+        <h2 class="sec-h2">這堂課，<br>適合想更靠近孩子的大人</h2>
+      </div>
+      <div class="target-grid">
+        <article class="content-card fade-up"><div class="num">Parents</div><h3>關心孩子情緒的父母</h3><p>想更懂孩子的內心狀態，也想用更溫柔的方式陪伴他。</p></article>
+        <article class="content-card fade-up d1"><div class="num">Family</div><h3>想改善親子溝通的家庭</h3><p>希望建立孩子願意說、也願意被理解的親子對話。</p></article>
+        <article class="content-card fade-up d2"><div class="num">Teacher</div><h3>幼兒園與小學老師</h3><p>想從孩子作品中讀懂更多學習狀態與情緒訊號。</p></article>
+        <article class="content-card fade-up"><div class="num">Adult</div><h3>對藝術教育有興趣的大人</h3><p>想理解藝術如何成為孩子表達自我與修復情緒的路徑。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="workshop-section alt" id="workshop-videos">
+    <div class="workshop-wrap">
+      <div class="section-head center">
+        <div class="sec-tag"><span class="sec-tag-dot"></span> 影片紀錄</div>
+        <h2 class="sec-h2">社群直播片段與家長心得，<br>讓你先感受課程現場</h2>
+        <p class="section-intro">以下影片整理自 Notion 提供的工作坊資料。</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-card fade-up">
+          <video controls playsinline preload="metadata" src="assets/workshop-notion/765777649.656772.mp4"></video>
+          <div><h3>工作坊片段 01</h3><p>從孩子的畫作開始，練習看見顏色、線條與構圖背後的情緒線索。</p></div>
+        </article>
+        <article class="video-card fade-up d1">
+          <video controls playsinline preload="metadata" src="assets/workshop-notion/765776587.156656.mp4"></video>
+          <div><h3>工作坊片段 02</h3><p>陪家長理解孩子不說出口的委屈、擔心與渴望，重新建立親子連結。</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="workshop-cta">
+    <h2 class="fade-up">想更懂孩子畫裡的心事嗎？</h2>
+    <p class="fade-up d1">附贈專屬畫本、蠟筆與精油禮物，陪你在生活中練習看見與理解。</p>
+    <div class="cta-btns fade-up d2">
+      <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-white">預約了解工作坊</a>
+      <a href="contact.html" class="btn btn-outline-w">聯絡我們</a>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="css/nav-footer.js?v=20260605-little-days-page"></script>
+  <script>eval(SHARED_JS)</script>
+</body>
+</html>

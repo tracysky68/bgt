@@ -1,0 +1,386 @@
+[
+  {
+    "num": 1,
+    "zh": "痕跡感知法",
+    "en": "Trace-Sense Approach",
+    "slug": "trace-sense",
+    "cat": "感官系（1–8）",
+    "file": "trace-sense.html"
+  },
+  {
+    "num": 2,
+    "zh": "層疊軌跡法",
+    "en": "Layered Pathway Method",
+    "slug": "layered-pathway",
+    "cat": "感官系（1–8）",
+    "file": "method-02-layered-pathway.html"
+  },
+  {
+    "num": 3,
+    "zh": "線性節奏法",
+    "en": "Rhythmic Line Approach",
+    "slug": "rhythmic-line",
+    "cat": "感官系（1–8）",
+    "file": "method-03-rhythmic-line.html"
+  },
+  {
+    "num": 4,
+    "zh": "觸覺導引法",
+    "en": "Tactile Navigation Theory",
+    "slug": "tactile-navigation",
+    "cat": "感官系（1–8）",
+    "file": "method-04-tactile-navigation.html"
+  },
+  {
+    "num": 5,
+    "zh": "音感創構法",
+    "en": "Sound-Form Composition",
+    "slug": "sound-form-composition",
+    "cat": "感官系（1–8）",
+    "file": "method-05-sound-form-composition.html"
+  },
+  {
+    "num": 6,
+    "zh": "溫度色感法",
+    "en": "Thermo-Color Perception",
+    "slug": "thermo-color-perception",
+    "cat": "感官系（1–8）",
+    "file": "method-06-thermo-color-perception.html"
+  },
+  {
+    "num": 7,
+    "zh": "氣味構圖法",
+    "en": "Olfactory Composition Theory",
+    "slug": "olfactory-composition",
+    "cat": "感官系（1–8）",
+    "file": "method-07-olfactory-composition.html"
+  },
+  {
+    "num": 8,
+    "zh": "感官旅程法",
+    "en": "Sensory Journey Pedagogy",
+    "slug": "sensory-journey",
+    "cat": "感官系（1–8）",
+    "file": "method-08-sensory-journey.html"
+  },
+  {
+    "num": 9,
+    "zh": "節奏構圖法",
+    "en": "Rhythmic Composition Theory",
+    "slug": "rhythmic-composition",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-09-rhythmic-composition.html"
+  },
+  {
+    "num": 10,
+    "zh": "空間對話法",
+    "en": "Spatial Dialogue Framework",
+    "slug": "spatial-dialogue",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-10-spatial-dialogue.html"
+  },
+  {
+    "num": 11,
+    "zh": "邏輯建構法",
+    "en": "Logical Constructivism Approach",
+    "slug": "logical-constructivism",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-11-logical-constructivism.html"
+  },
+  {
+    "num": 12,
+    "zh": "重力裝置法",
+    "en": "Gravity Installation Method",
+    "slug": "gravity-installation",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-12-gravity-installation.html"
+  },
+  {
+    "num": 13,
+    "zh": "多視角表現法",
+    "en": "Multi-Perspective Art Theory",
+    "slug": "multi-perspective",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-13-multi-perspective.html"
+  },
+  {
+    "num": 14,
+    "zh": "邊界探索法",
+    "en": "Boundary Deconstruction Method",
+    "slug": "boundary-deconstruction",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-14-boundary-deconstruction.html"
+  },
+  {
+    "num": 15,
+    "zh": "重複結構法",
+    "en": "Repetitive Structure Pedagogy",
+    "slug": "repetitive-structure",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-15-repetitive-structure.html"
+  },
+  {
+    "num": 16,
+    "zh": "留白平衡法",
+    "en": "Negative Space Awareness Theory",
+    "slug": "negative-space",
+    "cat": "結構與空間系（9–16）",
+    "file": "method-16-negative-space.html"
+  },
+  {
+    "num": 17,
+    "zh": "媒材解放法",
+    "en": "Medium Liberation Pedagogy",
+    "slug": "medium-liberation",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-17-medium-liberation.html"
+  },
+  {
+    "num": 18,
+    "zh": "解構拼貼法",
+    "en": "Deconstructive Collage Method",
+    "slug": "deconstructive-collage",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-18-deconstructive-collage.html"
+  },
+  {
+    "num": 19,
+    "zh": "暗面拓映法",
+    "en": "Shadow Impression Theory",
+    "slug": "shadow-impression",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-19-shadow-impression.html"
+  },
+  {
+    "num": 20,
+    "zh": "轉化媒材法",
+    "en": "Material Transformation Theory",
+    "slug": "material-transformation",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-20-material-transformation.html"
+  },
+  {
+    "num": 21,
+    "zh": "可食媒材法",
+    "en": "Edible Art Pedagogy",
+    "slug": "edible-art",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-21-edible-art.html"
+  },
+  {
+    "num": 22,
+    "zh": "雜質實驗法",
+    "en": "Impure Medium Experimentation",
+    "slug": "impure-medium",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-22-impure-medium.html"
+  },
+  {
+    "num": 23,
+    "zh": "液態運動法",
+    "en": "Liquid Motion Approach",
+    "slug": "liquid-motion",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-23-liquid-motion.html"
+  },
+  {
+    "num": 24,
+    "zh": "觸發媒材法",
+    "en": "Reactive Material Theory",
+    "slug": "reactive-material",
+    "cat": "材料與媒介系（17–24）",
+    "file": "method-24-reactive-material.html"
+  },
+  {
+    "num": 25,
+    "zh": "情緒顏色轉譯法",
+    "en": "Emotional Color Translation Method",
+    "slug": "emotional-color-translation",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-25-emotional-color-translation.html"
+  },
+  {
+    "num": 26,
+    "zh": "故事轉化法",
+    "en": "Narrative Transformation Theory",
+    "slug": "narrative-transformation",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-26-narrative-transformation.html"
+  },
+  {
+    "num": 27,
+    "zh": "內在小劇場法",
+    "en": "Inner Theater Method",
+    "slug": "inner-theater",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-27-inner-theater.html"
+  },
+  {
+    "num": 28,
+    "zh": "日常情緒拼貼法",
+    "en": "Everyday Emotion Collage",
+    "slug": "everyday-emotion-collage",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-28-everyday-emotion-collage.html"
+  },
+  {
+    "num": 29,
+    "zh": "潛意識漫遊法",
+    "en": "Subconscious Drift Method",
+    "slug": "subconscious-drift",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-29-subconscious-drift.html"
+  },
+  {
+    "num": 30,
+    "zh": "修復式創作法",
+    "en": "Restorative Creation Approach",
+    "slug": "restorative-creation",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-30-restorative-creation.html"
+  },
+  {
+    "num": 31,
+    "zh": "情緒角色對話法",
+    "en": "Emotional Persona Dialogue",
+    "slug": "emotional-persona-dialogue",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-31-emotional-persona-dialogue.html"
+  },
+  {
+    "num": 32,
+    "zh": "自畫像探索法",
+    "en": "Self-Portrait as Process",
+    "slug": "self-portrait-process",
+    "cat": "敘事與情緒系（25–32）",
+    "file": "method-32-self-portrait-process.html"
+  },
+  {
+    "num": 33,
+    "zh": "群體構築法",
+    "en": "Collective Construction Theory",
+    "slug": "collective-construction",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-33-collective-construction.html"
+  },
+  {
+    "num": 34,
+    "zh": "對話式創作法",
+    "en": "Dialogic Drawing Approach",
+    "slug": "dialogic-drawing",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-34-dialogic-drawing.html"
+  },
+  {
+    "num": 35,
+    "zh": "公共裝置法",
+    "en": "Public Installation Method",
+    "slug": "public-installation",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-35-public-installation.html"
+  },
+  {
+    "num": 36,
+    "zh": "共感視角法",
+    "en": "Empathic Perspective Practice",
+    "slug": "empathic-perspective",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-36-empathic-perspective.html"
+  },
+  {
+    "num": 37,
+    "zh": "連結地圖法",
+    "en": "Relationship Mapping Theory",
+    "slug": "relationship-mapping",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-37-relationship-mapping.html"
+  },
+  {
+    "num": 38,
+    "zh": "集體身體圖法",
+    "en": "Body-as-Canvas Pedagogy",
+    "slug": "body-as-canvas",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-38-body-as-canvas.html"
+  },
+  {
+    "num": 39,
+    "zh": "他人圖像重構法",
+    "en": "Re-Imagining the Other Method",
+    "slug": "reimagining-other",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-39-reimagining-other.html"
+  },
+  {
+    "num": 40,
+    "zh": "共同編年法",
+    "en": "Collective Chronology Pedagogy",
+    "slug": "collective-chronology",
+    "cat": "集體與關係系（33–40）",
+    "file": "method-40-collective-chronology.html"
+  },
+  {
+    "num": 41,
+    "zh": "問題圖像法",
+    "en": "Problem-Based Visual Inquiry",
+    "slug": "problem-based-visual-inquiry",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-41-problem-based-visual-inquiry.html"
+  },
+  {
+    "num": 42,
+    "zh": "抽象組構法",
+    "en": "Abstract Construction Theory",
+    "slug": "abstract-construction",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-42-abstract-construction.html"
+  },
+  {
+    "num": 43,
+    "zh": "風格建構法",
+    "en": "Stylistic Identity Pedagogy",
+    "slug": "stylistic-identity",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-43-stylistic-identity.html"
+  },
+  {
+    "num": 44,
+    "zh": "對比思辨法",
+    "en": "Contrasting Logic Approach",
+    "slug": "contrasting-logic",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-44-contrasting-logic.html"
+  },
+  {
+    "num": 45,
+    "zh": "假設圖像法",
+    "en": "Visual Hypothesis Thinking",
+    "slug": "visual-hypothesis",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-45-visual-hypothesis.html"
+  },
+  {
+    "num": 46,
+    "zh": "概念延伸法",
+    "en": "Conceptual Extension Model",
+    "slug": "conceptual-extension",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-46-conceptual-extension.html"
+  },
+  {
+    "num": 47,
+    "zh": "概念框架法",
+    "en": "Framework Visualization Theory",
+    "slug": "framework-visualization",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-47-framework-visualization.html"
+  },
+  {
+    "num": 48,
+    "zh": "多語言連結法",
+    "en": "Multimodal Language Synthesis",
+    "slug": "multimodal-language",
+    "cat": "概念與思辨系（41–48）",
+    "file": "method-48-multimodal-language.html"
+  }
+]

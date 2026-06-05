@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我們｜大綠地藝術 Big Green Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css?v=20260605-type">
+  <style>
+    /* ── Page specific ── */
+    .brand-section {
+      background: var(--white);
+      padding: 100px 80px;
+    }
+
+    .brand-intro {
+      max-width: 900px;
+      margin: 0 auto 56px;
+      text-align: center;
+    }
+
+    .brand-intro .sec-tag { justify-content: center; }
+
+    .brand-lead {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 20px;
+      color: var(--ink);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .brand-body {
+      max-width: 960px;
+      margin: 0 auto;
+      font-size: 15.5px;
+      color: var(--ink-mid);
+      line-height: 2;
+    }
+
+    .brand-body p { margin-bottom: 18px; }
+
+    .brand-tagline {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 21px;
+      color: var(--green-deep);
+      line-height: 1.8;
+      padding: 24px 28px;
+      background: var(--green-pale);
+      border-left: 3px solid var(--green);
+      border-radius: 0 14px 14px 0;
+      margin: 28px auto;
+      max-width: 760px;
+      text-align: left;
+    }
+
+    .moat-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 27px;
+      font-weight: 400;
+      text-align: center;
+      margin: 64px 0 32px;
+    }
+
+    .moat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .moat-card {
+      border-radius: 24px;
+      padding: 34px 30px;
+      background: var(--green-pale);
+      border: 1px solid rgba(127,175,155,.18);
+    }
+
+    .moat-card:nth-child(2) { background: var(--terra-light); }
+    .moat-card:nth-child(3) { background: var(--yellow-light); }
+
+    .moat-num {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 34px;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+
+    .moat-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .moat-card p {
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.95;
+    }
+
+    .brand-closing {
+      max-width: 820px;
+      margin: 52px auto 0;
+      padding-top: 38px;
+      border-top: 1px solid var(--beige-dark);
+      text-align: center;
+    }
+
+    .brand-closing strong {
+      display: block;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .brand-closing p { color: var(--ink-mid); font-size: 15px; line-height: 2; }
+
+    .creansense-sec {
+      background: var(--green-pale);
+      padding: 72px 80px 64px;
+    }
+
+    .creansense-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid rgba(127,175,155,.16);
+      border-radius: 24px;
+      padding: 32px 26px;
+      box-shadow: 0 14px 36px rgba(46,42,36,.06);
+      transition: transform .24s, box-shadow .24s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 46px rgba(46,42,36,.09);
+    }
+
+    .feature-num {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green-dark);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .feature-icon {
+      display: block;
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.9;
+    }
+
+    /* Philosophy cards */
+    .philosophy {
+      background: var(--beige);
+      padding: 100px 80px;
+    }
+
+    .philosophy-header { text-align: center; margin-bottom: 60px; }
+    .philosophy-header .sec-tag { justify-content: center; }
+
+    .phi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .phi-card {
+      background: white;
+      border-radius: 22px;
+      padding: 36px 30px;
+      transition: transform 0.26s, box-shadow 0.26s;
+    }
+
+    .phi-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(46,42,36,0.09); }
+
+    .phi-icon {
+      width: 76px;
+      height: 76px;
+      margin-bottom: 18px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .phi-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .phi-card p {
+      font-size: 14.5px;
+      color: var(--ink-mid);
+      line-height: 1.9;
+    }
+
+    /* Founder */
+    .founder-sec {
+      background: var(--white);
+      padding: 100px 80px;
+    }
+
+    .founder-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .founder-img {
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--beige);
+    }
+
+    .founder-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+
+    .founder-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: var(--ink-light);
+    }
+
+    .founder-placeholder span { font-size: 13px; text-align: center; }
+
+    .founder-quote {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.7;
+      padding: 24px 28px;
+      background: var(--green-pale);
+      border-radius: 18px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .founder-quote::before {
+      content: '\201C';
+      font-size: 56px;
+      color: var(--green);
+      opacity: 0.4;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 8px; left: 16px;
+      line-height: 1;
+    }
+
+    .founder-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .founder-title {
+      font-size: 13.5px;
+      color: var(--green-dark);
+      letter-spacing: 0.06em;
+      margin-bottom: 28px;
+    }
+
+    .founder-stats {
+      display: flex;
+      gap: 0;
+      margin-bottom: 28px;
+      background: var(--beige);
+      border-radius: 16px;
+      padding: 18px 0;
+      text-align: center;
+    }
+
+    .f-stat { flex: 1; }
+    .f-stat + .f-stat { border-left: 1px solid var(--beige-dark); }
+    .f-stat .num { font-family: 'Noto Serif TC', serif; font-size: 26px; font-weight: 400; color: var(--green-dark); }
+    .f-stat .label { font-size: 11px; color: var(--ink-light); margin-top: 3px; }
+
+    .founder-bio { font-size: 15px; color: var(--ink-mid); line-height: 2; }
+
+    .founder-services {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .service-tag {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green-dark);
+      font-size: 12.5px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(127,175,155,0.3);
+    }
+
+    /* Vision */
+    .vision-sec {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .vision-header { text-align: center; margin-bottom: 56px; }
+    .vision-header .sec-tag { justify-content: center; }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .vision-card {
+      background: white;
+      border-radius: 22px;
+      padding: 36px;
+      display: flex;
+      gap: 24px;
+    }
+
+    .vision-num {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--beige-dark);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 48px;
+    }
+
+    .vision-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .vision-card p { font-size: 14.5px; color: var(--ink-mid); line-height: 1.9; }
+
+    @media (max-width: 900px) {
+      .brand-section, .creansense-sec, .philosophy, .founder-sec, .vision-sec { padding: 72px 36px; }
+      .moat-grid, .phi-grid { grid-template-columns: 1fr; }
+      .creansense-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    @media (max-width: 680px) {
+      .brand-section, .creansense-sec, .philosophy, .founder-sec, .vision-sec { padding: 58px 20px; }
+      .brand-intro { margin-bottom: 38px; text-align: left; }
+      .brand-intro .sec-tag { justify-content: flex-start; }
+      .brand-lead { font-size: 18px; }
+      .brand-tagline { font-size: 18px; padding: 20px; }
+      .moat-title { font-size: 24px; margin-top: 48px; }
+      .moat-card { padding: 28px 24px; }
+      .creansense-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero" id="brand">
+  <svg style="position:absolute;top:20px;left:60px;width:64px;opacity:0.2;pointer-events:none" viewBox="0 0 64 88">
+    <path d="M32 80 Q10 58 18 28 Q26 4 40 16 Q54 32 32 80Z" fill="#7FAF9B"/>
+    <path d="M32 80 Q32 44 32 18" stroke="#5A9080" stroke-width="1" fill="none" opacity="0.5"/>
+  </svg>
+  <div class="page-hero-eyebrow"><span class="sec-tag-dot"></span> About Us</div>
+  <h1>關於大綠地｜<br>每一幅作品，<br>都是孩子思辨與情緒的視覺縮影</h1>
+  <p>從孩子出發，打造陪伴長隨一生的「思維與情緒」生活藝術場域。</p>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--beige)">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,0 L0,36 Q360,56 720,24 Q1080,0 1440,36 L1440,0Z" fill="white"/>
+  </svg>
+</div>
+
+<!-- ══ BRAND STORY ══ -->
+<section class="brand-section">
+  <div class="brand-intro fade-up">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 品牌理念</div>
+    <h2 class="sec-h2">從孩子出發，<br>打造陪伴長隨一生的<br>「思維與情緒」生活藝術場域</h2>
+    <div class="brand-tagline">「每個孩子的內在都有一片綠地，等待被看見、被理解、被尊重。」</div>
+  </div>
+
+  <div class="brand-body fade-up d1">
+    <p class="brand-lead">大綠地藝術的起點，源於兩位創辦人——花花老師與恐龍老師對兒童教育的全然專注。</p>
+    <p>我們深信，藝術不侷限於桌面上的一張圖畫，而是一套跨越學科的思考工具。大綠地教的不只是拿筆畫畫，更是以藝術為媒介，培養孩子的「創感力」——在 AI 時代最需要、也最難被取代的能力。</p>
+    <p>在這裡，藝術課程是最終的呈現，但「過程中的思維鍛鍊」才是大綠地的核心精髓。</p>
+  </div>
+
+  <h3 class="moat-title fade-up">我們的三大核心護城河</h3>
+  <div class="moat-grid">
+    <article class="moat-card fade-up">
+      <div class="moat-num">01</div>
+      <h3>全台獨創｜48種原創美學教學法</h3>
+      <p>我們將義大利瑞吉歐學派「孩子擁有一百種語言」的精神深耕本土，獨創出涵蓋感官感知、結構空間、媒介實驗、概念思辨等「48種藝術教學法」，如痕跡感知法、線性節奏法、抽象組構法等。透過國家、繪本、在地文化等八大主題有脈絡的引導，讓孩子在每一次創作中，練習拆解問題、建構邏輯，並發展出無法被複製的自主思考風格。</p>
+    </article>
+    <article class="moat-card fade-up d1">
+      <div class="moat-num">02</div>
+      <h3>情緒 × 藝術雙軌並行｜老師是孩子的「情緒翻譯員」</h3>
+      <p>大綠地在藝術探索中，深度融合了情緒教育。課程中融入情緒觀察與引導技巧，協助孩子透過色彩、筆觸與異材質實驗，將內在抽象的焦慮、快樂或挫折轉化為具象作品。我們深入瞭解並轉譯孩子的狀態，陪伴他們在「情緒修補法」中學會與不完美共處，從而建立起強大的自信心與自我價值感。</p>
+    </article>
+    <article class="moat-card fade-up d2">
+      <div class="moat-num">03</div>
+      <h3>不示範、不套版｜專注於成長導向的陪伴</h3>
+      <p>我們不是傳統的美術班。大綠地不提供標準範本、不複製框架，也不對作品進行精美度的評比。我們刻意留白，給孩子嘗試錯誤與解決問題的空間。我們更在乎的是：孩子在這裡，有沒有用自己的節奏發現內在的聲音？有沒有越來越喜歡自己？</p>
+    </article>
+  </div>
+
+  <div class="brand-closing fade-up">
+    <strong>這是一場用藝術開啟感官與思維的旅程。</strong>
+    <p>我們不急著教固定的技巧，而是帶著孩子在玩樂中學習、在實驗中思考、在包容中表達。大綠地陪伴孩子培養的，是面對 AI 時代時，長隨一生的創感力——感受、思考、判斷，與做自己的勇氣。</p>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:white">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,56 L0,20 Q480,56 720,20 Q960,0 1440,36 L1440,56Z" fill="var(--beige)"/>
+  </svg>
+</div>
+
+<!-- ══════════════ CREANSENSE ══════════════ -->
+<section class="creansense-sec">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="sec-tag" style="justify-content:center"><span class="sec-tag-dot"></span> 大綠地獨創教育框架</div>
+    <h2 class="sec-h2">孩子從這裡得到的，<br>叫做「創感力」</h2>
+    <p style="font-size:13px;color:var(--ink-light);letter-spacing:0.06em;margin-top:6px">Creansense｜AI 時代最需要、也最難被取代的四種核心能力</p>
+  </div>
+
+  <div class="creansense-grid">
+    <div class="feature-card fade-up" style="text-align:left">
+      <div class="feature-num">01 · Sense</div>
+      <img class="feature-icon" src="assets/feature-icons-handdrawn/sensory-explore.svg" alt="手繪感知力圖示">
+      <h3>感知力</h3>
+      <p>從五感出發，對外在訊息與內在狀態產生覺察。感受到了，才有辦法表達。</p>
+      <p style="margin-top:10px;font-size:12px;font-style:italic;color:var(--ink-light);border-left:2px solid var(--green);padding-left:10px">「你摸到這個質地，讓你想到什麼？」</p>
+    </div>
+
+    <div class="feature-card fade-up stagger-2" style="text-align:left">
+      <div class="feature-num">02 · Emotion</div>
+      <img class="feature-icon" src="assets/feature-icons-handdrawn/emotion-art.svg" alt="手繪情緒力圖示">
+      <h3>情緒力</h3>
+      <p>學習命名、理解自己的情緒狀態，透過創作把抽象的感受轉為具體語言。</p>
+      <p style="margin-top:10px;font-size:12px;font-style:italic;color:var(--ink-light);border-left:2px solid var(--terra);padding-left:10px">「你今天的心情，是哪個顏色？」</p>
+    </div>
+
+    <div class="feature-card fade-up stagger-3" style="text-align:left">
+      <div class="feature-num">03 · Create</div>
+      <img class="feature-icon" src="assets/feature-icons-handdrawn/creative-choice.svg" alt="手繪創造力圖示">
+      <h3>創造力</h3>
+      <p>將模糊的想法具象化，建立屬於自己的表達風格——這是 AI 時代最關鍵的能力。</p>
+      <p style="margin-top:10px;font-size:12px;font-style:italic;color:var(--ink-light);border-left:2px solid var(--yellow);padding-left:10px">「我想說的事，只有我能畫出來。」</p>
+    </div>
+
+    <div class="feature-card fade-up" style="transition-delay:0.3s;text-align:left">
+      <div class="feature-num">04 · Navigate</div>
+      <img class="feature-icon" src="assets/feature-icons-handdrawn/parent-connection.svg" alt="手繪判斷力圖示">
+      <h3>判斷力</h3>
+      <p>在不示範、不套版的環境裡練習做決定、承擔選擇——這是 AI 無法替代的能力。</p>
+      <p style="margin-top:10px;font-size:12px;font-style:italic;color:var(--ink-light);border-left:2px solid var(--green);padding-left:10px">「沒有標準答案，你怎麼想？」</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding-top:24px;border-top:1px solid rgba(127,175,155,0.25)">
+    <p style="font-family:var(--font-serif);font-size:15px;color:var(--ink-mid);line-height:2">
+      AI 不能取代有判斷力的人。<br>
+      而<span style="font-style:italic;color:var(--terra)">判斷力，從藝術課開始訓練。</span><br>
+      <span style="color:var(--green-deep);font-weight:500">這是創感力，也是大綠地二十年來一直在做的事。</span>
+    </p>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--green-pale)">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,0 L0,32 Q480,56 720,28 Q960,0 1440,40 L1440,0Z" fill="var(--beige)"/>
+  </svg>
+</div>
+
+<!-- ══ PHILOSOPHY ══ -->
+<section class="philosophy">
+  <div class="philosophy-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 教學哲學</div>
+    <h2 class="sec-h2">我們這樣相信，<br>也這樣實踐</h2>
+  </div>
+
+  <div class="phi-grid">
+    <div class="phi-card fade-up">
+      <img class="phi-icon" src="assets/feature-icons-handdrawn/sensory-explore.svg" alt="手繪創作本能圖示">
+      <h3>讓創作回到孩子的本能</h3>
+      <p>孩子天生就懂得用身體、聲音、顏色表達自己。我們的角色不是教，而是不要打斷他已經在做的事，陪著他繼續說下去。</p>
+    </div>
+    <div class="phi-card fade-up d1">
+      <img class="phi-icon" src="assets/feature-icons-handdrawn/emotion-art.svg" alt="手繪想像與情緒圖示">
+      <h3>引導孩子打開想像與情緒的開關</h3>
+      <p>課堂中，我們不急著講解「怎麼畫」，而是先問一句：「你今天想說什麼？」每一次創作，都是一場內在的對話。</p>
+    </div>
+    <div class="phi-card fade-up d2">
+      <img class="phi-icon" src="assets/feature-icons-handdrawn/life-art.svg" alt="手繪生活藝術圖示">
+      <h3>從生活出發的藝術教育</h3>
+      <p>藝術不是被切割出來的一小塊時間，而是融入日常的感受力與想像力。孩子從安平樹屋學習自然與建築，從青花瓷學習圖紋的故事。</p>
+    </div>
+    <div class="phi-card fade-up">
+      <img class="phi-icon" src="assets/feature-icons-handdrawn/emotion-translator.svg" alt="手繪情緒翻譯員圖示">
+      <h3>老師是情緒翻譯員</h3>
+      <p>老師不是評分的評審，而是孩子創作旅程的陪伴者與情緒翻譯員。從孩子的畫作線條、顏色與結構中，讀懂他正在說的話。</p>
+    </div>
+    <div class="phi-card fade-up d1">
+      <img class="phi-icon" src="assets/feature-icons-handdrawn/europe-art-view.svg" alt="手繪瑞吉歐與歐洲藝術觀點圖示">
+      <h3>融合瑞吉歐與歐洲藝術觀點</h3>
+      <p>義大利瑞吉歐教育：材料是「第三位老師」，孩子透過觸摸主動發現創作方式。法國龐畢度：不給標準結果，讓孩子產生獨立連結。</p>
+    </div>
+    <div class="phi-card fade-up d2">
+      <img class="phi-icon" src="assets/feature-icons-handdrawn/hundred-languages.svg" alt="手繪一百種表達圖示">
+      <h3>讓孩子用一百種方式表達自己</h3>
+      <p>課程圍繞八大主題、48種歐洲藝術方法論發展，每個單元設計了多元媒材與開放引導，讓孩子透過創作建構自我，發展出屬於自己的觀看方式。</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:var(--beige)">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,0 L0,32 Q480,56 720,28 Q960,0 1440,40 L1440,0Z" fill="white"/>
+  </svg>
+</div>
+
+<!-- ══ FOUNDER ══ -->
+<section class="founder-sec" id="founder">
+  <div class="founder-inner">
+    <div class="founder-img fade-up">
+      <img src="assets/founder-huahua.png" alt="大綠地藝術創辦人花花老師">
+    </div>
+
+    <div class="fade-up d1">
+      <div class="sec-tag"><span class="sec-tag-dot"></span> 創辦人介紹</div>
+      <div class="founder-quote">陪伴不是指導，理解才是真正的力量。</div>
+      <div class="founder-name">花花老師（王靜雯）</div>
+      <div class="founder-title">大綠地藝術 創辦人 · 幼兒美感教育與藝術教案設計專家</div>
+
+      <div class="founder-stats">
+        <div class="f-stat"><div class="num">20<span style="font-size:13px">年</span></div><div class="label">現場教學</div></div>
+        <div class="f-stat"><div class="num">15<span style="font-size:13px">年</span></div><div class="label">藝術教育</div></div>
+        <div class="f-stat"><div class="num">5<span style="font-size:13px">年</span></div><div class="label">幼教老師</div></div>
+        <div class="f-stat"><div class="num">3<span style="font-size:13px">寶</span></div><div class="label">媽媽</div></div>
+      </div>
+
+      <p class="founder-bio">花花老師以5年幼教現場、15年兒童藝術教育與20年教學實務為基礎，深信每個孩子天生都有表達的能力，只是需要被看見、被理解的空間。她設計出融合義大利瑞吉歐教育理念與歐洲當代藝術觀點的獨創課程，讓創作成為孩子認識自己的旅程。</p>
+      <p class="founder-bio" style="margin-top:14px">她同時是三個孩子的媽媽，以自身的育兒經驗與專業的兒童藝術解讀能力，協助家長從孩子的畫作中讀懂情緒、建立連結。</p>
+
+      <div class="founder-services">
+        <span class="service-tag">「五分鐘看懂孩子的內心畫」講座</span>
+        <span class="service-tag">幼兒園師資培訓</span>
+        <span class="service-tag">企業親子工作坊</span>
+        <span class="service-tag">線上 × 實體工作坊</span>
+        <span class="service-tag">情緒藝術教案設計</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave" style="background:white">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,56 L0,24 Q360,56 720,20 Q1080,-8 1440,32 L1440,56Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
+<!-- ══ VISION ══ -->
+<section class="vision-sec" id="vision">
+  <div class="vision-header">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 教育願景</div>
+    <h2 class="sec-h2">在創作中長大的孩子，<br>不只是更有創意</h2>
+    <p style="font-size:16px;color:var(--ink-mid);max-width:620px;margin:0 auto">在 AI 無法取代判斷力的時代，他更懂得感受、傾聽，以及清晰地表達他想成為的人。</p>
+  </div>
+
+  <div class="vision-grid">
+    <div class="vision-card fade-up">
+      <div class="vision-num">01</div>
+      <div>
+        <h3>培養美學力與想像力</h3>
+        <p>「人類因夢想而偉大」，夢想來自於想像力。「想像力」是創造力之母，未來創意人才的培育，應從想像力教育開始。大綠地藉由不同的藝術啟發讓孩子由想像力進而提升美學力。</p>
+      </div>
+    </div>
+    <div class="vision-card fade-up d1">
+      <div class="vision-num">02</div>
+      <div>
+        <h3>建立情緒韌性與自信</h3>
+        <p>孩子不只是來完成作品，而是一步步在創作中建立自信，拓展理解力，慢慢成為一個能表達、能感受、也能同理他人的人。</p>
+      </div>
+    </div>
+    <div class="vision-card fade-up">
+      <div class="vision-num">03</div>
+      <div>
+        <h3>成為自己生命的策展人</h3>
+        <p>歐洲的藝術教育早已不再是「教畫畫」，而是「讓孩子成為自己生命的策展人」與「從生活中感受世界」。大綠地正是將這樣的理念帶入台灣的地方。</p>
+      </div>
+    </div>
+    <div class="vision-card fade-up d1">
+      <div class="vision-num">04</div>
+      <div>
+        <h3>讓家長成為孩子的理解者</h3>
+        <p>透過家長工作坊，讓家長學習從孩子的畫作中讀懂情緒密碼，成為孩子最好的陪伴者。理解，是最深的愛。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<div class="wave" style="background:var(--cream)">
+  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56">
+    <path d="M0,56 L0,20 Q360,56 720,16 Q1080,-12 1440,32 L1440,56Z" fill="var(--green)"/>
+  </svg>
+</div>
+
+<section class="cta-sec">
+  <h2 class="fade-up">歡迎你走進大綠地</h2>
+  <p class="fade-up d1">讓我們一起種下創作的種子，陪孩子長出自信、勇氣與內在的力量</p>
+  <div class="cta-btns fade-up d2">
+    <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-white">立即報名體驗課</a>
+    <a href="contact.html" class="btn btn-outline-w">聯絡我們</a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="css/nav-footer.js?v=20260605-little-days-page"></script>
+<script>eval(SHARED_JS)</script>
+</body>
+</html>

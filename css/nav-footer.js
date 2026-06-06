@@ -18,6 +18,7 @@ const NAV_HTML = `
     <li><a href="workshop.html">家長工作坊</a></li>
     <li><a href="blog.html">部落格</a></li>
     <li><a href="little-days.html">幼學小日子</a></li>
+    <li><a href="sunday-art.html">週日玩藝術</a></li>
     <li><a href="contact.html" class="nav-cta">聯絡我們</a></li>
   </ul>
 </nav>`;
@@ -51,6 +52,7 @@ const FOOTER_HTML = `
         <li><a href="workshop.html">家長工作坊</a></li>
         <li><a href="blog.html">部落格專欄</a></li>
         <li><a href="little-days.html">幼學小日子</a></li>
+        <li><a href="sunday-art.html">週日玩藝術</a></li>
         <li><a href="https://www.facebook.com/biggreenteam" target="_blank">Facebook</a></li>
         <li><a href="https://lin.ee/zJctveL" target="_blank">LINE 官方帳號</a></li>
       </ul>

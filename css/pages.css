@@ -379,6 +379,59 @@
 .field input:focus,.field select:focus,.field textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(127,175,155,.12); }
 .form-note { font-size:11px; color:var(--ink-light); line-height:1.7; margin-top:14px; }
 
+/* Cross-page photo moments */
+.site-photo-section { background:var(--cream); }
+.site-photo-section.soft-green { background:var(--green-pale); }
+.site-photo-grid {
+  display:grid;
+  grid-template-columns:1.08fr .92fr 1fr;
+  gap:18px;
+  align-items:stretch;
+}
+.site-photo-card {
+  position:relative;
+  min-height:280px;
+  border-radius:34px;
+  overflow:hidden;
+  background:white;
+  box-shadow:0 22px 55px rgba(46,42,36,.08);
+  border:1px solid rgba(127,175,155,.16);
+}
+.site-photo-card.tall { min-height:430px; }
+.site-photo-card.wide { grid-column:span 2; }
+.site-photo-card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform:scale(1.01);
+}
+.site-photo-caption {
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:16px;
+  padding:13px 16px;
+  border-radius:20px;
+  background:rgba(250,247,242,.86);
+  backdrop-filter:blur(12px);
+  color:var(--ink);
+  box-shadow:0 12px 28px rgba(46,42,36,.08);
+}
+.site-photo-caption span {
+  display:block;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--green-deep);
+  margin-bottom:4px;
+}
+.site-photo-caption strong {
+  font-family:var(--font-serif);
+  font-size:18px;
+  font-weight:500;
+}
+
 @media (max-width: 1000px) {
   .inner-section { padding:72px 36px; }
   .story-strip,.learn-grid { grid-template-columns:repeat(2,1fr); }
@@ -403,6 +456,8 @@
   .little-voice-grid { grid-template-columns:repeat(2,1fr); }
   .little-feature-list article { grid-template-columns:64px 1fr; align-items:start; }
   .little-feature-list article p { grid-column:2; }
+  .site-photo-grid { grid-template-columns:1fr 1fr; }
+  .site-photo-card.wide { grid-column:1 / -1; }
 }
 @media (max-width: 680px) {
   .inner-section { padding:58px 20px; }
@@ -443,4 +498,8 @@
   .little-feature-list article { grid-template-columns:1fr; gap:10px; padding:22px; }
   .little-feature-list article p { grid-column:auto; }
   .little-statement blockquote { padding:22px; font-size:16px; }
+  .site-photo-grid { grid-template-columns:1fr; }
+  .site-photo-card,
+  .site-photo-card.tall { min-height:280px; }
+  .site-photo-card.wide { grid-column:auto; }
 }

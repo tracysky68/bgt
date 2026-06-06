@@ -499,6 +499,65 @@
       margin-bottom: 12px;
     }
 
+    .home-photo-reel {
+      background: var(--cream);
+      padding: 88px 80px;
+    }
+
+    .home-photo-head {
+      max-width: 760px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    .home-photo-head p {
+      color: var(--ink-light);
+      line-height: 2;
+      margin-top: 14px;
+      font-size: 15px;
+    }
+
+    .home-photo-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr 1fr;
+      gap: 18px;
+    }
+
+    .home-photo-card {
+      position: relative;
+      min-height: 300px;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 22px 55px rgba(46,42,36,.08);
+      border: 1px solid rgba(127,175,155,.16);
+      background: white;
+    }
+
+    .home-photo-card.tall { min-height: 430px; }
+    .home-photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .home-photo-card div {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      padding: 13px 16px;
+      border-radius: 20px;
+      background: rgba(250,247,242,.86);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 28px rgba(46,42,36,.08);
+    }
+    .home-photo-card span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      margin-bottom: 4px;
+    }
+    .home-photo-card strong { font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--ink); }
+
     /* ══ SECTION SHARED ═══════════════════════ */
     .sec-tag {
       font-family: var(--font-display);
@@ -1069,6 +1128,9 @@
       .home-story-intro { grid-template-columns: 1fr; gap: 26px; }
       .story-grid { grid-template-columns: 1fr; }
       .story-closing { grid-template-columns: 1fr; padding: 34px 28px; }
+      .home-photo-reel { padding: 78px 40px; }
+      .home-photo-grid { grid-template-columns: 1fr 1fr; }
+      .home-photo-card:first-child { grid-column: 1 / -1; }
       .about,.founder { grid-template-columns: 1fr; gap: 48px; }
       .features-grid,.quotes-grid,.testimonials-grid { grid-template-columns: repeat(2,1fr); }
       .features,.quotes-sec,.testimonials,.about,.founder,.cta-sec { padding: 78px 40px; }
@@ -1092,6 +1154,11 @@
       .home-story { padding: 64px 22px; }
       .home-story h2 { font-size: 30px; }
       .home-story-lead { font-size: 18px; }
+      .home-photo-reel { padding: 62px 20px; }
+      .home-photo-grid { grid-template-columns: 1fr; }
+      .home-photo-card,
+      .home-photo-card.tall { min-height: 280px; }
+      .home-photo-card:first-child { grid-column: auto; }
       .stats { padding: 48px 20px; }
       .stats-inner { grid-template-columns: repeat(2,1fr); gap: 30px 0; }
       .stat + .stat { border-left: 0; }
@@ -1253,6 +1320,20 @@
         <p>在創作中長大的孩子，不只是更有創意——在 AI 無法取代判斷力的時代，他更懂得感受、傾聽，以及清晰地表達他想成為的人。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══════════════ PHOTO MOMENTS ══════════════ -->
+<section class="home-photo-reel">
+  <div class="home-photo-head fade-up">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 大綠地的日常現場</div>
+    <h2 class="sec-h2">孩子不是只在畫圖，<br>他們正在把世界變成自己的語言</h2>
+    <p>從沾滿顏料的小手，到戶外大型裝置、教室窗景與孩子共同完成的作品，這些都是大綠地課堂裡真實發生的學習片刻。</p>
+  </div>
+  <div class="home-photo-grid">
+    <article class="home-photo-card tall fade-up"><img src="assets/site-life/painted-hands.jpg" alt="孩子沾滿顏料的雙手與畫面"><div><span>sensory art</span><strong>用整個身體記住顏色</strong></div></article>
+    <article class="home-photo-card fade-up stagger-2"><img src="assets/site-life/collage-mural.jpg" alt="孩子共同完成的大型拼貼畫作品"><div><span>collective work</span><strong>把每個人的想法拼在一起</strong></div></article>
+    <article class="home-photo-card fade-up stagger-3"><img src="assets/site-life/orange-masks.jpg" alt="戶外展示一整排孩子創作的橘色表情作品"><div><span>public display</span><strong>讓作品走進生活場域</strong></div></article>
   </div>
 </section>
 

@@ -3,44 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="大綠地藝術週日玩藝術，為孩子安排假日裡自由探索、感官創作與親子共享的藝術時光。">
+  <meta name="description" content="大綠地藝術週日玩藝術：個性化創意畫布，6/28 於南屯豐樂教室與北屯昌平教室舉辦，包含個人壓克力創作與親子組創作。">
   <title>週日玩藝術｜大綠地藝術 Big Green Team</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css?v=20260605-type">
-  <link rel="stylesheet" href="css/pages.css?v=20260606-sunday-art">
+  <link rel="stylesheet" href="css/pages.css?v=20260606-sunday-canvas">
+  <style>
+    .sunday-photo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:34px; }
+    .sunday-photo-card { background:white; border-radius:30px; padding:12px; box-shadow:0 18px 45px rgba(46,42,36,.08); border:1px solid rgba(127,175,155,.16); transform:rotate(var(--tilt,0deg)); }
+    .sunday-photo-card img { width:100%; height:280px; object-fit:cover; border-radius:22px; display:block; }
+    .sunday-photo-card span { display:block; margin:12px 8px 4px; font-family:var(--font-serif); font-size:18px; color:var(--green-deep); }
+    .sunday-class-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; margin-top:34px; }
+    .sunday-class-card { background:white; border-radius:34px; padding:34px; border:1px solid rgba(127,175,155,.2); box-shadow:0 18px 50px rgba(46,42,36,.06); }
+    .sunday-class-card h3 { font-family:var(--font-serif); font-size:30px; margin-bottom:18px; color:var(--ink); }
+    .sunday-info-list { list-style:none; display:grid; gap:13px; padding:0; margin:0; }
+    .sunday-info-list li { display:grid; grid-template-columns:78px 1fr; gap:12px; color:var(--ink-mid); line-height:1.75; }
+    .sunday-info-list span { color:var(--green-deep); font-weight:600; }
+    .sunday-note-list { display:grid; gap:12px; margin-top:26px; }
+    .sunday-note-list p { background:rgba(255,255,255,.74); border:1px solid rgba(127,175,155,.18); border-radius:22px; padding:14px 18px; color:var(--ink-mid); line-height:1.8; }
+    .sunday-contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:22px; }
+    .sunday-contact-card { background:rgba(255,255,255,.86); border-radius:24px; padding:18px 20px; border:1px solid rgba(127,175,155,.16); }
+    .sunday-contact-card h4 { font-size:18px; margin-bottom:8px; color:var(--green-deep); }
+    .sunday-contact-card a { color:var(--terra); text-decoration:none; font-weight:600; }
+    @media (max-width:900px) {
+      .sunday-photo-grid, .sunday-class-grid, .sunday-contact-grid { grid-template-columns:1fr; }
+      .sunday-photo-card { transform:none; }
+      .sunday-photo-card img { height:260px; }
+    }
+  </style>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 
 <section class="page-hero">
   <div class="page-hero-eyebrow"><span class="sec-tag-dot"></span> Sunday Art</div>
-  <h1>週日玩藝術</h1>
-  <p>把週日留給孩子的好奇心。用顏色、材料、故事與身體探索，陪孩子在假日裡打開感受與想像。</p>
-  <div class="hero-note">假日藝術探索 · 感官創作 · 親子共享</div>
+  <h1>個性化創意畫布</h1>
+  <p>這次還有親子組！歡迎大人小孩一起來玩。用壓克力、長型畫布與自由創作，讓孩子把想像畫成獨一無二的作品。</p>
+  <div class="hero-note">6/28（日）限定場次 · 個人創作 · 親子同樂</div>
 </section>
 
 <div class="wave" style="background:var(--beige)"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" height="56"><path d="M0,0 L0,36 Q360,56 720,24 Q1080,0 1440,36 L1440,0Z" fill="white"/></svg></div>
 
 <section class="inner-section">
   <div class="section-head center">
-    <div class="sec-tag"><span class="sec-tag-dot"></span> 假日裡的創作時光</div>
-    <h2 class="sec-h2">不急著完成作品，<br>而是讓孩子玩出自己的想法</h2>
-    <p class="section-intro">週日玩藝術適合想在假日安排藝術體驗的家庭。課程會依主題帶入繪本、自然材料、感官媒材與開放式創作，讓孩子在輕鬆的節奏裡探索。</p>
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 本週主題</div>
+    <h2 class="sec-h2">在畫布上自由玩色，<br>把想像變成孩子自己的風格</h2>
+    <p class="section-intro">這是一場適合假日參與的壓克力畫布創作。孩子可以自由創作、發揮想像；親子組也能一起完成大尺寸畫布，留下共同創作的週日記憶。</p>
   </div>
-  <div class="feature-grid">
-    <article class="feature-card fade-up"><div class="feature-num">01 · Sense</div><span class="feature-icon">✦</span><h3>感官探索</h3><p>從顏色、觸感、聲音與身體經驗出發，讓孩子用最自然的方式進入創作。</p></article>
-    <article class="feature-card fade-up d1"><div class="feature-num">02 · Story</div><span class="feature-icon">⌁</span><h3>故事引導</h3><p>用繪本與情境開啟想像，讓孩子把看見的、想到的、感受到的轉成作品。</p></article>
-    <article class="feature-card fade-up d2"><div class="feature-num">03 · Create</div><span class="feature-icon">◌</span><h3>自由創作</h3><p>沒有標準答案，也不追求範本完成度，而是陪孩子練習選擇與表達。</p></article>
+  <div class="sunday-photo-grid">
+    <article class="sunday-photo-card fade-up" style="--tilt:-1.5deg"><img src="assets/sunday-art/sunday-free-creation.jpg" alt="孩子在顏料盤前自由創作壓克力畫布"><span>自由創作</span></article>
+    <article class="sunday-photo-card fade-up d1" style="--tilt:1deg"><img src="assets/sunday-art/sunday-imagination.jpg" alt="孩子專注使用畫筆在畫布上創作"><span>發揮想像</span></article>
+    <article class="sunday-photo-card fade-up d2" style="--tilt:-.8deg"><img src="assets/sunday-art/sunday-parent-child.jpg" alt="孩子們一起在大畫布上進行親子共創"><span>親子同樂</span></article>
+  </div>
+</section>
+
+<section class="inner-section alt">
+  <div class="section-head">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 場次資訊</div>
+    <h2 class="sec-h2">南屯與北屯，<br>各有不同創作形式</h2>
+    <p class="section-intro">請依孩子年齡與想參與的創作方式選擇場次。活動名額有限，建議先透過 LINE 索取報名表與最新名額。</p>
+  </div>
+  <div class="sunday-class-grid">
+    <article class="sunday-class-card fade-up">
+      <div class="sec-tag"><span class="sec-tag-dot"></span> 南屯豐樂教室</div>
+      <h3>個人壓克力創作</h3>
+      <ul class="sunday-info-list">
+        <li><span>年齡</span><strong>大班以上孩子</strong></li>
+        <li><span>日期</span><strong>6/28（日）10:00–11:30</strong></li>
+        <li><span>畫布</span><strong>29 × 20 公分長型畫布</strong></li>
+      </ul>
+    </article>
+    <article class="sunday-class-card fade-up d1">
+      <div class="sec-tag"><span class="sec-tag-dot"></span> 北屯昌平教室</div>
+      <h3>親子組壓克力創作</h3>
+      <ul class="sunday-info-list">
+        <li><span>年齡</span><strong>3 歲至幼兒園孩子</strong></li>
+        <li><span>日期</span><strong>6/28（日）10:00–12:00</strong></li>
+        <li><span>畫布</span><strong>100 × 70 公分長型畫布</strong></li>
+        <li><span>組合</span><strong>每組 2–4 人，大人與幼兒園孩子共同創作</strong></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="inner-section soft">
+  <div class="section-head center">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 報名前小提醒</div>
+    <h2 class="sec-h2">讓孩子玩得舒服，<br>也讓大人陪得剛剛好</h2>
+  </div>
+  <div class="sunday-note-list">
+    <p>一大一小、兩個人的組合，是最舒服的創作方式。</p>
+    <p>如果有兩位三歲以上幼兒園孩子，建議由兩位大人帶領，報名兩組個別創作。</p>
+    <p>三歲以下孩子不佔名額，需由家長於課程中安撫照護。</p>
+  </div>
+  <div class="sunday-contact-grid">
+    <article class="sunday-contact-card">
+      <h4>昌平教室</h4>
+      <p><a href="tel:04-22334859">04-22334859</a></p>
+      <p>台中市北屯區昌平路一段77號</p>
+    </article>
+    <article class="sunday-contact-card">
+      <h4>豐樂教室</h4>
+      <p><a href="tel:04-24752782">04-24752782</a></p>
+      <p>台中市南屯區文心南五路一段312號</p>
+    </article>
   </div>
 </section>
 
 <section class="inner-section alt">
   <div class="line-banner fade-up">
     <div>
-      <h2>想了解週日場次與主題？</h2>
-      <p>加入 LINE 告訴我們孩子年齡，我們會回覆最新週日活動安排。</p>
+      <h2>活動名額有限，歡迎官方 LINE 索取表單</h2>
+      <p>告訴我們想報名的教室、孩子年齡與參與人數，我們會協助確認適合場次。</p>
     </div>
-    <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-white">詢問週日玩藝術</a>
+    <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-white">索取報名表</a>
   </div>
 </section>
 

@@ -50,6 +50,7 @@ const FOOTER_HTML = `
         <li><a href="courses.html">課程介紹</a></li>
         <li><a href="works.html">學生成果</a></li>
         <li><a href="workshop.html">家長工作坊</a></li>
+        <li><a href="parent-peace.html">家長安心事</a></li>
         <li><a href="blog.html">部落格專欄</a></li>
         <li><a href="little-days.html">幼學小日子</a></li>
         <li><a href="sunday-art.html">週日玩藝術</a></li>

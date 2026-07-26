@@ -117,6 +117,24 @@
 .gift-card h3 { font-family:'Noto Serif TC',serif; font-size:22px; font-weight:400; margin-bottom:8px; }
 .gift-card p { color:var(--ink-mid); font-size:13.5px; line-height:1.8; }
 
+/* Parent Peace */
+.parent-peace-hero { background:linear-gradient(135deg,var(--green-pale),#fffaf1 72%); }
+.parent-peace-intro { background:white; }
+.parent-peace-wrap { max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1.05fr .95fr; gap:52px; align-items:center; }
+.peace-note-card { padding:38px; background:var(--yellow-light); }
+.peace-note-card span { display:inline-block; color:var(--terra-dark); font-size:12px; letter-spacing:.14em; margin-bottom:18px; }
+.peace-note-card p { font-family:'Noto Serif TC',serif; color:var(--green-deep); font-size:20px; line-height:2; }
+.parent-faq-grid { max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.parent-faq-card { padding:34px 32px; position:relative; overflow:hidden; }
+.parent-faq-card:nth-child(5) { grid-column:1 / -1; }
+.parent-faq-card::after { content:''; position:absolute; width:150px; height:150px; border-radius:45% 55% 60% 40%; right:-58px; top:-62px; background:var(--green-light); opacity:.75; }
+.parent-faq-card .faq-number { font-family:var(--font-display); color:var(--terra); font-size:18px; letter-spacing:.16em; margin-bottom:18px; position:relative; z-index:1; }
+.parent-faq-card h3 { font-family:'Noto Serif TC',serif; color:var(--ink); font-size:23px; font-weight:500; line-height:1.55; margin-bottom:14px; position:relative; z-index:1; }
+.parent-faq-card p { color:var(--ink-mid); font-size:15px; line-height:2; position:relative; z-index:1; }
+.parent-peace-cta { background:var(--beige); }
+.parent-peace-closing { max-width:860px; margin:0 auto; padding:42px 48px; text-align:center; background:var(--green-pale); }
+.parent-peace-closing p { font-family:'Noto Serif TC',serif; color:var(--green-deep); font-size:24px; line-height:2; }
+
 /* Blog */
 .category-nav { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
 .category-nav a { text-decoration:none; color:var(--green-deep); background:white; padding:10px 17px; border-radius:24px; font-size:12px; border:1px solid rgba(127,175,155,.22); }
@@ -527,6 +545,9 @@
   .little-core-grid,
   .little-pillars,
   .little-voice-grid { grid-template-columns:repeat(2,1fr); }
+  .parent-peace-wrap { grid-template-columns:1fr; gap:28px; }
+  .parent-faq-grid { grid-template-columns:1fr; }
+  .parent-faq-card:nth-child(5) { grid-column:auto; }
   .spring-gallery-head { grid-template-columns:1fr; gap:12px; }
   .spring-photo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .spring-photo-card.wide { grid-column:auto; }
@@ -576,6 +597,12 @@
   .little-feature-list article { grid-template-columns:1fr; gap:10px; padding:22px; }
   .little-feature-list article p { grid-column:auto; }
   .little-statement blockquote { padding:22px; font-size:16px; }
+  .peace-note-card,
+  .parent-faq-card,
+  .parent-peace-closing { padding:28px 24px; }
+  .peace-note-card p { font-size:17px; }
+  .parent-faq-card h3 { font-size:20px; }
+  .parent-peace-closing p { font-size:19px; }
   .spring-gallery-group { margin-bottom:56px; }
   .spring-photo-grid { grid-template-columns:1fr; gap:14px; }
   .spring-photo-card,

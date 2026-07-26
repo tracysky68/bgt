@@ -14,6 +14,7 @@ const NAV_HTML = `
   <ul class="nav-links">
     <li><a href="about.html">關於我們</a></li>
     <li><a href="courses.html">課程介紹</a></li>
+    <li><a href="current-themes.html">最新主題</a></li>
     <li><a href="works.html">學生成果</a></li>
     <li><a href="workshop.html">家長工作坊</a></li>
     <li><a href="blog.html">部落格</a></li>
@@ -48,6 +49,7 @@ const FOOTER_HTML = `
       <ul>
         <li><a href="about.html">關於我們</a></li>
         <li><a href="courses.html">課程介紹</a></li>
+        <li><a href="current-themes.html">最新主題</a></li>
         <li><a href="works.html">學生成果</a></li>
         <li><a href="workshop.html">家長工作坊</a></li>
         <li><a href="booking.html">預約與聯絡</a></li>

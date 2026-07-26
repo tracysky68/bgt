@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>大綠地藝術｜課前小觀察</title>
+    <meta name="description" content="大綠地藝術官方 LINE 專屬課前小觀察入口，協助老師在第一堂課前理解孩子的情緒、表達、互動與學習節奏。" />
+    <link rel="canonical" href="https://bgtkidart.com.tw/pre-class-observation.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:site_name" content="大綠地兒童藝術 Big Green Team" />
+    <meta property="og:title" content="大綠地藝術｜課前小觀察" />
+    <meta property="og:description" content="官方 LINE 專屬入口。這不是考試，而是讓老師在第一堂課前先看見孩子。" />
+    <meta property="og:url" content="https://bgtkidart.com.tw/pre-class-observation.html" />
+    <link rel="stylesheet" href="assets/pre-class-observation/pre-class-observation.css?v=official-hidden-1" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div>
+          <div class="brand-lockup" aria-label="大綠地藝術 Big Green Team">
+            <img src="assets/pre-class-observation/big-green-team-logo-cutout.png" alt="大綠地藝術 Big Green Team" />
+          </div>
+          <p class="eyebrow">官方 LINE 專屬入口</p>
+          <h1>課前小觀察</h1>
+          <p class="hero-copy">
+            這不是考試，也不是替孩子貼標籤。大綠地想在第一堂課前，
+            先理解孩子怎麼感受、怎麼表達、怎麼互動、怎麼學習。
+          </p>
+        </div>
+        <div class="hero-note doodle-card">
+          <span>約 3-5 分鐘</span>
+          <strong>12 題完成孩子藝術學習畫像</strong>
+          <img class="hero-drawing" src="assets/pre-class-observation/tracy-clean-cutout.png" alt="" aria-hidden="true" />
+        </div>
+      </header>
+
+      <section class="intro-panel" aria-label="課前小觀察說明">
+        <article>
+          <div class="tiny-icon pencil" aria-hidden="true"></div>
+          <strong>讓老師更快認識孩子</strong>
+          <p>第一堂課前，老師先知道孩子需要暖身、探索、安定，還是被看見。</p>
+        </article>
+        <article>
+          <div class="tiny-icon palette" aria-hidden="true"></div>
+          <strong>讓家長理解學習狀態</strong>
+          <p>完成後會看到一份溫暖的孩子藝術學習畫像，而不是冷冰冰分數。</p>
+        </article>
+        <article>
+          <div class="tiny-icon tape" aria-hidden="true"></div>
+          <strong>成為成長地圖的起點</strong>
+          <p>之後可以和課堂觀察串起來，看見孩子在藝術學習中的變化。</p>
+        </article>
+      </section>
+
+      <form id="assessmentForm" class="assessment-form">
+        <section class="panel">
+          <div class="section-title">
+            <p>Step 1</p>
+            <h2>孩子基本資料</h2>
+          </div>
+          <div class="field-grid">
+            <label>
+              孩子姓名
+              <input name="childName" required placeholder="例：林小安" autocomplete="name" />
+            </label>
+            <label>
+              出生年月日
+              <input id="birthdateInput" name="birthdate" type="date" required />
+            </label>
+            <div id="versionNotice" class="version-notice" role="status">
+              請選擇孩子出生年月日，系統會自動帶入適合的觀察題目。
+            </div>
+            <label>
+              想就讀或已預約教室
+              <select name="campus" required>
+                <option value="">請選擇</option>
+                <option>昌平教室</option>
+                <option>豐樂教室</option>
+                <option>尚未確定</option>
+              </select>
+            </label>
+            <label>
+              目前狀態
+              <select name="status" required>
+                <option value="">請選擇</option>
+                <option>尚未預約</option>
+                <option>已預約體驗</option>
+                <option>已報名課程</option>
+                <option>舊生回填</option>
+              </select>
+            </label>
+            <label>
+              家長姓名
+              <input name="parentName" required placeholder="例：林媽媽" autocomplete="name" />
+            </label>
+            <label>
+              聯絡電話
+              <input name="phone" required placeholder="例：0912-345-678" inputmode="tel" autocomplete="tel" />
+            </label>
+            <label>
+              LINE 顯示名稱
+              <input name="lineName" placeholder="例：小安媽媽" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">
+            <p>Step 2</p>
+            <h2>12 題課前小觀察</h2>
+            <span id="questionSetLabel">依孩子年齡自動切換版本</span>
+          </div>
+          <div class="observation-map" aria-label="觀察面向">
+            <span>情緒狀態</span>
+            <span>表達方式</span>
+            <span>互動習慣</span>
+            <span>學習節奏</span>
+          </div>
+          <div id="questionList" class="question-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">
+            <p>Step 3</p>
+            <h2>給老師的補充</h2>
+          </div>
+          <label>
+            孩子最近最喜歡做什麼？
+            <textarea name="interest" rows="3" placeholder="例：畫怪獸、玩黏土、剪貼、說故事"></textarea>
+          </label>
+          <label>
+            孩子在學習或創作時，最容易卡住的是什麼？
+            <textarea name="stuckPoint" rows="3" placeholder="例：怕畫錯、很在意不像、需要大人陪在旁邊"></textarea>
+          </label>
+          <label>
+            第一堂課希望老師特別留意的地方
+            <textarea name="teacherNote" rows="3" placeholder="例：剛開始會比較慢熟，請老師先給他一點觀察時間"></textarea>
+          </label>
+        </section>
+
+        <div class="form-actions">
+          <p>此測試版會在本頁產生結果，不會送出到伺服器。</p>
+          <button type="submit">看孩子的藝術學習畫像</button>
+        </div>
+      </form>
+
+      <section id="resultPanel" class="result-panel" hidden>
+        <div class="result-card">
+          <p class="eyebrow">孩子的藝術學習畫像</p>
+          <h2 id="resultTitle"></h2>
+          <p id="resultText"></p>
+
+          <div class="type-chips" id="typeChips" aria-label="孩子狀態"></div>
+
+          <div class="summary-grid">
+            <article>
+              <span>孩子可能需要的支持</span>
+              <strong id="supportTip"></strong>
+            </article>
+            <article>
+              <span>大綠地老師會如何陪伴</span>
+              <strong id="teacherTip"></strong>
+            </article>
+            <article>
+              <span>第一堂課建議</span>
+              <strong id="firstClassTip"></strong>
+            </article>
+            <article>
+              <span>需要避免</span>
+              <strong id="avoidTip"></strong>
+            </article>
+          </div>
+
+          <div class="teacher-summary">
+            <h3>老師課前摘要</h3>
+            <pre id="teacherSummary"></pre>
+          </div>
+
+          <div class="result-actions">
+            <button id="restartButton" type="button">重新填寫</button>
+            <button id="copySummaryButton" type="button">複製老師摘要</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="assets/pre-class-observation/pre-class-observation.js"></script>
+  </body>
+</html>

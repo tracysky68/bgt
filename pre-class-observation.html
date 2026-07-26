@@ -138,11 +138,15 @@
             第一堂課希望老師特別留意的地方
             <textarea name="teacherNote" rows="3" placeholder="例：剛開始會比較慢熟，請老師先給他一點觀察時間"></textarea>
           </label>
+          <label class="consent-check">
+            <input name="privacyConsent" type="checkbox" required />
+            <span>我同意將以上資料提供給大綠地藝術老師作為課前理解與課程安排使用。</span>
+          </label>
         </section>
 
         <div class="form-actions">
-          <p>此測試版會在本頁產生結果，不會送出到伺服器。</p>
-          <button type="submit">看孩子的藝術學習畫像</button>
+          <p id="submissionStatus">送出後會產生孩子藝術學習畫像，並同步提供給老師作為課前參考。</p>
+          <button id="submitButton" type="submit">送出並看孩子的藝術學習畫像</button>
         </div>
       </form>
 
@@ -185,6 +189,7 @@
         </div>
       </section>
     </main>
+    <script src="assets/pre-class-observation/pre-class-observation-config.js?v=backend-1"></script>
     <script src="assets/pre-class-observation/pre-class-observation.js"></script>
   </body>
 </html>

@@ -297,6 +297,25 @@ textarea {
   resize: vertical;
 }
 
+.consent-check {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(15, 91, 59, 0.14);
+  border-radius: 16px;
+  line-height: 1.6;
+}
+
+.consent-check input {
+  width: auto;
+  min-height: 0;
+  margin-top: 5px;
+  accent-color: var(--green);
+}
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -399,6 +418,13 @@ textarea:focus {
   border-radius: 999px;
   font-weight: 900;
   box-shadow: 0 7px 0 rgba(147, 69, 18, 0.23);
+}
+
+.form-actions button:disabled {
+  cursor: progress;
+  opacity: 0.72;
+  box-shadow: none;
+  transform: translateY(3px);
 }
 
 .result-card {

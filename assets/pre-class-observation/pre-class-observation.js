@@ -251,6 +251,9 @@ const questionSets = {
   }
 };
 
+const appConfig = window.BGT_PRECLASS_CONFIG || {};
+const submissionEndpoint = appConfig.submissionEndpoint || "";
+
 const profiles = {
   observer: {
     name: "觀察暖身型",
@@ -318,6 +321,8 @@ const birthdateInput = document.querySelector("#birthdateInput");
 const versionNotice = document.querySelector("#versionNotice");
 const questionSetLabel = document.querySelector("#questionSetLabel");
 const typeChips = document.querySelector("#typeChips");
+const submissionStatus = document.querySelector("#submissionStatus");
+const submitButton = document.querySelector("#submitButton");
 
 let currentVersion = "preschool";
 
@@ -459,14 +464,79 @@ function buildTeacherSummary(formData, age, result) {
   ].join("\n");
 }
 
-birthdateInput.addEventListener("change", updateVersionNotice);
+function buildSubmissionPayload(formData, age, result, summary) {
+  const primaryProfile = profiles[result.primary];
+  const secondaryProfile = profiles[result.secondary];
+  const questions = questionSets[currentVersion].questions;
+  const answers = questions.map((question, index) => {
+    const value = formData.get(`q${index + 1}`);
+    const selected = question.choices.find(([choiceValue]) => choiceValue === value);
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formData = new FormData(form);
+    return {
+      number: index + 1,
+      area: question.area,
+      question: question.text,
+      type: value,
+      typeLabel: typeLabels[value],
+      answer: selected ? selected[1] : ""
+    };
+  });
+
+  return {
+    submittedAt: new Date().toISOString(),
+    source: "bgtkidart.com.tw/pre-class-observation.html",
+    childName: formData.get("childName"),
+    birthdate: formData.get("birthdate"),
+    age,
+    version: questionSets[currentVersion].label,
+    campus: formData.get("campus"),
+    status: formData.get("status"),
+    parentName: formData.get("parentName"),
+    phone: formData.get("phone"),
+    lineName: formData.get("lineName") || "",
+    interest: formData.get("interest") || "",
+    stuckPoint: formData.get("stuckPoint") || "",
+    teacherNote: formData.get("teacherNote") || "",
+    primaryType: primaryProfile.name,
+    secondaryType: secondaryProfile.name,
+    scores: result.scores,
+    scoreLine: result.ranked.map(([type, count]) => `${typeLabels[type]} ${count}`).join(" / "),
+    supportTip: primaryProfile.supportTip,
+    teacherTip: primaryProfile.teacherTip,
+    firstClassTip: primaryProfile.firstClassTip,
+    avoidTip: primaryProfile.avoidTip,
+    teacherSummary: summary,
+    answers
+  };
+}
+
+async function submitObservation(payload) {
+  if (!submissionEndpoint) {
+    return { ok: false, skipped: true };
+  }
+
+  await fetch(submissionEndpoint, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  return { ok: true };
+}
+
+function setSubmissionState(state, message) {
+  if (submissionStatus) submissionStatus.textContent = message;
+  if (!submitButton) return;
+
+  submitButton.disabled = state === "submitting";
+  submitButton.textContent = state === "submitting" ? "送出中..." : "送出並看孩子的藝術學習畫像";
+}
+
+function showResult(formData, age, result, summary) {
   const childName = formData.get("childName");
-  const age = getAge(formData.get("birthdate"));
-  const result = score(formData);
   const primaryProfile = profiles[result.primary];
 
   resultTitle.textContent = `${childName}目前比較像是「${primaryProfile.name}」`;
@@ -475,12 +545,42 @@ form.addEventListener("submit", (event) => {
   teacherTip.textContent = primaryProfile.teacherTip;
   firstClassTip.textContent = primaryProfile.firstClassTip;
   avoidTip.textContent = primaryProfile.avoidTip;
-  teacherSummary.textContent = buildTeacherSummary(formData, age, result);
+  teacherSummary.textContent = summary;
   renderTypeChips(result);
 
   form.hidden = true;
   resultPanel.hidden = false;
   resultPanel.scrollIntoView({ behavior: "smooth" });
+}
+
+birthdateInput.addEventListener("change", updateVersionNotice);
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  const age = getAge(formData.get("birthdate"));
+  const result = score(formData);
+  const summary = buildTeacherSummary(formData, age, result);
+  const payload = buildSubmissionPayload(formData, age, result, summary);
+
+  setSubmissionState("submitting", "正在送出給老師端...");
+
+  try {
+    const submitResult = await submitObservation(payload);
+    if (submitResult.skipped) {
+      setSubmissionState(
+        "idle",
+        "目前尚未填入 Google Apps Script 後端網址，結果只會在本頁顯示。"
+      );
+    } else {
+      setSubmissionState("idle", "已送出，老師端稍後即可看到這筆課前觀察。");
+    }
+  } catch (error) {
+    console.error(error);
+    setSubmissionState("idle", "送出時遇到網路問題，請稍後再試或截圖提供給老師。");
+  }
+
+  showResult(formData, age, result, summary);
 });
 
 restartButton.addEventListener("click", () => {
@@ -490,6 +590,7 @@ restartButton.addEventListener("click", () => {
   updateVersionNotice();
   form.hidden = false;
   resultPanel.hidden = true;
+  setSubmissionState("idle", "送出後會產生孩子藝術學習畫像，並同步提供給老師作為課前參考。");
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 

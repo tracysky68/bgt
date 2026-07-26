@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>大綠地藝術｜老師課前觀察</title>
+    <link rel="stylesheet" href="assets/pre-class-observation/pre-class-observation.css?v=official-hidden-1" />
+    <link rel="stylesheet" href="assets/pre-class-observation/teacher-observations.css?v=backend-1" />
+  </head>
+  <body>
+    <main class="page-shell teacher-page">
+      <header class="hero teacher-hero">
+        <div>
+          <div class="brand-lockup" aria-label="大綠地藝術 Big Green Team">
+            <img src="assets/pre-class-observation/big-green-team-logo-cutout.png" alt="大綠地藝術 Big Green Team" />
+          </div>
+          <p class="eyebrow">老師端</p>
+          <h1>課前觀察紀錄</h1>
+          <p class="hero-copy">快速看見孩子的主要類型、輔助特質與第一堂課提醒。</p>
+        </div>
+      </header>
+
+      <section class="panel teacher-login">
+        <div class="section-title">
+          <p>Teacher</p>
+          <h2>讀取觀察資料</h2>
+        </div>
+        <div class="teacher-controls">
+          <label>
+            老師查詢密碼
+            <input id="teacherKeyInput" type="password" placeholder="輸入老師查詢密碼" autocomplete="current-password" />
+          </label>
+          <button id="loadObservationsButton" type="button">讀取資料</button>
+        </div>
+        <p id="teacherStatus" class="teacher-status">尚未連線 Google Sheet 後端。</p>
+      </section>
+
+      <section class="panel teacher-tools" hidden>
+        <input id="teacherSearchInput" type="search" placeholder="搜尋孩子姓名、家長、電話、類型或教室" />
+      </section>
+
+      <section id="observationList" class="teacher-list" aria-label="課前觀察列表"></section>
+    </main>
+
+    <script src="assets/pre-class-observation/pre-class-observation-config.js?v=backend-1"></script>
+    <script src="assets/pre-class-observation/teacher-observations.js?v=backend-1"></script>
+  </body>
+</html>

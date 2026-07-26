@@ -1,0 +1,137 @@
+.teacher-page .hero {
+  min-height: 280px;
+}
+
+.teacher-page .hero h1 {
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+}
+
+.teacher-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.teacher-controls button,
+.teacher-card button {
+  min-height: 46px;
+  padding: 0 18px;
+  color: #fff;
+  background: var(--orange);
+  border: 0;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.teacher-status {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 800;
+}
+
+.teacher-tools {
+  margin-top: 16px;
+}
+
+.teacher-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.teacher-card {
+  padding: 18px;
+  background: var(--paper);
+  border: 5px solid var(--scratch);
+  outline: 2px dashed rgba(255, 255, 255, 0.86);
+  outline-offset: -9px;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.teacher-card header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.teacher-card h3 {
+  margin: 0;
+  color: var(--green);
+  font-size: 1.35rem;
+}
+
+.teacher-card time {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.teacher-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.teacher-meta span {
+  padding: 7px 10px;
+  color: var(--green);
+  background: #fff;
+  border: 2px solid rgba(15, 91, 59, 0.12);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.teacher-note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.teacher-note-grid article {
+  padding: 14px;
+  background: var(--paper-light);
+  border: 3px solid #fff;
+  border-radius: 16px;
+}
+
+.teacher-note-grid span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.teacher-note-grid strong {
+  display: block;
+  margin-top: 7px;
+  line-height: 1.55;
+}
+
+.teacher-summary-text {
+  margin: 14px 0;
+  padding: 14px;
+  white-space: pre-wrap;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(15, 91, 59, 0.96), rgba(48, 105, 82, 0.96));
+  border-radius: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .teacher-controls,
+  .teacher-note-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-controls button {
+    width: 100%;
+  }
+}

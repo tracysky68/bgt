@@ -492,7 +492,7 @@ function buildSubmissionPayload(formData, age, result, summary) {
     campus: formData.get("campus"),
     status: formData.get("status"),
     parentName: formData.get("parentName"),
-    phone: formData.get("phone"),
+    phone: formatSheetText(formData.get("phone")),
     lineName: formData.get("lineName") || "",
     interest: formData.get("interest") || "",
     stuckPoint: formData.get("stuckPoint") || "",
@@ -508,6 +508,11 @@ function buildSubmissionPayload(formData, age, result, summary) {
     teacherSummary: summary,
     answers
   };
+}
+
+function formatSheetText(value) {
+  const text = String(value || "").trim();
+  return text ? `'${text}` : "";
 }
 
 async function submitObservation(payload) {

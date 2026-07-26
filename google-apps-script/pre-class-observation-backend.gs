@@ -1,5 +1,6 @@
+const SHEET_ID = "1zItOncVHBLgDqbxyTdeWyB1laWdHPhUWQlJGblG-WXk";
 const SHEET_NAME = "課前小觀察";
-const DEFAULT_TEACHER_KEY = "請改成老師查詢密碼";
+const DEFAULT_TEACHER_KEY = "BGTobserve2026";
 
 const COLUMNS = [
   "填寫時間",
@@ -39,7 +40,7 @@ function doPost(e) {
       payload.campus || "",
       payload.status || "",
       payload.parentName || "",
-      payload.phone || "",
+      formatSheetText_(payload.phone),
       payload.lineName || "",
       payload.primaryType || "",
       payload.secondaryType || "",
@@ -102,10 +103,8 @@ function setupPreClassObservationSheet() {
 
 function getSheet_() {
   const properties = PropertiesService.getScriptProperties();
-  const sheetId = properties.getProperty("SHEET_ID");
-  const spreadsheet = sheetId
-    ? SpreadsheetApp.openById(sheetId)
-    : SpreadsheetApp.getActiveSpreadsheet();
+  const sheetId = properties.getProperty("SHEET_ID") || SHEET_ID;
+  const spreadsheet = SpreadsheetApp.openById(sheetId);
 
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
   if (!sheet) sheet = spreadsheet.insertSheet(SHEET_NAME);
@@ -144,4 +143,10 @@ function formatValue_(value) {
     return Utilities.formatDate(value, "Asia/Taipei", "yyyy/MM/dd HH:mm:ss");
   }
   return value === null || value === undefined ? "" : String(value);
+}
+
+function formatSheetText_(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  return text.startsWith("'") ? text : `'${text}`;
 }

@@ -13,7 +13,9 @@
     .cs-section{padding:86px 80px;background:white}
     .cs-section.alt{background:var(--beige)}
     .cs-wrap{max-width:1120px;margin:0 auto}
-    .cs-lead{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,46px);line-height:1.55;color:var(--ink);letter-spacing:.04em}
+    .cs-lead{font-family:var(--font-serif);font-size:clamp(30px,3.2vw,44px);line-height:1.45;color:var(--ink);letter-spacing:.02em}
+    .cs-lead .line{display:block;white-space:nowrap}
+    .cs-process-title{white-space:nowrap;font-size:clamp(34px,5vw,64px);letter-spacing:.02em}
     .cs-copy{font-size:16px;line-height:2;color:var(--ink-mid);max-width:780px}
     .cs-flow{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0}
     .cs-flow span{background:white;border:1px solid rgba(127,175,155,.28);border-radius:999px;padding:12px 18px;color:var(--green-deep);font-weight:600}
@@ -31,7 +33,7 @@
     .cs-case ul{display:grid;gap:10px;list-style:none}
     .cs-case li{background:rgba(255,255,255,.1);border-radius:999px;padding:10px 14px;color:white;font-size:14px}
     @media(max-width:1000px){.cs-section{padding:68px 36px}.cs-grid{grid-template-columns:repeat(2,1fr)}.cs-two,.cs-case{grid-template-columns:1fr}}
-    @media(max-width:680px){.cs-section{padding:56px 20px}.cs-grid{grid-template-columns:1fr}.cs-case{padding:30px 22px}}
+    @media(max-width:680px){.cs-section{padding:56px 20px}.cs-grid{grid-template-columns:1fr}.cs-case{padding:30px 22px}.cs-lead .line,.cs-process-title{white-space:normal}.cs-process-title{font-size:clamp(28px,9vw,40px)}}
   </style>
 </head>
 <body>
@@ -51,7 +53,7 @@
   <div class="cs-wrap cs-two">
     <div>
       <div class="sec-tag"><span class="sec-tag-dot"></span> 核心定義</div>
-      <h2 class="cs-lead">孩子不是只需要畫得像，<br>而是需要能把想法做出來。</h2>
+      <h2 class="cs-lead"><span class="line">孩子不是只需要畫得像，</span><span class="line">而是需要能把想法做出來。</span></h2>
     </div>
     <div class="cs-copy">
       <p>在 AI 可以快速生成圖像的時代，孩子更需要的不是只記住步驟，而是能感受、選擇、判斷、調整，最後說明自己的想法。</p>
@@ -64,7 +66,7 @@
   <div class="cs-wrap">
     <div class="section-head center">
       <div class="sec-tag"><span class="sec-tag-dot"></span> 五步歷程</div>
-      <h2 class="sec-h2">感知 → 構想 → 實作 → 解題 → 表達</h2>
+      <h2 class="sec-h2 cs-process-title">感知 → 構想 → 實作 → 解題 → 表達</h2>
       <p class="section-intro">創感力不是抽象口號，而是一套在課堂中可以被看見的學習歷程。</p>
     </div>
     <div class="cs-grid">

@@ -38,14 +38,54 @@
 </section>
 
 <section class="inner-section">
+  <div class="section-head center">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 預約與聯絡</div>
+    <h2 class="sec-h2">你現在想做的是哪一件事？</h2>
+    <p class="section-intro">家長、現有學員、園所與老師的需求不同，我們先幫你分流到最適合的入口。</p>
+  </div>
+  <div class="contact-grid">
+    <article class="studio-card organic-card fade-up">
+      <h3>新生預約體驗</h3>
+      <p class="section-intro" style="margin:0 0 18px">想讓孩子先感受大綠地的課堂，可以加入 LINE 告訴我們孩子年齡與方便時段。</p>
+      <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra">我要預約體驗</a>
+    </article>
+    <article class="studio-card organic-card fade-up d1">
+      <h3>我想先問課程</h3>
+      <p class="section-intro" style="margin:0 0 18px">還不確定孩子適合哪一種課？可以先填課前小觀察，老師會依孩子狀態協助建議。</p>
+      <a href="pre-class-observation.html" class="btn btn-terra">填寫課前小觀察</a>
+    </article>
+    <article class="studio-card organic-card fade-up d2">
+      <h3>現有學員</h3>
+      <p class="section-intro" style="margin:0 0 18px">需要請假、補課、確認課表或詢問當期活動，請直接透過 LINE 聯絡教室。</p>
+      <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra">聯絡教室</a>
+    </article>
+    <article class="studio-card organic-card fade-up">
+      <h3>師資培訓</h3>
+      <p class="section-intro" style="margin:0 0 18px">如果你是老師、教育工作者或想了解創感力師培，可以先閱讀師培頁面。</p>
+      <a href="teacher-training.html" class="btn btn-terra">了解師資培訓</a>
+    </article>
+    <article class="studio-card organic-card fade-up d1">
+      <h3>園所合作</h3>
+      <p class="section-intro" style="margin:0 0 18px">幼兒園、學校或親子館若想安排藝術課程、親子活動或教師研習，歡迎來訊討論。</p>
+      <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra">詢問合作</a>
+    </article>
+    <article class="studio-card organic-card fade-up d2">
+      <h3>想先了解理念</h3>
+      <p class="section-intro" style="margin:0 0 18px">可以先從創感力、兒童課程與家長安心事開始，看大綠地怎麼陪孩子創作。</p>
+      <a href="creansense.html" class="btn btn-terra">認識創感力</a>
+    </article>
+  </div>
+</section>
+
+<section class="inner-section">
   <div class="form-wrap">
-    <div class="fade-up"><div class="sec-tag"><span class="sec-tag-dot"></span> 聯繫表單</div><h2 class="sec-h2">留下你的問題，<br>我們會盡快回覆</h2><p class="section-intro">此網站目前為原型版本，送出後會顯示完成提示；正式上線前可再串接 Email 或表單服務。</p></div>
+    <div class="fade-up"><div class="sec-tag"><span class="sec-tag-dot"></span> 聯繫表單</div><h2 class="sec-h2">留下你的問題，<br>我們會盡快回覆</h2><p class="section-intro">如果你不方便立刻加入 LINE，也可以先留下想詢問的內容，我們會依你提供的資訊協助回覆。</p></div>
     <form class="contact-form organic-card fade-up d1" id="contactForm">
       <div class="form-grid">
         <div class="field"><label for="name">家長姓名 *</label><input id="name" name="name" required></div>
         <div class="field"><label for="phone">聯絡電話 *</label><input id="phone" name="phone" type="tel" required></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email"></div>
-        <div class="field"><label for="age">孩子年齡</label><select id="age" name="age"><option value="">請選擇</option><option>2–5 歲</option><option>5–8 歲</option><option>8–12 歲</option><option>家長工作坊</option></select></div>
+        <div class="field"><label for="age">詢問類型</label><select id="age" name="age"><option value="">請選擇</option><option>2–3 歲寶寶塗鴉</option><option>3–4 歲感官啟蒙</option><option>4–6 歲幼兒班</option><option>7–9 歲兒童班</option><option>9 歲以上創意技法班</option><option>家長工作坊</option><option>師資培訓</option><option>園所合作</option></select></div>
         <div class="field full"><label for="message">想詢問的內容 *</label><textarea id="message" name="message" required placeholder="例如：想詢問 5 歲孩子的體驗課與平日時段"></textarea></div>
       </div>
       <button type="submit" class="btn btn-terra" style="border:0;margin-top:22px">送出詢問</button>
@@ -69,7 +109,7 @@
 <script>
 document.getElementById('contactForm').addEventListener('submit', function (event) {
   event.preventDefault();
-  document.getElementById('formStatus').textContent = '已收到你的詢問！原型版尚未連接寄信服務，正式上線前會完成串接。';
+  document.getElementById('formStatus').textContent = '已收到你的詢問提醒。若是急件，建議也可以直接加入 LINE 官方帳號，我們會更快協助你。';
   document.getElementById('formStatus').style.color = 'var(--green-deep)';
 });
 </script>

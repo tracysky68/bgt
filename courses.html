@@ -4,11 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>課程介紹｜台中兒童美術班・2–9歲分齡課程</title>
-  <meta name="description" content="大綠地兒童藝術提供2–9歲分齡美術課程，融合48種歐洲藝術方法與八大主題，台中昌平・豐樂教室開課中，立即預約兒童美術體驗課！">
+  <meta name="description" content="大綠地兒童藝術提供2–9歲分齡美術課程，融合48種創作引導方法與八大主題，台中昌平・豐樂教室開課中，立即預約兒童美術體驗課！">
   <link rel="canonical" href="https://bgtkidart.com.tw/courses.html">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css?v=20260605-type">
   <style>
+    .course-info-sec {
+      background: var(--green-pale);
+      padding: 86px 80px;
+    }
+    .course-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 34px;
+    }
+    .course-info-card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(127,175,155,.24);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(46,42,36,.05);
+    }
+    .course-info-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .course-info-card p {
+      color: var(--ink-mid);
+      font-size: 14px;
+      line-height: 1.9;
+    }
     .structure-sec {
       background: white;
       padding: 100px 80px;
@@ -321,7 +350,7 @@
 
     @media (max-width: 680px) {
       .structure-sec, .themes-sec, .age-sec, .methods-sec { padding: 58px 20px; }
-      .course-pillars, .themes-grid, .age-grid, .methods-cats { grid-template-columns: 1fr; }
+      .course-pillars, .themes-grid, .age-grid, .methods-cats, .course-info-grid { grid-template-columns: 1fr; }
       .age-card:last-child { grid-column: auto; }
       .structure-visual { padding: 28px 20px; }
       .sv-grid { grid-template-columns: repeat(3, 1fr); }
@@ -336,10 +365,10 @@
 <section class="page-hero" id="structure">
   <div class="page-hero-eyebrow"><span class="sec-tag-dot"></span> Course Introduction</div>
   <h1>課程介紹</h1>
-  <p>八大主題是孩子探索世界的內容脈絡，48 種歐洲藝術方法論是老師帶領創作的教學路徑；兩者會在每堂課中混合使用，讓孩子在自由中找到自己，在創作中建立自信。</p>
+  <p>八大主題是孩子探索世界的內容脈絡，48 種創作引導方法是老師帶領創作的教學路徑；兩者會在每堂課中混合使用，讓孩子在自由中找到自己，在創作中建立自信。</p>
   <div class="course-pillars">
     <a class="course-pillar" href="#themes"><span>01 · WHAT WE EXPLORE</span><strong>八大主題<br>課程內容脈絡</strong></a>
-    <a class="course-pillar" href="#methods"><span>02 · HOW WE GUIDE</span><strong>48 種歐洲藝術方法論<br>教學引導路徑</strong></a>
+    <a class="course-pillar" href="#methods"><span>02 · HOW WE GUIDE</span><strong>48 種創作引導方法<br>教學引導路徑</strong></a>
   </div>
 </section>
 
@@ -355,7 +384,7 @@
     <div class="structure-text fade-up">
       <div class="sec-tag"><span class="sec-tag-dot"></span> 課程架構</div>
       <h2 class="sec-h2">不是兩套分開的課，<br>而是 8 × 48 的混合式藝術課程</h2>
-      <p>我們的課程規劃以<span class="em">「八大主題」</span>與<span class="em">「獨家研發 48 種歐洲藝術方法論」</span>交織而成。八大主題提供孩子探索世界的內容與情境，48 種方法論則提供老師帶領孩子感受、思考與表達的創作路徑。</p>
+      <p>我們的課程規劃以<span class="em">「八大主題」</span>與<span class="em">「大綠地整理的 48 種創作引導方法」</span>交織而成。八大主題提供孩子探索世界的內容與情境，48 種創作引導方法則提供老師帶領孩子感受、思考與表達的創作路徑。</p>
       <p>也就是說，每一堂課都不是單純上一個主題，也不是只練一種技法，而是把「主題脈絡」與「方法引導」混合設計，讓孩子在生活中發現藝術，在藝術中學會生活。</p>
       <p>孩子不只是來完成作品，而是一步步在創作中建立自信，拓展理解力，慢慢成為一個能表達、能感受、也能同理他人的人。</p>
       <div class="fusion-box">
@@ -366,14 +395,14 @@
         <div class="fusion-plus">×</div>
         <div class="fusion-item">
           <span>HOW</span>
-          <strong>48 種方法論</strong>
+          <strong>48 種創作引導方法</strong>
         </div>
-        <div class="fusion-note">一堂大綠地課程 = 一個生活/文化主題 + 一組歐洲藝術教學方法，兩者一起形成孩子的創作經驗。</div>
+        <div class="fusion-note">一堂大綠地課程 = 一個生活/文化主題 + 一組創作引導方法，兩者一起形成孩子的創作經驗。</div>
       </div>
       <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra" style="margin-top:12px;display:inline-block">預約體驗課 →</a>
     </div>
     <div class="structure-visual fade-up d1">
-      <div class="sv-title">獨家研發 48 種歐洲藝術學派方法論</div>
+      <div class="sv-title">大綠地整理的 48 種創作引導方法</div>
       <div class="sv-grid">
         <div class="sv-item"><div class="num">8</div><div class="label">感官系</div></div>
         <div class="sv-item"><div class="num">8</div><div class="label">結構空間</div></div>
@@ -383,7 +412,7 @@
         <div class="sv-item"><div class="num">8</div><div class="label">自然生態</div></div>
       </div>
       <div style="margin-top:20px;text-align:center">
-        <div style="font-size:13px;color:var(--ink-light);line-height:1.8">融合義大利瑞吉歐 · 德國包浩斯<br>法國感知教育 · 當代歐洲藝術</div>
+        <div style="font-size:13px;color:var(--ink-light);line-height:1.8">從瑞吉歐教育、造形結構、感官探索<br>與當代創作觀點整理而成</div>
       </div>
     </div>
   </div>
@@ -395,7 +424,7 @@
     <div>
       <div class="sec-tag"><span class="sec-tag-dot"></span> 課程裡的真實材料</div>
       <h3>材料，是孩子靠近世界的入口</h3>
-      <p>八大主題與 48 種方法論會落在真實材料裡：繪本、自然物、顏料與開放式媒材，陪孩子慢慢建立自己的創作方法。</p>
+      <p>八大主題與 48 種創作引導方法會落在真實材料裡：繪本、自然物、顏料與開放式媒材，陪孩子慢慢建立自己的創作方法。</p>
     </div>
   </div>
 </section>
@@ -411,7 +440,7 @@
   <div class="themes-header">
     <div class="sec-tag"><span class="sec-tag-dot"></span> 第一軸：課程內容</div>
     <h2 class="sec-h2">八大主題法，<br>是孩子探索世界的內容脈絡</h2>
-    <p class="theme-method-note">八大主題不是獨立課程分類，而是每堂課的「內容地圖」。老師會在這些主題中，搭配 48 種歐洲藝術方法論，引導孩子用不同方式感受、思考與創作。</p>
+    <p class="theme-method-note">八大主題不是獨立課程分類，而是每堂課的「內容地圖」。老師會在這些主題中，搭配 48 種創作引導方法，引導孩子用不同方式感受、思考與創作。</p>
   </div>
   <div class="themes-grid">
     <a class="theme-card fade-up" href="theme-world-cultures.html">
@@ -564,9 +593,9 @@
 <section class="methods-sec" id="methods">
   <div class="methods-header">
     <div class="sec-tag"><span class="sec-tag-dot"></span> 第二軸：教學方法</div>
-    <h2 class="sec-h2">48 種歐洲藝術方法論，<br>是老師引導創作的路徑</h2>
-    <p style="font-size:16px;color:var(--ink-mid);max-width:620px;margin:0 auto;line-height:1.9">每個單元都會從八大主題中選擇內容，再搭配適合的歐洲教育觀點與藝術方法，讓孩子的學習有深厚的理論根基，也有豐富的實踐體驗。</p>
-    <p class="theme-method-note">簡單來說：八大主題回答「這堂課探索什麼」，48 種方法論回答「老師如何帶孩子創作」。兩者一起，才是大綠地完整的課程設計。</p>
+    <h2 class="sec-h2">48 種創作引導方法，<br>是老師引導創作的路徑</h2>
+    <p style="font-size:16px;color:var(--ink-mid);max-width:620px;margin:0 auto;line-height:1.9">每個單元都會從八大主題中選擇內容，再搭配適合的創作引導方法，讓孩子的學習有清楚脈絡，也有豐富的材料實踐。</p>
+    <p class="theme-method-note">簡單來說：八大主題回答「這堂課探索什麼」，48 種創作引導方法回答「老師如何帶孩子創作」。兩者一起，才是大綠地完整的課程設計。</p>
   </div>
   <div class="methods-cats">
     <div class="method-cat fade-up">
@@ -650,6 +679,26 @@
   </div>
   <div style="text-align:center">
     <a href="https://lin.ee/zJctveL" target="_blank" class="btn btn-terra">立即預約體驗課</a>
+  </div>
+</section>
+
+<section class="course-info-sec" id="course-info">
+  <div class="section-head center">
+    <div class="sec-tag"><span class="sec-tag-dot"></span> 家長報名前可以先知道</div>
+    <h2 class="sec-h2">不只看課名，<br>也看孩子適不適合這個節奏</h2>
+    <p class="section-intro">每個孩子進入課堂的速度不同。大綠地會先從年齡、個性、是否需要陪伴、過去創作經驗與家長期待來協助安排。</p>
+  </div>
+  <div class="course-info-grid">
+    <article class="course-info-card fade-up"><h3>課程時間與班級人數</h3><p>每期課表會依昌平、豐樂兩間教室安排。小班制讓老師能觀察孩子狀態，也保留孩子彼此互相學習的空間。</p></article>
+    <article class="course-info-card fade-up d1"><h3>體驗課與材料準備</h3><p>新生可先預約兒童美術體驗課。一般課程材料由教室準備，特殊主題會在課前另行通知。</p></article>
+    <article class="course-info-card fade-up d2"><h3>孩子慢熟或怕生也可以嗎？</h3><p>可以。老師會先觀察孩子的進入方式，不急著要求完成作品，而是用故事、材料與提問慢慢建立安全感。</p></article>
+    <article class="course-info-card fade-up"><h3>家長是否需要陪同？</h3><p>會依孩子年齡與課程類型安排。年紀較小或親子共創課會保留陪伴空間，其他班級可先與老師討論。</p></article>
+    <article class="course-info-card fade-up d1"><h3>請假與補課</h3><p>請假、補課與期數規則會依當期班級公告為準。建議加入 LINE，由教室協助確認最新安排。</p></article>
+    <article class="course-info-card fade-up d2"><h3>如何選班？</h3><p>還不確定適合哪一班，可以先填寫課前小觀察，老師會依孩子年齡、狀態與家長需求給建議。</p></article>
+  </div>
+  <div style="text-align:center;margin-top:34px">
+    <a href="pre-class-observation.html" class="btn btn-terra">填寫課前小觀察</a>
+    <a href="contact.html" class="btn btn-outline" style="margin-left:10px">查看預約與聯絡</a>
   </div>
 </section>
 

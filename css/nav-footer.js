@@ -12,15 +12,17 @@ const NAV_HTML = `
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="about.html">關於我們</a></li>
-    <li><a href="courses.html">課程介紹</a></li>
+    <li><a href="creansense.html">認識創感力</a></li>
+    <li><a href="courses.html">兒童課程</a></li>
     <li><a href="current-themes.html">最新主題</a></li>
-    <li><a href="works.html">學生成果</a></li>
-    <li><a href="workshop.html">家長工作坊</a></li>
-    <li><a href="blog.html">部落格</a></li>
+    <li><a href="works.html">學習故事</a></li>
+    <li><a href="teacher-training.html">師資培訓</a></li>
     <li><a href="little-days.html">幼學小日子</a></li>
+    <li><a href="workshop.html">家長工作坊</a></li>
+    <li><a href="about.html">關於大綠地</a></li>
+    <li><a href="blog.html">部落格</a></li>
     <li><a href="sunday-art.html">週日玩藝術</a></li>
-    <li><a href="booking.html" class="nav-cta">預約與聯絡</a></li>
+    <li><a href="booking.html" class="nav-cta">聯絡／預約</a></li>
   </ul>
 </nav>`;
 
@@ -42,15 +44,17 @@ const FOOTER_HTML = `
           <span style="font-size:9.5px;font-weight:300;color:var(--green);letter-spacing:0.2em;text-transform:uppercase;display:block">Big Green Team</span>
         </div>
       </a>
-      <p>致力推廣兒童情緒藝術教育，陪孩子用創作感受生活、表達想法、釋放情緒。每個孩子的內在都有一片綠地，等待被看見。</p>
+      <p>大綠地以創感力教育法陪孩子透過藝術材料與開放式任務，練習感知、構想、實作、解題與表達，把想法一步一步做出來。</p>
     </div>
     <div class="footer-col">
       <h5>服務項目</h5>
       <ul>
-        <li><a href="about.html">關於我們</a></li>
-        <li><a href="courses.html">課程介紹</a></li>
+        <li><a href="creansense.html">認識創感力</a></li>
+        <li><a href="courses.html">兒童課程</a></li>
         <li><a href="current-themes.html">最新主題</a></li>
-        <li><a href="works.html">學生成果</a></li>
+        <li><a href="works.html">學習故事</a></li>
+        <li><a href="teacher-training.html">師資培訓</a></li>
+        <li><a href="about.html">關於大綠地</a></li>
         <li><a href="workshop.html">家長工作坊</a></li>
         <li><a href="booking.html">預約與聯絡</a></li>
         <li><a href="parent-peace.html">家長安心事</a></li>

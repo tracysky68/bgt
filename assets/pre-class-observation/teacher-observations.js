@@ -99,8 +99,7 @@ function renderObservations() {
           <div class="teacher-meta">
             <span>${escapeHtml(item["教室"] || "未填教室")}</span>
             <span>${escapeHtml(item["年齡"] || "未填年齡")} 歲</span>
-            <span>${escapeHtml(item["主要類型"] || "未分型")}</span>
-            <span>輔助：${escapeHtml(item["輔助特質"] || "未分型")}</span>
+            ${String(item["版本"] || "").includes("組合觀察 v2") ? '<span>情境綜合觀察（不分型）</span>' : `<span>${escapeHtml(item["主要類型"] || "未分型")}</span><span>輔助：${escapeHtml(item["輔助特質"] || "未分型")}</span>`}
           </div>
         </div>
         <time>${escapeHtml(item["填寫時間"] || "")}</time>

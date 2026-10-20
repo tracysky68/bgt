@@ -606,3 +606,15 @@ textarea:focus {
     width: 100%;
   }
 }
+
+/* Context-based observation v2 */
+.observation-followup { margin-top: 18px; padding: 16px; border: 2px solid var(--ink); border-radius: 16px; }
+.observation-followup[hidden], .observation-followup label[hidden] { display: none; }
+.observation-followup label { display: block; margin-top: 12px; }
+#resultText, .summary-grid strong { white-space: pre-line; }
+.domain-details { margin-top: 20px; }
+.domain-details summary { cursor: pointer; font-weight: 700; }
+#domainOverview article { margin-top: 14px; }
+#domainOverview p, #resultText, #uncertaintyNote { overflow-wrap: anywhere; }
+
+.hero-note .hero-drawing { position: static; display: block; margin: 12px 0 0 auto; width: 140px; }

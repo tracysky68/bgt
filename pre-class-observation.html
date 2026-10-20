@@ -13,7 +13,7 @@
     <meta property="og:title" content="大綠地藝術｜課前小觀察" />
     <meta property="og:description" content="官方 LINE 專屬入口。這不是考試，而是讓老師在第一堂課前先看見孩子。" />
     <meta property="og:url" content="https://bgtkidart.com.tw/pre-class-observation.html" />
-    <link rel="stylesheet" href="assets/pre-class-observation/pre-class-observation.css?v=official-hidden-1" />
+    <link rel="stylesheet" href="assets/pre-class-observation/pre-class-observation.css?v=combination-v2-20261020" />
   </head>
   <body>
     <main class="page-shell">
@@ -23,15 +23,15 @@
             <img src="assets/pre-class-observation/big-green-team-logo-cutout.png" alt="大綠地藝術 Big Green Team" />
           </div>
           <p class="eyebrow">官方 LINE 專屬入口</p>
-          <h1>課前小觀察</h1>
+          <h1>孩子的創作與學習準備小觀察</h1>
           <p class="hero-copy">
             這不是考試，也不是替孩子貼標籤。大綠地想在第一堂課前，
             先理解孩子怎麼感受、怎麼表達、怎麼互動、怎麼學習。
           </p>
         </div>
         <div class="hero-note doodle-card">
-          <span>約 3-5 分鐘</span>
-          <strong>12 題完成孩子藝術學習畫像</strong>
+          <span>依填答情況約 5–8 分鐘</span>
+          <strong>五個面向，理解孩子需要的支持</strong>
           <img class="hero-drawing" src="assets/pre-class-observation/tracy-clean-cutout.png" alt="" aria-hidden="true" />
         </div>
       </header>
@@ -40,12 +40,12 @@
         <article>
           <div class="tiny-icon pencil" aria-hidden="true"></div>
           <strong>讓老師更快認識孩子</strong>
-          <p>第一堂課前，老師先知道孩子需要暖身、探索、安定，還是被看見。</p>
+          <p>整理孩子容易投入的方式、可能需要的支持，以及第一堂課待確認的事。</p>
         </article>
         <article>
           <div class="tiny-icon palette" aria-hidden="true"></div>
           <strong>讓家長理解學習狀態</strong>
-          <p>完成後會看到一份溫暖的孩子藝術學習畫像，而不是冷冰冰分數。</p>
+          <p>完成後會看到整體理解與陪伴建議，保留不同情境的差異，不替孩子分型。</p>
         </article>
         <article>
           <div class="tiny-icon tape" aria-hidden="true"></div>
@@ -63,14 +63,14 @@
           <div class="field-grid">
             <label>
               孩子姓名
-              <input name="childName" required placeholder="例：林小安" autocomplete="name" />
+              <input name="childName" maxlength="40" required placeholder="例：林小安" autocomplete="name" />
             </label>
             <label>
               出生年月日
               <input id="birthdateInput" name="birthdate" type="date" required />
             </label>
             <div id="versionNotice" class="version-notice" role="status">
-              請選擇孩子出生年月日，系統會自動帶入適合的觀察題目。
+              請選擇孩子出生年月日，請依最近一個月的生活經驗回答。
             </div>
             <label>
               想就讀或已預約教室
@@ -93,15 +93,15 @@
             </label>
             <label>
               家長姓名
-              <input name="parentName" required placeholder="例：林媽媽" autocomplete="name" />
+              <input name="parentName" maxlength="40" required placeholder="例：林媽媽" autocomplete="name" />
             </label>
             <label>
               聯絡電話
-              <input name="phone" required placeholder="例：0912-345-678" inputmode="tel" autocomplete="tel" />
+              <input name="phone" maxlength="30" required placeholder="例：0912-345-678" inputmode="tel" autocomplete="tel" />
             </label>
             <label>
               LINE 顯示名稱
-              <input name="lineName" placeholder="例：小安媽媽" />
+              <input name="lineName" maxlength="80" placeholder="例：小安媽媽" />
             </label>
           </div>
         </section>
@@ -109,34 +109,34 @@
         <section class="panel">
           <div class="section-title">
             <p>Step 2</p>
-            <h2>12 題課前小觀察</h2>
+            <h2>最近一個月的實際觀察</h2>
             <span id="questionSetLabel">依孩子年齡自動切換版本</span>
           </div>
-          <div class="observation-map" aria-label="觀察面向">
-            <span>情緒狀態</span>
-            <span>表達方式</span>
-            <span>互動習慣</span>
-            <span>學習節奏</span>
-          </div>
+          <p>請依最近一個月的生活、遊戲或創作經驗回答。沒有標準答案；沒有遇過的情境可選「尚未觀察」，不同場合表現不同可選「依情境不同」。重要情境才會展開追問，不確定的地方不用猜測。</p>
+          <div class="observation-map" aria-label="觀察面向"><span>新環境適應</span><span>創作與探索</span><span>挫折與接受建議</span><span>表達與求助</span><span>互動與完成節奏</span></div>
           <div id="questionList" class="question-list"></div>
         </section>
 
         <section class="panel">
           <div class="section-title">
             <p>Step 3</p>
-            <h2>給老師的補充</h2>
+            <h2>具體經驗與家長期待</h2>
           </div>
           <label>
+            11. 最近一次讓您印象深刻的例子（選填）
+            <textarea name="recentExample" rows="3" maxlength="800" placeholder="發生什麼事？您如何回應？孩子接著怎麼做？沒有例子也可以留白。"></textarea>
+          </label>
+          <label>
             孩子最近最喜歡做什麼？
-            <textarea name="interest" rows="3" placeholder="例：畫怪獸、玩黏土、剪貼、說故事"></textarea>
+            <textarea name="interest" rows="3" maxlength="300" placeholder="例：畫怪獸、玩黏土、剪貼、說故事"></textarea>
           </label>
           <label>
             孩子在學習或創作時，最容易卡住的是什麼？
-            <textarea name="stuckPoint" rows="3" placeholder="例：怕畫錯、很在意不像、需要大人陪在旁邊"></textarea>
+            <textarea name="stuckPoint" rows="3" maxlength="300" placeholder="例：怕畫錯、很在意不像、需要大人陪在旁邊"></textarea>
           </label>
           <label>
-            第一堂課希望老師特別留意的地方
-            <textarea name="teacherNote" rows="3" placeholder="例：剛開始會比較慢熟，請老師先給他一點觀察時間"></textarea>
+            12. 第一堂課最希望老師留意的事（這是期待，不是行為評分）
+            <textarea name="teacherNote" rows="3" maxlength="800" placeholder="例：剛開始會比較慢熟，請老師先給他一點觀察時間"></textarea>
           </label>
           <label class="consent-check">
             <input name="privacyConsent" type="checkbox" required />
@@ -145,8 +145,8 @@
         </section>
 
         <div class="form-actions">
-          <p id="submissionStatus">送出後會產生孩子藝術學習畫像，並同步提供給老師作為課前參考。</p>
-          <button id="submitButton" type="submit">送出並看孩子的藝術學習畫像</button>
+          <p id="submissionStatus">送出後會產生家長版整體觀察，並同步提供給老師作為課前參考。</p>
+          <button id="submitButton" type="submit">送出並看孩子的整體觀察</button>
         </div>
       </form>
 
@@ -158,11 +158,8 @@
 
           <p class="parent-note">這份小觀察是理解孩子的起點，不是能力評分或固定分類；孩子在不同情境下，也可能有不同表現。</p>
 
+          <p id="uncertaintyNote" role="status"></p>
           <div class="summary-grid">
-            <article>
-              <span>孩子可能需要的支持</span>
-              <strong id="supportTip"></strong>
-            </article>
             <article>
               <span>來到大綠地，我們會這樣陪伴</span>
               <strong id="teacherTip"></strong>
@@ -172,11 +169,12 @@
               <strong id="firstClassTip"></strong>
             </article>
             <article>
-              <span>孩子卡住時可以怎麼陪</span>
+              <span>第一堂課一起確認</span>
               <strong id="avoidTip"></strong>
             </article>
           </div>
 
+          <details class="domain-details"><summary>查看五個面向的填答依據</summary><div id="domainOverview"></div></details>
           <p id="recordId" style="overflow-wrap: anywhere"></p>
           <p id="resultSubmissionStatus" role="status" aria-live="polite"></p>
           <p id="lineDeliveryStatus" role="status" aria-live="polite"></p>
@@ -196,7 +194,8 @@
     <script src="assets/pre-class-observation/pre-class-observation-config.js?v=auto-line-20261020"></script>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script src="assets/pre-class-observation/pre-class-observation-line.js?v=auto-line-20261020"></script>
-    <script src="assets/pre-class-observation/teacher-observation-summary.js?v=evidence-20261020"></script>
-    <script src="assets/pre-class-observation/pre-class-observation.js?v=evidence-20261020"></script>
+    <script src="assets/pre-class-observation/questionnaire-data.js?v=combination-v2-20261020"></script>
+    <script src="assets/pre-class-observation/observation-analysis.js?v=combination-v2-20261020"></script>
+    <script src="assets/pre-class-observation/pre-class-observation.js?v=combination-v2-20261020"></script>
   </body>
 </html>

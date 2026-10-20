@@ -568,6 +568,63 @@ function setSubmissionState(state, message) {
   submitButton.textContent = state === "submitting" ? "送出中..." : "送出並看孩子的藝術學習畫像";
 }
 
+// Teacher-facing LINE handoff; parentGuides and parentSummary remain separate.
+const teacherLineGuides = {
+  observer: {
+    watch: "新環境中可能先觀察再加入，留意開始靠近材料或主動提問的時機。",
+    start: "先介紹環境與材料，提供一個可一起試的小步驟，留出暖身時間。",
+    stuck: "先等候，再給選擇：『你想先看一下，還是一起試一小塊？』",
+    avoid: "避免催促立即加入、突然點名或把安靜解讀成不投入。",
+    review: "何時開始參與？哪個邀請有效？"
+  },
+  explorer: {
+    watch: "可能對材料與新點子較有興趣，留意能否選定起點、需要多少步驟提示。",
+    start: "提供兩種材料選項，讓孩子選一個想法，先完成一個小目標。",
+    stuck: "先聽想法，再縮小任務：『你想先試哪一個？我們先完成這一小段。』",
+    avoid: "避免過早否定點子，或一次提供太多選項、太長指令。",
+    review: "哪種材料讓他投入？什麼提示能幫他接著完成？"
+  },
+  sensitive: {
+    watch: "可能較在意作品結果與大人的回應，留意挫折時的表達及恢復節奏。",
+    start: "從容易開始的任務帶入，具體回應努力，先建立可以嘗試的安全感。",
+    stuck: "先理解感受：『這跟你想的不太一樣嗎？你想休息，還是一起試別的方法？』",
+    avoid: "避免公開比較、以像不像評價，或情緒未穩時連續要求修改。",
+    review: "什麼情境容易卡住？哪種回應能讓他願意再試？"
+  },
+  sharer: {
+    watch: "可能透過對話與分享投入，留意分享和動手之間是否需要轉換提醒。",
+    start: "先聽一小段作品想法，再給清楚的創作順序，預留簡短分享時間。",
+    stuck: "回應故事並指向下一步：『我想聽這個故事，我們先做出這個角色再分享，好嗎？』",
+    avoid: "避免只給籠統稱讚、突然打斷，或分享時間缺乏清楚界線。",
+    review: "哪種提問能帶出想法？如何從分享轉回創作？"
+  }
+};
+
+function buildTeacherLineMessage(formData, age, result, recordId, saved) {
+  const primary = teacherLineGuides[result.primary];
+  const secondary = teacherLineGuides[result.secondary];
+  const tied = result.ranked[0][1] === result.ranked[1][1];
+  // Keep the message within LINE's limit; full parent input remains in the record.
+  const field = (name, limit = 100) => {
+    const value = String(formData.get(name) || "").trim();
+    if (!value) return "未提供";
+    return value.length > limit ? value.slice(0, limit) + "…（完整內容見紀錄）" : value;
+  };
+  const date = new Date().toLocaleDateString("zh-TW", { timeZone: "Asia/Taipei" });
+  return [
+    "【老師課前準備摘要】",
+    `① 基本資料\n孩子：${field("childName", 40)}｜約 ${age ?? "未提供"} 歲\n${field("campus", 30)}｜${field("status", 30)}\n填寫日期：${date}\n紀錄編號：${recordId}\n${saved ? "完整資料已保存" : "尚未確認存檔，請協助確認"}`,
+    "② 課前優先留意\n家長填答顯示：" + (tied ? "有多種同樣明顯的傾向，請現場核對。\n" : "以下情況可優先觀察，並非定論。\n") +
+      "・" + primary.watch + (result.ranked[1][1] > 0 ? "\n・" + secondary.watch : ""),
+    "③ 第一堂課帶入\n" + primary.start,
+    "④ 卡住時怎麼陪\n" + primary.stuck,
+    "⑤ 互動提醒\n" + primary.avoid,
+    `⑥ 家長補充（依原填答）\n最近喜歡：${field("interest")}\n容易卡住：${field("stuckPoint")}\n特別留意：${field("teacherNote")}`,
+    "⑦ 課後核對\n" + primary.review + " 實際表現與家長描述有哪些差異？",
+    "這是課前參考，請依當天狀態調整；完整答案可至老師查詢頁以紀錄編號搜尋。"
+  ].join("\n\n");
+}
+
 async function showResult(formData, age, result, recordId, saved) {
   const guide = parentGuides[result.primary];
   const tied = result.ranked[0][1] === result.ranked[1][1];
@@ -589,15 +646,7 @@ async function showResult(formData, age, result, recordId, saved) {
   ].join("\n\n");
   copySummaryButton.textContent = "複製陪伴建議";
   document.querySelector("#recordId").textContent = "紀錄編號：" + recordId;
-  const lineMessage = [
-    "【課前小觀察】", "孩子姓名：" + formData.get("childName"),
-    "紀錄編號：" + recordId,
-    saved ? "課前資料已保存，請協助安排後續。" : "尚未確認存檔，請協助確認課前資料。",
-    resultTitle.textContent,
-    "在家可以試試：" + guide.home,
-    "孩子卡住時：" + guide.stuck,
-    parentNote
-  ].join("\n\n");
+  const lineMessage = buildTeacherLineMessage(formData, age, result, recordId, saved);
   document.querySelector("#sendToLine").href = "https://line.me/R/oaMessage/%40wjy4797e/?" + encodeURIComponent(lineMessage);
 
   form.hidden = true;

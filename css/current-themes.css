@@ -1,0 +1,79 @@
+/* Scoped seasonal palette; shared navigation and footer retain the brand. */
+.emotion-page { --emotion-coral:#a44e38; --emotion-peach:#f9e5dc; --emotion-pink:#f5e3e7; --emotion-yellow:#f8edc9; background:#fffbf5; color:var(--ink); }
+.emotion-container { max-width:1160px; margin:0 auto; }
+.emotion-prose { max-width:800px; margin:0 auto; }
+.emotion-section { padding:88px 48px; }
+.emotion-page p { font-size:16px; line-height:2; color:#65574f; }
+.emotion-page h2 { font-family:var(--font-serif); font-size:clamp(27px,3.1vw,40px); font-weight:500; line-height:1.6; margin-bottom:24px; text-wrap:balance; }
+.emotion-page h3 { font-family:var(--font-serif); font-size:24px; font-weight:600; line-height:1.6; }
+.emotion-eyebrow { color:var(--emotion-coral); font-size:13px; letter-spacing:.13em; margin-bottom:18px; font-weight:500; }
+.emotion-hero { background:#f9eee2; padding:84px 48px; }
+.emotion-hero::before { display:none; }
+.hero-layout { display:grid; grid-template-columns:1.5fr 1fr; gap:70px; align-items:center; }
+.emotion-hero .page-hero-eyebrow { color:var(--emotion-coral); font-family:var(--font-sans); font-size:12px; letter-spacing:.12em; }
+.emotion-hero h1 { font-size:clamp(36px,4.5vw,60px); line-height:1.5; }
+.emotion-hero .hero-lead { font-size:18px; max-width:600px; }
+.emotion-link { display:inline-flex; gap:24px; color:var(--emotion-coral); font-size:14px; margin-top:28px; padding:10px 0; text-underline-offset:7px; }
+.hero-note { background:#f4d7ce; padding:42px 32px; border-radius:90px 90px 24px 24px; text-align:center; }
+.note-label { font-size:12px; letter-spacing:.16em; color:#7b473c; }
+.hero-note p { font-family:var(--font-serif); font-size:25px; color:#654137; margin:24px 0; }
+.feeling-tags { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; }
+.feeling-tags span { padding:8px 14px; background:#fff7e8; border-radius:50%; font-size:13px; color:#704f41; }
+.feeling-tags span:nth-child(2n) { background:#f8edc9; }
+.introduction { padding-top:58px; padding-bottom:58px; }
+.emotion-prose p + p,.story-copy p + p { margin-top:18px; }
+.story-section { background:#faeee8; }
+.story-layout { display:grid; grid-template-columns:1fr 1.2fr; gap:80px; }
+.story-layout h2 { margin-bottom:0; }
+.learning-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px; margin-top:36px; }
+.learning-grid article { border-top:2px solid #e9b3a1; padding-top:22px; }
+.learning-grid article:nth-child(2n) { border-color:#dec06d; }
+.learning-grid span { font-family:var(--font-display); font-size:32px; color:var(--emotion-coral); }
+.learning-grid h3 { margin:12px 0; font-size:22px; }
+.learning-grid p { font-size:15px; }
+.books-section { background:#f5efe6; }
+.section-lead { max-width:780px; margin-bottom:36px; }
+.emotion-books { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
+.emotion-book { background:#fffcf8; border:1px solid #e9dfd3; border-radius:24px; overflow:hidden; }
+.emotion-book header { background:var(--emotion-peach); padding:25px 30px; }
+.emotion-book:nth-child(3n+2) header { background:var(--emotion-yellow); }
+.emotion-book:nth-child(3n) header { background:var(--emotion-pink); }
+.book-number { font-family:var(--font-display); font-size:36px; color:#96503d; display:inline-block; margin-right:16px; vertical-align:middle; }
+.book-category { font-size:12px; color:#6e5145; letter-spacing:.08em; }
+.emotion-book h3 { margin:10px 0 8px; }
+.emotion-book .book-theme { font-size:14px; color:#725447; }
+.book-body { padding:28px 30px 30px; }
+.emotion-book .book-question { color:#594139; font-weight:500; margin-bottom:24px; }
+.book-body h4 { font-size:12px; color:var(--emotion-coral); letter-spacing:.12em; margin-bottom:8px; }
+.emotion-book .class-note { border-top:1px solid #eaded3; margin-top:24px; padding-top:18px; font-size:14px; }
+.class-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
+.class-grid article { padding:32px; border-radius:24px; background:#f9edcc; }
+.class-grid article + article { background:#f6e6e6; }
+.class-grid h3 { margin-bottom:14px; }
+.class-grid .class-detail { font-size:14px; margin-top:20px; }
+.closing-section { text-align:center; background:#f6dfd4; }
+.emotion-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:32px; }
+.emotion-primary,.emotion-secondary { padding:14px 28px; font-size:15px; border:1px solid #93442f; }
+.emotion-primary { background:#93442f; color:white; }
+.emotion-secondary { background:#fff9f2; color:#843d2c; }
+.emotion-actions a:hover { background:#773724; color:white; }
+.emotion-page a:focus-visible { outline:3px solid #843d2c; outline-offset:5px; }
+#picture-books { scroll-margin-top:90px; }
+@media(max-width:1050px) { .hero-layout { gap:32px; } .story-layout { gap:36px; } .learning-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } #picture-books { scroll-margin-top:148px; } }
+@media(max-width:680px) {
+ .emotion-section { padding:54px 22px; } .emotion-hero { padding:48px 22px; }
+ .hero-layout,.story-layout,.emotion-books,.class-grid { grid-template-columns:1fr; gap:26px; }
+ .emotion-hero h1 { font-size:36px; } .emotion-hero .hero-lead { font-size:16px; }
+ .hero-note { padding:26px 22px; border-radius:44px 44px 20px 20px; } .hero-note p { font-size:22px; margin:16px 0; }
+ .learning-grid { gap:24px 18px; } .learning-grid h3 { font-size:20px; }
+ .emotion-book header,.book-body,.class-grid article { padding:24px; } .emotion-book h3 { font-size:23px; }
+ .emotion-actions { flex-direction:column; } #picture-books { scroll-margin-top:176px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .emotion-page .btn { transition:none; } }
+
+/* Photographed book covers and spreads remain uncropped. */
+.book-photo { margin:0; padding:24px 30px 0; }
+.book-photo-frame { height:300px; display:flex; align-items:center; justify-content:center; background:#f4eee5; border-radius:12px; overflow:hidden; }
+.book-photo img { display:block; width:100%; height:100%; object-fit:contain; }
+.book-photo figcaption { margin-top:10px; font-size:12px; color:#716258; line-height:1.8; }
+@media(max-width:680px) { .book-photo { padding:20px 24px 0; } .book-photo-frame { height:240px; } }

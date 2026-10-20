@@ -152,11 +152,11 @@
 
       <section id="resultPanel" class="result-panel" hidden>
         <div class="result-card">
-          <p class="eyebrow">孩子的藝術學習畫像</p>
+          <p class="eyebrow">給家長的陪伴建議</p>
           <h2 id="resultTitle"></h2>
           <p id="resultText"></p>
 
-          <div class="type-chips" id="typeChips" aria-label="孩子狀態"></div>
+          <p class="parent-note">這份小觀察是理解孩子的起點，不是能力評分或固定分類；孩子在不同情境下，也可能有不同表現。</p>
 
           <div class="summary-grid">
             <article>
@@ -164,32 +164,30 @@
               <strong id="supportTip"></strong>
             </article>
             <article>
-              <span>大綠地老師會如何陪伴</span>
+              <span>來到大綠地，我們會這樣陪伴</span>
               <strong id="teacherTip"></strong>
             </article>
             <article>
-              <span>第一堂課建議</span>
+              <span>在家可以試試</span>
               <strong id="firstClassTip"></strong>
             </article>
             <article>
-              <span>需要避免</span>
+              <span>孩子卡住時可以怎麼陪</span>
               <strong id="avoidTip"></strong>
             </article>
           </div>
 
-          <div class="teacher-summary">
-            <h3>老師課前摘要</h3>
-            <pre id="teacherSummary"></pre>
-          </div>
+          <p id="resultSubmissionStatus" role="status" aria-live="polite"></p>
+          <p class="result-next-steps"><a href="https://liff.line.me/2011349758-Whdnu6TO">預約體驗課</a> · <a href="https://line.me/R/ti/p/%40wjy4797e">回到官方 LINE</a></p>
 
           <div class="result-actions">
             <button id="restartButton" type="button">重新填寫</button>
-            <button id="copySummaryButton" type="button">複製老師摘要</button>
+            <button id="copySummaryButton" type="button">複製陪伴建議</button>
           </div>
         </div>
       </section>
     </main>
     <script src="assets/pre-class-observation/pre-class-observation-config.js?v=backend-1"></script>
-    <script src="assets/pre-class-observation/pre-class-observation.js"></script>
+    <script src="assets/pre-class-observation/pre-class-observation.js?v=parent-20261020"></script>
   </body>
 </html>

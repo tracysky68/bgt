@@ -297,6 +297,43 @@ const profiles = {
   }
 };
 
+const parentGuides = {
+  observer: {
+    title: "留一點時間，陪孩子慢慢走進創作",
+    text: "從這次填答來看，孩子可能習慣先看看環境、熟悉材料，再開始動手。願意觀察也是參與的一種方式，可以留意他什麼時候開始靠近、提問或想試一試。",
+    support: "先讓孩子知道接下來會做什麼，也給他一點選擇開始方式的空間。",
+    home: "一起擺好紙和兩種畫筆，邀請孩子先看你試一筆，再問：『你想試哪一支？』不急著要求他完成作品。",
+    stuck: "可以說：『你想先看一下，還是我們一起試一小塊？』讓孩子知道，慢慢開始也可以。",
+    class: "老師可以先介紹環境與材料，從簡單的小步驟邀請孩子加入，依當天的狀態調整節奏。"
+  },
+  explorer: {
+    title: "陪孩子把好奇心變成創作",
+    text: "從這次填答來看，孩子可能喜歡新材料，也常有自己的點子。可以陪他從一個最想試的想法開始，慢慢找到把想法做出來的方法。",
+    support: "保留嘗試的空間，並一起決定眼前的一小步。",
+    home: "準備兩種適合孩子年齡的材料，問：『今天你想先試哪一個？』再一起選一個小目標，例如先完成一個角色。",
+    stuck: "可以說：『你的點子好多，我們先試哪一個？』如果作品不如預期，再陪他想一個可以繼續的做法。",
+    class: "老師可以提供材料選擇，聽孩子說想法，再用短短的創作步驟陪他逐步完成。"
+  },
+  sensitive: {
+    title: "先理解感受，再陪孩子試下一步",
+    text: "從這次填答來看，孩子可能比較在意作品是否符合期待，也留意大人的語氣與回應。可以先聽聽他的感受，再一起找一個願意嘗試的小步驟。",
+    support: "讓孩子知道自己的感受被聽見，也看見他已經做出的嘗試。",
+    home: "一起玩不需要畫得像的色彩遊戲。聊聊『你最喜歡哪一塊顏色？』，把注意力放在探索的過程。",
+    stuck: "可以說：『這跟你想的不太一樣嗎？你想休息一下，還是一起想辦法？』先等孩子準備好，再討論調整。",
+    class: "老師可以從容易開始的任務帶入，用具體的回饋回應孩子的努力，依孩子當下的感受調整引導。"
+  },
+  sharer: {
+    title: "聽見孩子的故事，陪他把想法畫出來",
+    text: "從這次填答來看，孩子可能喜歡和人分享，也會透過對話找到創作的動力。聽他說說作品裡的故事，有助於了解他正在想什麼。",
+    support: "留一段專心聽他說的時間，再一起選擇下一個想完成的部分。",
+    home: "請孩子介紹作品中的一個角色，問：『他今天發生了什麼事？』再邀請他把故事裡的一個場景畫出來。",
+    stuck: "可以說：『我想聽這個故事，我們先把這一小段做出來，再一起分享好嗎？』給分享和動手都留一點時間。",
+    class: "老師可以安排簡短的作品分享，回應孩子的故事，並用清楚的小步驟陪他繼續創作。"
+  }
+};
+const parentNote = "這份小觀察是理解孩子的起點，不是能力評分或固定分類；孩子在不同情境下，也可能有不同表現。";
+let parentSummary = "";
+
 const typeOrder = ["observer", "explorer", "sensitive", "sharer"];
 const typeLabels = {
   observer: "觀察暖身型",
@@ -314,13 +351,12 @@ const supportTip = document.querySelector("#supportTip");
 const teacherTip = document.querySelector("#teacherTip");
 const firstClassTip = document.querySelector("#firstClassTip");
 const avoidTip = document.querySelector("#avoidTip");
-const teacherSummary = document.querySelector("#teacherSummary");
+const resultSubmissionStatus = document.querySelector("#resultSubmissionStatus");
 const restartButton = document.querySelector("#restartButton");
 const copySummaryButton = document.querySelector("#copySummaryButton");
 const birthdateInput = document.querySelector("#birthdateInput");
 const versionNotice = document.querySelector("#versionNotice");
 const questionSetLabel = document.querySelector("#questionSetLabel");
-const typeChips = document.querySelector("#typeChips");
 const submissionStatus = document.querySelector("#submissionStatus");
 const submitButton = document.querySelector("#submitButton");
 
@@ -427,16 +463,6 @@ function score(formData) {
   };
 }
 
-function renderTypeChips(result) {
-  typeChips.innerHTML = "";
-  result.ranked.forEach(([type, count], index) => {
-    const chip = document.createElement("span");
-    chip.className = index === 0 ? "active" : "";
-    chip.textContent = `${typeLabels[type]} ${count}`;
-    typeChips.append(chip);
-  });
-}
-
 function buildTeacherSummary(formData, age, result) {
   const primaryProfile = profiles[result.primary];
   const secondaryProfile = profiles[result.secondary];
@@ -520,7 +546,7 @@ async function submitObservation(payload) {
     return { ok: false, skipped: true };
   }
 
-  await fetch(submissionEndpoint, {
+  const response = await fetch(submissionEndpoint, {
     method: "POST",
     mode: "no-cors",
     headers: {
@@ -529,11 +555,15 @@ async function submitObservation(payload) {
     body: JSON.stringify(payload)
   });
 
-  return { ok: true };
+  // Opaque no-cors responses do not confirm that the backend saved the record.
+  if (response.type === "opaque") return { ok: false, unconfirmed: true };
+  if (!response.ok) throw new Error("Observation submission failed");
+  return { ok: false, unconfirmed: true };
 }
 
 function setSubmissionState(state, message) {
   if (submissionStatus) submissionStatus.textContent = message;
+  if (resultSubmissionStatus) resultSubmissionStatus.textContent = message;
   if (!submitButton) return;
 
   submitButton.disabled = state === "submitting";
@@ -541,17 +571,24 @@ function setSubmissionState(state, message) {
 }
 
 function showResult(formData, age, result, summary) {
-  const childName = formData.get("childName");
-  const primaryProfile = profiles[result.primary];
-
-  resultTitle.textContent = `${childName}目前比較像是「${primaryProfile.name}」`;
-  resultText.textContent = primaryProfile.text;
-  supportTip.textContent = primaryProfile.supportTip;
-  teacherTip.textContent = primaryProfile.teacherTip;
-  firstClassTip.textContent = primaryProfile.firstClassTip;
-  avoidTip.textContent = primaryProfile.avoidTip;
-  teacherSummary.textContent = summary;
-  renderTypeChips(result);
+  const guide = parentGuides[result.primary];
+  const tied = result.ranked[0][1] === result.ranked[1][1];
+  resultTitle.textContent = tied ? "陪孩子找到自在的創作方式" : guide.title;
+  resultText.textContent = tied
+    ? "這次填答呈現了幾種同樣明顯的傾向。孩子可能隨情境有不同需要，可以先從下面一個小方法試起，再觀察什麼方式讓他更自在。"
+    : guide.text;
+  supportTip.textContent = guide.support;
+  teacherTip.textContent = guide.class;
+  firstClassTip.textContent = guide.home;
+  avoidTip.textContent = guide.stuck;
+  parentSummary = [
+    "大綠地藝術｜給家長的陪伴建議", resultTitle.textContent, resultText.textContent,
+    "孩子可能需要的支持：" + guide.support,
+    "在家可以試試：" + guide.home,
+    "孩子卡住時可以怎麼陪：" + guide.stuck,
+    "來到大綠地，我們會這樣陪伴：" + guide.class, parentNote
+  ].join("\n\n");
+  copySummaryButton.textContent = "複製陪伴建議";
 
   form.hidden = true;
   resultPanel.hidden = false;
@@ -562,6 +599,7 @@ birthdateInput.addEventListener("change", updateVersionNotice);
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (submitButton.disabled) return;
   const formData = new FormData(form);
   const age = getAge(formData.get("birthdate"));
   const result = score(formData);
@@ -575,20 +613,21 @@ form.addEventListener("submit", async (event) => {
     if (submitResult.skipped) {
       setSubmissionState(
         "idle",
-        "目前尚未填入 Google Apps Script 後端網址，結果只會在本頁顯示。"
+        "陪伴建議已產生，但資料尚未送出。請透過官方 LINE 聯絡我們，協助確認課前資料。"
       );
     } else {
-      setSubmissionState("idle", "已送出，老師端稍後即可看到這筆課前觀察。");
+      setSubmissionState("idle", "陪伴建議已產生。已嘗試傳送課前資料，目前無法確認是否收到；請透過官方 LINE 聯絡我們確認。");
     }
   } catch (error) {
     console.error(error);
-    setSubmissionState("idle", "送出時遇到網路問題，請稍後再試或截圖提供給老師。");
+    setSubmissionState("idle", "陪伴建議已產生，但資料未能送出。請透過官方 LINE 聯絡我們，協助確認課前資料。");
   }
 
   showResult(formData, age, result, summary);
 });
 
 restartButton.addEventListener("click", () => {
+  parentSummary = "";
   form.reset();
   currentVersion = "preschool";
   renderQuestions();
@@ -600,11 +639,15 @@ restartButton.addEventListener("click", () => {
 });
 
 copySummaryButton.addEventListener("click", async () => {
-  await navigator.clipboard.writeText(teacherSummary.textContent);
-  copySummaryButton.textContent = "已複製";
+  try {
+    await navigator.clipboard.writeText(parentSummary);
+    copySummaryButton.textContent = "已複製陪伴建議";
+  } catch {
+    copySummaryButton.textContent = "無法複製，請截圖保存建議";
+  }
   window.setTimeout(() => {
-    copySummaryButton.textContent = "複製老師摘要";
-  }, 1800);
+    copySummaryButton.textContent = "複製陪伴建議";
+  }, 2500);
 });
 
 renderQuestions();

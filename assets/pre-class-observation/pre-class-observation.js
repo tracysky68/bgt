@@ -568,7 +568,7 @@ function setSubmissionState(state, message) {
   submitButton.textContent = state === "submitting" ? "送出中..." : "送出並看孩子的藝術學習畫像";
 }
 
-function showResult(formData, age, result, recordId, saved) {
+async function showResult(formData, age, result, recordId, saved) {
   const guide = parentGuides[result.primary];
   const tied = result.ranked[0][1] === result.ranked[1][1];
   resultTitle.textContent = tied ? "陪孩子找到自在的創作方式" : guide.title;
@@ -603,6 +603,19 @@ function showResult(formData, age, result, recordId, saved) {
   form.hidden = true;
   resultPanel.hidden = false;
   resultPanel.scrollIntoView({ behavior: "smooth" });
+  const lineStatus = document.querySelector("#lineDeliveryStatus");
+  const fallback = document.querySelector("#lineManualFallback");
+  fallback.hidden = false;
+  lineStatus.textContent = saved ? "正在回傳摘要到開啟表單的 LINE 對話…" : "尚未確認存檔，未自動傳送 LINE 摘要。";
+  const delivery = await window.BGT_OBSERVATION_LINE.send(recordId, lineMessage, saved);
+  if (delivery.status === "sent") {
+    lineStatus.textContent = "摘要已傳回 LINE 對話，謝謝您完成課前小觀察。";
+    fallback.hidden = true;
+  } else if (delivery.status === "unconfirmed") {
+    lineStatus.textContent = "資料已保存，但尚未確認 LINE 是否收到；請先查看官方 LINE 對話，避免重複傳送。";
+  } else if (delivery.status === "unavailable") {
+    lineStatus.textContent = "資料已保存。這次開啟方式無法自動回傳，請使用下方按鈕傳到官方 LINE。下次請從大綠地官方 LINE 選單進入。";
+  }
 }
 
 birthdateInput.addEventListener("change", updateVersionNotice);
@@ -636,7 +649,7 @@ form.addEventListener("submit", async (event) => {
     setSubmissionState("idle", "陪伴建議已產生，但尚未確認資料是否保存。請用下方按鈕傳到官方 LINE，請我們協助確認，先不用重複填寫。");
   }
 
-  showResult(formData, age, result, recordId, saved);
+  await showResult(formData, age, result, recordId, saved);
 });
 
 restartButton.addEventListener("click", () => {
@@ -664,3 +677,5 @@ copySummaryButton.addEventListener("click", async () => {
 });
 
 renderQuestions();
+
+window.BGT_OBSERVATION_LINE.init();

@@ -548,17 +548,15 @@ async function submitObservation(payload) {
 
   const response = await fetch(submissionEndpoint, {
     method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(payload)
+    mode: "cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(30000)
   });
-
-  // Opaque no-cors responses do not confirm that the backend saved the record.
-  if (response.type === "opaque") return { ok: false, unconfirmed: true };
   if (!response.ok) throw new Error("Observation submission failed");
-  return { ok: false, unconfirmed: true };
+  const receipt = await response.json();
+  if (receipt.ok !== true) throw new Error("Observation was not saved");
+  return { ok: true };
 }
 
 function setSubmissionState(state, message) {
@@ -570,7 +568,7 @@ function setSubmissionState(state, message) {
   submitButton.textContent = state === "submitting" ? "送出中..." : "送出並看孩子的藝術學習畫像";
 }
 
-function showResult(formData, age, result, summary) {
+function showResult(formData, age, result, recordId, saved) {
   const guide = parentGuides[result.primary];
   const tied = result.ranked[0][1] === result.ranked[1][1];
   resultTitle.textContent = tied ? "陪孩子找到自在的創作方式" : guide.title;
@@ -582,13 +580,25 @@ function showResult(formData, age, result, summary) {
   firstClassTip.textContent = guide.home;
   avoidTip.textContent = guide.stuck;
   parentSummary = [
-    "大綠地藝術｜給家長的陪伴建議", resultTitle.textContent, resultText.textContent,
+    "大綠地藝術｜給家長的陪伴建議", "孩子姓名：" + formData.get("childName"),
+    "紀錄編號：" + recordId, resultTitle.textContent, resultText.textContent,
     "孩子可能需要的支持：" + guide.support,
     "在家可以試試：" + guide.home,
     "孩子卡住時可以怎麼陪：" + guide.stuck,
     "來到大綠地，我們會這樣陪伴：" + guide.class, parentNote
   ].join("\n\n");
   copySummaryButton.textContent = "複製陪伴建議";
+  document.querySelector("#recordId").textContent = "紀錄編號：" + recordId;
+  const lineMessage = [
+    "【課前小觀察】", "孩子姓名：" + formData.get("childName"),
+    "紀錄編號：" + recordId,
+    saved ? "課前資料已保存，請協助安排後續。" : "尚未確認存檔，請協助確認課前資料。",
+    resultTitle.textContent,
+    "在家可以試試：" + guide.home,
+    "孩子卡住時：" + guide.stuck,
+    parentNote
+  ].join("\n\n");
+  document.querySelector("#sendToLine").href = "https://line.me/R/oaMessage/%40wjy4797e/?" + encodeURIComponent(lineMessage);
 
   form.hidden = true;
   resultPanel.hidden = false;
@@ -603,10 +613,12 @@ form.addEventListener("submit", async (event) => {
   const formData = new FormData(form);
   const age = getAge(formData.get("birthdate"));
   const result = score(formData);
-  const summary = buildTeacherSummary(formData, age, result);
+  const recordId = "BGT-" + crypto.randomUUID();
+  const summary = "紀錄編號：" + recordId + "\n" + buildTeacherSummary(formData, age, result);
   const payload = buildSubmissionPayload(formData, age, result, summary);
 
-  setSubmissionState("submitting", "正在送出給老師端...");
+  let saved = false;
+  setSubmissionState("submitting", "正在保存課前資料，請稍候…");
 
   try {
     const submitResult = await submitObservation(payload);
@@ -616,14 +628,15 @@ form.addEventListener("submit", async (event) => {
         "陪伴建議已產生，但資料尚未送出。請透過官方 LINE 聯絡我們，協助確認課前資料。"
       );
     } else {
-      setSubmissionState("idle", "陪伴建議已產生。已嘗試傳送課前資料，目前無法確認是否收到；請透過官方 LINE 聯絡我們確認。");
+      saved = submitResult.ok === true;
+      setSubmissionState("idle", "課前資料已保存。可以點下方按鈕，把摘要傳到大綠地官方 LINE，方便後續聯繫。");
     }
   } catch (error) {
-    console.error(error);
-    setSubmissionState("idle", "陪伴建議已產生，但資料未能送出。請透過官方 LINE 聯絡我們，協助確認課前資料。");
+    console.warn("Observation save could not be confirmed");
+    setSubmissionState("idle", "陪伴建議已產生，但尚未確認資料是否保存。請用下方按鈕傳到官方 LINE，請我們協助確認，先不用重複填寫。");
   }
 
-  showResult(formData, age, result, summary);
+  showResult(formData, age, result, recordId, saved);
 });
 
 restartButton.addEventListener("click", () => {
